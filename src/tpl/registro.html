@@ -1,0 +1,44 @@
+<div data-role="content" data-theme="d">
+  
+  <div align="center">
+   <img src="assets/images/EXPO_CP.png" height="60px"></img>
+  </div>
+  <br />
+
+  <div id="signin_form"> 		    		  
+	  <div class="ui-hide-label">
+		  <label for="username">Nomre:</label>
+		  <input type="text" name="username" id="nombre" value="" placeholder="Nombre y apellidos" data-mini="true"/>
+		  
+		  <label for="empresa">Empresa:</label>
+		  <input type="text" name="empresa" id="empresa" value="" placeholder="Empresa" data-mini="true"/>
+
+		  <label for="cargo">Cargo:</label>
+		  <input type="text" name="cargo" id="cargo" value="" placeholder="Cargo" data-mini="true"/>
+		  
+ 		  <label for="username">Email:</label>
+		  <input type="email" name="username" id="username" value="<%= username %>" placeholder="Email" data-mini="true"/>
+
+		  <label for="telefono">Teléfono:</label>
+		  <input type="tel" name="telefono" id="telefono" value="" placeholder="Teléfono" data-mini="true"/>
+	  </div>
+	  
+  	<a id="registrarse_pulsado" href="" data-theme="b" data-role="button" data-inline="false" data-mini="true">Registrarse</a>	  		  
+	</div>  
+  <br />
+  
+  <div align="center">
+    <div hidden id="registro_error">Por favor, rellena todos los campos</div>  		  
+  </div>		  
+  <br />  
+
+  <div align="center">
+  	<a id="yaregistrado_pulsado" href="#login"><small>¿Ya registrado?</small></a>
+  </div>		  
+  <br />
+
+  <div align="center">
+  	<a id="condiciones_pulsado" href="#condiciones"><small>Condiciones de uso</small></a>
+  </div>		  
+  
+</div>

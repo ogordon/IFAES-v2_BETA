@@ -1,0 +1,49 @@
+.slogan {
+	color: #5b79ff;
+	font-style: italic;
+	font-size: medium;
+}
+
+#login_error, #email_error, #registro_error
+{
+	color: red;
+	font-style: italic;
+	font-size: small;
+}
+
+.login_small {
+	color: red;
+	font-style: italic;
+	font-size: x-small;	
+	text-align: center;
+}
+
+.ponente_btn {
+	height: 40px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#msg_votacion_ok {
+	color: green;	
+}
+
+#sin_elegir, #msg_votacion_fail {
+	color: red;	
+}
+
+.patrocinadores_table {
+	border: 0px;
+	padding: 0px;
+	margin: 0px;
+	text-align: center;
+}
+
+.patrocinadores_table td {
+	border: 0px;
+	text-align: center;
+	padding-left: 8px;
+	padding-right: 8px;
+	border: 0px;
+	margin: 0px;
+}

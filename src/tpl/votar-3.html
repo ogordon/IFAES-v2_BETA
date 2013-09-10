@@ -1,0 +1,34 @@
+<div data-role="header" data-position="fixed" data-theme="z" align="center">
+	<a href="" id="volver_pulsado" data-theme="z" data-icon="back" data-iconpos="notext"></a>		
+	<h2>VOTAR</h2>
+	<a href="#home" id="volver_home" data-theme="z" data-icon="home" data-iconpos="notext"></a>		
+</div>
+
+<div data-role="content" data-theme="x">
+  
+  <div align="center">
+		<form>
+			<fieldset data-role="controlgroup">
+				<legend><strong><%= titulo %></strong></legend>
+				<input type="radio" name="respuesta" id="opcion_1" value="1" data-theme="d">
+				<label for="opcion_1"><small><%= opcion_1 %></small></label>
+				<input type="radio" name="respuesta" id="opcion_2" value="2" data-theme="d">
+				<label for="opcion_2"><small><%= opcion_2 %></small></label>
+				<input type="radio" name="respuesta" id="opcion_3" value="3" data-theme="d">
+				<label for="opcion_3"><small><%= opcion_3 %></small></label>								
+			</fieldset>
+		</form>
+		
+		<a href="" id="votar_pulsado" data-theme="x" data-role="button" data-inline="false" data-mini="true">Vota</a>
+		<div hidden id="msg_votacion_ok">
+			<strong>Voto registrado</strong>
+		</div>
+		<div hidden id="sin_elegir">
+			<strong>Elige una opción</strong>
+		</div>
+		<div hidden id="msg_votacion_fail">
+			Error al registrar el voto
+		</div>		  			  	
+  </div>		  
+</div>
+

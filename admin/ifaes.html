@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>IFAES'13 - Consola de Administración</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+    <!-- bootstrap -->
+    <link href="css/bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="css/bootstrap/bootstrap-responsive.css" rel="stylesheet" />
+    <link href="css/bootstrap/bootstrap-overrides.css" type="text/css" rel="stylesheet" />
+
+    <!-- libraries -->
+    <link href="css/lib/jquery-ui-1.10.2.custom.css" rel="stylesheet" type="text/css" />
+    <link href="css/lib/font-awesome.css" type="text/css" rel="stylesheet" />
+
+    <!-- global styles -->
+    <link rel="stylesheet" type="text/css" href="css/compiled/layout.css">
+    <link rel="stylesheet" type="text/css" href="css/elements.css">
+    <link rel="stylesheet" type="text/css" href="css/icons.css">
+    
+    <!-- Morris.js -->
+    <link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css">
+
+    <!-- this page specific styles -->
+    <link rel="stylesheet" href="css/compiled/index.css" type="text/css" media="screen" />
+
+    <!-- open sans font -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- lato font -->
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    
+    <!-- scripts -->
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-ui-1.10.2.custom.min.js"></script>
+
+    <!-- StackMob -->        
+    <script src="js/stackmob-js-0.9.1-bundled-min.js"></script>	
+    
+    <!-- knob --
+    <script src="js/jquery.knob.js"></script>
+    <!-- flot charts 
+    <script src="js/jquery.flot.js"></script>
+    <script src="js/jquery.flot.stack.js"></script>
+    <script src="js/jquery.flot.resize.js"></script>
+    -->
+    <script src="js/theme.js"></script>
+    <script src="src/expo.js"></script>	
+    
+    <!-- Morris.js -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    <script src="http://cdn.oesmith.co.uk/morris-0.4.3.min.js"></script>	
+    
+    <script>
+  	  // StackMob initialization  
+		  StackMob.init({
+				publicKey: "9abb2959-eced-4fa5-80f4-d9a4d25155af",
+				apiVersion: 0
+			});
+		  
+    </script>	
+    
+</head>
+<body>
+
+    <!-- navbar -->
+    <div class="navbar navbar-inverse">
+        <div class="navbar-inner">
+            <a class="brand" href="index.html"><strong>IFAES 13</strong><small> - Consola de Administración</small></a>
+            <ul class="nav pull-right">
+                <a class="brand" href="index.html"><img src="img/logo.png"></a>
+            </ul>            
+        </div>
+    </div>
+    <!-- end navbar -->
+
+    <!-- sidebar -->
+    <div id="sidebar-nav" class="hidden-phone">
+        <ul id="dashboard-menu">
+            <li id="home_menu" class="active">
+                <div id="pointer_div1" class="pointer">
+                    <div class="arrow"></div>
+                    <div class="arrow_border"></div>
+                </div>
+                <a class="tab1" href="ifaes.html">
+                    <i class="sidebar-home"></i>
+                    <span>Home</span>
+                </a>
+            </li>
+            <li id="add_menu" class="">
+                <div hidden id="pointer_div2" class="pointer">
+                    <div class="arrow"></div>
+                    <div class="arrow_border"></div>
+                </div>
+                <a class="tab2" href="#nueva">
+                    <i class="sidebar-tables"></i>
+                    <span>Añadir</span>
+                </a>
+            </li>            
+            <li id="activate_menu" class="">
+                <div hidden id="pointer_div3" class="pointer">
+                    <div class="arrow"></div>
+                    <div class="arrow_border"></div>
+                </div>
+
+                <a class="tab3" href="#activar">
+                    <i class="icon-group"></i>
+                    <span>Activar</span>
+                </a>
+            </li>
+            <li id="graph_menu" class="">
+                <div hidden id="pointer_div4" class="pointer">
+                    <div class="arrow"></div>
+                    <div class="arrow_border"></div>
+                </div>
+            
+                <a class="tab4" href="#resultados">
+                    <i class="sidebar-charts"></i>
+                    <span>Resultados</span>
+                </a>
+            </li>
+             <li class="">
+                <a class="tab6" href="#logout">
+                    <i class="sidebar-logout"></i>
+                    <span>Logout</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- end sidebar -->
+
+
+	<!-- main container -->
+    <div class="content">
+
+        <div class="container-fluid">
+
+            <!-- upper main stats -->
+            <div id="main-stats">
+                <div class="row-fluid stats-row">
+                    <!--
+                    <div class="span3 stat">
+                        <div class="data">
+                            <span class="number">757</span>
+                            Asistentes
+                        </div>
+                    </div>
+                    -->
+                    <div class="span4 stat">
+                        <div class="data">
+                            <span id="usuarios_counter" class="number">0</span>
+                            Usuarios
+                        </div>
+                        <!-- <span class="date">Hoy</span> -->
+                    </div>
+                    <div class="span4 stat">
+                        <div class="data">
+                            <span id="preguntas_counter" class="number">0</span>
+                            Preguntas
+                        </div>
+                        <!-- <span class="date">Hoy</span> -->
+                    </div>
+                    <div class="span4 stat last">
+                        <div class="data">
+                            <span id="respuestas_counter" class="number">0</span>
+                            Respuestas
+                        </div>
+                        <!-- <span class="date">Hoy</span> -->
+                    </div>
+                </div>
+            </div>
+            <!-- end upper main stats -->
+
+            <div id="pad-wrapper">
+                
+					    <!-- Plantilla para importar usuarios -->
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Template: Home -->
+
+    <script type="text/template" id="home">
+    	<div align="center">		    
+		    <img src="img/EXPO_CP.png">
+    	</div>
+    </script>
+        
+    <!-- Template: Añadir pregunta -->
+
+    <script type="text/template" id="add_question">
+      <div class="box">
+        <div class="content-wrap" align="center">
+            <strong>Indique la pregunta</strong><br/>
+            <input id="pregunta" class="span8" type="text" placeholder="Indique la pregunta"><br/>
+            <strong>Indique las respuestas</strong><br/>
+            <input id="resp_1" class="span8" type="text" placeholder="Respuesta 1">
+            <input id="resp_2" class="span8" type="text" placeholder="Respuesta 2">            
+            <input id="resp_3" class="span8" type="text" placeholder="Respuesta 3">            
+            <input id="resp_4" class="span8" type="text" placeholder="Respuesta 4">
+            <input id="resp_5" class="span8" type="text" placeholder="Respuesta 5">
+            <div class="action">
+                <a id="cargar_preguntas" class="btn-glow primary" href="">Cargar</a>
+            </div>                
+        </div>
+	    </div>
+    </script>
+
+    <!-- Template: Activar pregunta -->
+
+    <script type="text/template" id="activate_question">
+    	<div id="lista_preguntas">   	
+    	</div>
+    	<br/>
+      <div id="activar_btn" class="action">
+          <a id="activar_preguntas" class="btn-glow primary" href="">Activar</a>
+      </div>  			  
+    </script>
+
+    <script type="text/template" id="show_question">
+
+			<label class="radio">
+			  <input type="radio" name="pregunta" id=<%= pregunta_id %> value=<%= pregunta_id %> <% if(activa==true) {%>checked<% } %>> 
+			  <%= titulo %>
+			</label>
+
+    </script>
+
+    <!-- Template: Mostrar gráfica -->
+
+    <script type="text/template" id="show_graph">
+    	<div align="center">
+		    <!--<a id="refresh" class="btn-glow primary" href="expocontact.html">Refrescar</a>
+		    <br/>-->
+		    <div id="expo_chart" style="height: 250px;"></div><br/>
+		    <h4 id="title_chart" hidden>Título del gráfico</h4>
+    	</div>
+    </script>
+    
+</body>
+</html>

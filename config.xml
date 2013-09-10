@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <widget xmlns = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id        = "com.imelius.ifaes"
+        versionCode="1" 
+        version   = "1.0">
+	
+	<!-- Push notifications plugin -->
+	<gap:plugin name="com.adobe.plugins.pushplugin" />
+	<gap:plugin name="com.arnia.plugins.smsbuilder" />
+
+    <!-- versionCode is optional and Android only -->
+
+    <name>IFAES</name>
+
+    <description>
+        App del congreso de IFAES
+    </description>
+
+    <author href="http://www.imelius.com" email="info@imelius.com">
+        Imelius Internet, S.L. 
+    </author>
+    
+    <feature name="http://api.phonegap.com/1.0/device" />
+    <feature name="http://api.phonegap.com/1.0/notification" />
+    <feature name="http://api.phonegap.com/1.0/SMSBuilder" />
+    
+    
+    <preference name="orientation" value="portrait" />
+    <preference name="target-device" value="hanset" />
+    <preference name="show-splash-screen-spinner" value="false" />
+    <preference name="fullscreen" value="true" />
+    
+		<icon src="icon.png" gap:platform="ios" width="57" height="57" />
+		
+		<!-- COMMENTED, NO ICONS AND SPLASH SCREENS FOR NOW >
+		<icon src="icon-72.png" gap:platform="ios" width="72" height="72" />
+		<icon src="icon_at_2x.png" gap:platform="ios" width="114" height="114" />
+		
+		<icon src="icon-mdpi.png" gap:platform="android" gap:density="mdpi" />
+		<icon src="icon-hdpi.png" gap:platform="android" gap:density="hdpi" />
+		<icon src="icon-xhdpi.png" gap:platform="android" gap:density="xhdpi" />
+		<icon src="icon-xxhdpi.png" gap:platform="android" gap:density="xxhdpi" />
+				
+		<gap:splash src="assets/images/splashscreens/apple-touch-startup-image-320x460.png" gap:platform="ios" width="320" height="480" />
+		<gap:splash src="assets/images/splashscreens/apple-touch-startup-image-640x920.png" gap:platform="ios" width="640" height="960" />
+		<gap:splash src="assets/images/splashscreens/apple-touch-startup-image-640x1096.png" gap:platform="ios" width="640" height="1136" />
+		
+		<gap:splash src="assets/images/splashscreens/android-touch-startup-image-mdpi.png" gap:platform="android" gap:density="mdpi" />
+		<gap:splash src="assets/images/splashscreens/android-touch-startup-image-hdpi.png" gap:platform="android" gap:density="hdpi" />
+		<gap:splash src="assets/images/splashscreens/android-touch-startup-image-xhdpi.png" gap:platform="android" gap:density="xhdpi" />
+		<gap:splash src="assets/images/splashscreens/android-touch-startup-image-xxhdpi.png" gap:platform="android" gap:density="xxhdpi" />
+		
+		<-->
+		<access origin="*" />
+		
+</widget>

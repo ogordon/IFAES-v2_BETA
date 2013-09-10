@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html class="login-bg">
+<head>
+	<title>IFAES13 Admin Console</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+    <!-- bootstrap -->
+    <link href="css/bootstrap/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap/bootstrap-responsive.css" rel="stylesheet">
+    <link href="css/bootstrap/bootstrap-overrides.css" type="text/css" rel="stylesheet">
+
+    <!-- global styles -->
+    <link rel="stylesheet" type="text/css" href="css/layout.css">
+    <link rel="stylesheet" type="text/css" href="css/elements.css">
+    <link rel="stylesheet" type="text/css" href="css/icons.css">
+
+    <!-- libraries -->
+    <link rel="stylesheet" type="text/css" href="css/lib/font-awesome.css">
+    
+    <!-- this page specific styles -->
+    <link rel="stylesheet" href="css/signin.css" type="text/css" media="screen" />
+
+    <!-- open sans font -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    
+	<!-- scripts -->
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript" src="http://static.stackmob.com/js/stackmob-js-0.9.1-bundled-min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/theme.js"></script>
+
+    <!-- pre load bg imgs -->    
+        
+    <script>
+  	  // StackMob initialization  
+		  StackMob.init({
+				publicKey: "9abb2959-eced-4fa5-80f4-d9a4d25155af",
+				apiVersion: 0
+			});
+		  
+    </script>	
+    
+    <script type="text/javascript">
+      $(function () {
+          // bg switcher
+          var $btns = $(".bg-switch .bg");
+          $btns.click(function (e) {
+              e.preventDefault();
+              $btns.removeClass("active");
+              $(this).addClass("active");
+              var bg = $(this).data("img");
+
+              $("html").css("background-image", "url('img/bgs/" + bg + "')");
+          });
+
+          // Login in StackMob
+          
+          var $login = $("#login_btn");
+          
+          $login.click(function (e) {
+	        	e.preventDefault();
+	        	 
+	        	var username = $("#username").val();
+	        	var password = $("#password").val();
+	        	
+	        	if (username == "admin") {
+		        	var user = new StackMob.User({username: username, password: password}); 
+							
+							user.login(true, {
+								success: function(model) {																	
+									window.location.assign("ifaes.html");
+								},
+								error: function(model, response) {
+									alert("Error: Usuario o password incorrecto");
+								}  	
+					    });		        	
+	        	}
+	        	else {
+		        	alert("Sin privilegios de admin");	
+	        	}	        	 
+          });
+
+      });
+    </script>
+    
+</head>
+<body>
+    <div class="row-fluid login-wrapper">
+    		<h1 class="sigin_tittle">IFAES'13</h1>
+    		<br/>
+    		<h2 class="sigin_tittle">Administration Console</h2>
+    		<br/>
+        <img class="logo" src="img/logo-white.png">
+
+        <div class="span4 box">
+            <div class="content-wrap">
+                <h6>Log in</h6>
+                <input id="username" class="span12" type="text" placeholder="E-mail">
+                <input id="password" class="span12" type="password" placeholder="Tu password">
+                <br/><br/>
+                <a id="login_btn" class="btn-glow primary login" href="ifaes.html">Log in</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
