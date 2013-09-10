@@ -146,10 +146,11 @@ var AppRouter = Backbone.Router.extend({
                                     function(status) {
                                         var pushToken = status;
                                         showStatusMsg('push token: ' + JSON.stringify(pushToken));
-                                        console.log(pushToken);
+                                        console.log("TOKEN:"+ pushToken);
                                     },
                                     function(status) {
                                         showStatusMsg(JSON.stringify(['failed to register', status]));
+                                        console.log("TOKEN:"+ pushToken);
                                     });
 
         }
