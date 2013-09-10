@@ -126,7 +126,7 @@ var AppRouter = Backbone.Router.extend({
     },
    
     onDeviceReady: function() {
-        alert("Device Ready:"+ device.model);        
+        //alert("Device Ready:"+ device.model);        
         pushNotification = window.plugins.pushNotification;
         
         if (device.platform == 'android' || device.platform == 'Android') {
@@ -146,11 +146,11 @@ var AppRouter = Backbone.Router.extend({
                                     function(status) {
                                         var pushToken = status;
                                         console.log("success, TOKEN:"+ pushToken);
-                                        showStatusMsg('push token: ' + JSON.stringify(pushToken));                                        
+                                        //showStatusMsg('push token: ' + JSON.stringify(pushToken));                                        
                                     },
                                     function(status) {
                                         console.log("TOKEN:"+ pushToken);
-                                        showStatusMsg(JSON.stringify(['failed to register', status]));
+                                        //showStatusMsg(JSON.stringify(['failed to register', status]));
                                         
                                     });
 
