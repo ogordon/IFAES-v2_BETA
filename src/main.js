@@ -141,10 +141,12 @@ var AppRouter = Backbone.Router.extend({
 
 
         } else {
+            console.log("ios device");
             pushNotification.registerDevice({ alert:true, badge:true, sound:true,  appname: "ifaesBETA", pw_appid : "ABF08-7738C" },
                                     function(status) {
                                         var pushToken = status;
                                         showStatusMsg('push token: ' + JSON.stringify(pushToken));
+                                        console.log(pushToken);
                                     },
                                     function(status) {
                                         showStatusMsg(JSON.stringify(['failed to register', status]));
