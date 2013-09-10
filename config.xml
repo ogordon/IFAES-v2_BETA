@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" ?>
     <widget xmlns = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.imelius.ifaes"
+        id        = "com.imelius.ifaes_v2beta"
         versionCode="1" 
         version   = "1.0">
 	
-	<!-- Push notifications plugin -->
-	<gap:plugin name="com.adobe.plugins.pushplugin" />
-	<gap:plugin name="com.arnia.plugins.smsbuilder" />
+	<!-- PushWoosh notifications plugin -->
+	<gap:plugin name="com.pushwoosh.plugins.pushwoosh" />
+
 
     <!-- versionCode is optional and Android only -->
 
-    <name>IFAES</name>
+    <name>ifaesBETA</name>
 
     <description>
         App del congreso de IFAES
@@ -23,7 +23,6 @@
     
     <feature name="http://api.phonegap.com/1.0/device" />
     <feature name="http://api.phonegap.com/1.0/notification" />
-    <feature name="http://api.phonegap.com/1.0/SMSBuilder" />
     
     
     <preference name="orientation" value="portrait" />

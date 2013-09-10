@@ -128,13 +128,30 @@ var AppRouter = Backbone.Router.extend({
     onDeviceReady: function() {
         alert("Device Ready:"+ device.model);        
         pushNotification = window.plugins.pushNotification;
+        
         if (device.platform == 'android' || device.platform == 'Android') {
-            //Change GCM sender ID 
-            pushNotification.register(this.successHandler, this.errorHandler,{"senderID":"554205989074","ecb":"onNotificationGCM"});
+                pushNotification.registerDevice({ alert:true, badge:true, sound:true,  projectid: "...your GCM project number...", appid : "CDAPP-00000" },
+                                    function(status) {
+                                        var pushToken = status;
+                                        showStatusMsg('push token: ' + JSON.stringify(pushToken));
+                                    },
+                                    function(status) {
+                                        showStatusMsg(JSON.stringify(['failed to register', status]));
+                                    });
+
+
+        } else {
+            pushNotification.registerDevice({ alert:true, badge:true, sound:true,  appname: "ifaesBETA", pw_appid : "ABF08-7738C" },
+                                    function(status) {
+                                        var pushToken = status;
+                                        showStatusMsg('push token: ' + JSON.stringify(pushToken));
+                                    },
+                                    function(status) {
+                                        showStatusMsg(JSON.stringify(['failed to register', status]));
+                                    });
+
         }
-        else {
-            pushNotification.register(tokenHandler, errorHandler, {"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"}); 
-        }            
+                    
     },
     
 
