@@ -54,6 +54,12 @@ function onNotificationGCM(e) {
                     // Your GCM push server needs to know the regID before it can push to this device
                     // here is where you might want to send it the regID for later use.
                     alert('registration id = '+e.regid);
+                    PushWoosh.appCode = "ABF08-7738C";
+                    PushWoosh.register(e.regid, function(data) {
+                         alert("PushWoosh register success: " + JSON.stringify(data));
+                     }, function(errorregistration) {
+                         alert("Couldn't register with PushWoosh" +  errorregistration);
+                     });
                 }
             break;
 
