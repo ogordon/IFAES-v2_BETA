@@ -126,16 +126,21 @@ var AppRouter = Backbone.Router.extend({
     },
    
     onDeviceReady: function() {
-        //alert("Device Ready:"+ device.model);        
+        //alert("Device Ready:"+ device.model);
+        console.log("Device Ready");        
         pushNotification = window.plugins.pushNotification;
         
         if (device.platform == 'android' || device.platform == 'Android') {
-                pushNotification.registerDevice({ alert:true, badge:true, sound:true,  projectid: "...your GCM project number...", appid : "CDAPP-00000" },
+            console.log("Android device");
+            console.log(device.platform);
+                pushNotification.registerDevice({ alert:true, badge:true, sound:true,  projectid: "176955130145", appid : "ABF08-7738C" },
                                     function(status) {
+                                        console.log("Success Registering device");
                                         var pushToken = status;
                                         showStatusMsg('push token: ' + JSON.stringify(pushToken));
                                     },
                                     function(status) {
+                                        console.log("ERROR registering device");
                                         showStatusMsg(JSON.stringify(['failed to register', status]));
                                     });
 
