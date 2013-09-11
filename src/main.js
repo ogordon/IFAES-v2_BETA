@@ -181,7 +181,7 @@ var AppRouter = Backbone.Router.extend({
             console.log("Android Device");
             console.debug("Debug: Android Device"); 
             //Change GCM sender ID 
-            pushNotification.register(this.successHandler, this.errorHandler,{"senderID":"176955130145","ecb":"onNotificationGCM"});
+            pushNotification.register(successHandler, errorHandler,{"senderID":"176955130145","ecb":"onNotificationGCM"});
         }
         else {
             alert("IOS device:"+ device.platform);
