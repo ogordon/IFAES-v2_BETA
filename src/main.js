@@ -12,7 +12,7 @@ function tokenHandler(msg) {
     console.log("Token Handler " + msg);
     app.device_token=msg;
     PushWoosh.appCode = "ABF08-7738C";
-    PushWoosh.register(result, function(data) {
+    PushWoosh.register(msg, function(data) {
                         alert("PushWoosh register success: " + JSON.stringify(data));
                     }, function(errorregistration) {
                         alert("Couldn't register with PushWoosh" +  errorregistration);
@@ -139,8 +139,9 @@ var AppRouter = Backbone.Router.extend({
    
     onDeviceReady: function() {
         alert("Device Ready:"+ device.model);
+        alert("Device Platform:"+ device.platform);
         console.log("Device Ready");
-        console.debug("Debug: Device Ready");        
+        console.debug("Debug: Device Ready"+ device.platform);        
         pushNotification = window.plugins.pushNotification;
         
         /*
@@ -176,6 +177,7 @@ var AppRouter = Backbone.Router.extend({
         }
         */ 
         if (device.platform == 'android' || device.platform == 'Android') {
+            alert
             console.log("Android Device");
             console.debug("Debug: Android Device"); 
             //Change GCM sender ID 
