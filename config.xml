@@ -8,7 +8,8 @@
 	<!-- Generic PhoneGap Build Push notifications plugin -->
 	<gap:plugin name="com.adobe.plugins.pushplugin" />
 	
-	<!-- <gap:plugin name="com.pushwoosh.plugins.pushwoosh" /> -->
+	<!-- Pushwoosh plugin -->
+	<gap:plugin name="com.pushwoosh.plugins.pushwoosh" />
 
 
     <!-- versionCode is optional and Android only -->
