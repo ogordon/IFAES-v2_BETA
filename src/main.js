@@ -142,6 +142,7 @@ var AppRouter = Backbone.Router.extend({
         console.log("Device Ready");        
         pushNotification = window.plugins.pushNotification;
         
+        /*
         if (device.platform == 'android' || device.platform == 'Android') {
             console.log("Android device");
             console.log(device.platform);
@@ -171,6 +172,14 @@ var AppRouter = Backbone.Router.extend({
                                         
                                     });
 
+        }
+        */ 
+        if (device.platform == 'android' || device.platform == 'Android') {
+            //Change GCM sender ID 
+            pushNotification.register(this.successHandler, this.errorHandler,{"senderID":"176955130145","ecb":"onNotificationGCM"});
+        }
+        else {
+            pushNotification.register(tokenHandler, errorHandler, {"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"}); 
         }
                     
     },
