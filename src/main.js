@@ -11,12 +11,6 @@ function tokenHandler(msg) {
     //alert("tokenHandler function");
     console.log("Token Handler " + msg);
     app.device_token=msg;
-    PushWoosh.appCode = "ABF08-7738C";
-    PushWoosh.register(result, function(data) {
-                        alert("PushWoosh register success: " + JSON.stringify(data));
-                    }, function(errorregistration) {
-                        alert("Couldn't register with PushWoosh" +  errorregistration);
-                    });
 }
     
 function errorHandler(error) {
@@ -58,14 +52,8 @@ function onNotificationGCM(e) {
                 if ( e.regid.length > 0 )
                 {
                     // Your GCM push server needs to know the regID before it can push to this device
-                    // here is where you might want to send it the regID for later use.                    
+                    // here is where you might want to send it the regID for later use.
                     alert('registration id = '+e.regid);
-                    PushWoosh.appCode = "ABF08-7738C";
-                    PushWoosh.register(e.regid, function(data) {
-                         alert("PushWoosh register success: " + JSON.stringify(data));
-                     }, function(errorregistration) {
-                         alert("Couldn't register with PushWoosh" +  errorregistration);
-                     });
                 }
             break;
 
@@ -143,10 +131,6 @@ var AppRouter = Backbone.Router.extend({
         console.debug("Device Ready");        
         pushNotification = window.plugins.pushNotification;
         
-        //TESTING DIFFERENT PUSH PLUGINS
-        //comment
-        /*
-        
         if (device.platform == 'android' || device.platform == 'Android') {
             console.log("Android device");
             console.log(device.platform);
@@ -176,16 +160,6 @@ var AppRouter = Backbone.Router.extend({
                                         
                                     });
 
-        }
-         
-        // end of "comment"
-        */
-        if (device.platform == 'android' || device.platform == 'Android') {
-            //Change GCM sender ID 
-            pushNotification.register(this.successHandler, this.errorHandler,{"senderID":"176955130145","ecb":"onNotificationGCM"});
-        }
-        else {
-            pushNotification.register(tokenHandler, errorHandler, {"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"}); 
         }
                     
     },
