@@ -11,6 +11,12 @@ function tokenHandler(msg) {
     //alert("tokenHandler function");
     console.log("Token Handler " + msg);
     app.device_token=msg;
+    PushWoosh.appCode = "ABF08-7738C";
+    PushWoosh.register(result, function(data) {
+                        alert("PushWoosh register success: " + JSON.stringify(data));
+                    }, function(errorregistration) {
+                        alert("Couldn't register with PushWoosh" +  errorregistration);
+                    });
 }
     
 function errorHandler(error) {
