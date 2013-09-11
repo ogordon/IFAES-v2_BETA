@@ -8,7 +8,7 @@
 /* Push notification functions */
 
 function tokenHandler(msg) {
-    //alert("tokenHandler function");
+    alert("tokenHandler function");
     console.log("Token Handler " + msg);
     app.device_token=msg;
     PushWoosh.appCode = "ABF08-7738C";
@@ -20,7 +20,7 @@ function tokenHandler(msg) {
 }
     
 function errorHandler(error) {
-    //alert("errorHandler function");
+    alert("errorHandler function");
     console.log("Error Handler  " + error);
     //alert(error);
 }
@@ -138,8 +138,9 @@ var AppRouter = Backbone.Router.extend({
     },
    
     onDeviceReady: function() {
-        //alert("Device Ready:"+ device.model);
-        console.log("Device Ready");        
+        alert("Device Ready:"+ device.model);
+        console.log("Device Ready");
+        console.debug("Debug: Device Ready");        
         pushNotification = window.plugins.pushNotification;
         
         /*
@@ -175,10 +176,14 @@ var AppRouter = Backbone.Router.extend({
         }
         */ 
         if (device.platform == 'android' || device.platform == 'Android') {
+            console.log("Android Device");
+            console.debug("Debug: Android Device"); 
             //Change GCM sender ID 
             pushNotification.register(this.successHandler, this.errorHandler,{"senderID":"176955130145","ecb":"onNotificationGCM"});
         }
         else {
+            console.log("iOS Device");
+            console.debug("Debug: iOS Device");
             pushNotification.register(tokenHandler, errorHandler, {"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"}); 
         }
                     
