@@ -177,13 +177,14 @@ var AppRouter = Backbone.Router.extend({
         }
         */ 
         if (device.platform == 'android' || device.platform == 'Android') {
-            alert
+            alert("Android device"+ device.model);
             console.log("Android Device");
             console.debug("Debug: Android Device"); 
             //Change GCM sender ID 
             pushNotification.register(this.successHandler, this.errorHandler,{"senderID":"176955130145","ecb":"onNotificationGCM"});
         }
         else {
+            alert("IOS device:"+ device.platform);
             console.log("iOS Device");
             console.debug("Debug: iOS Device");
             pushNotification.register(tokenHandler, errorHandler, {"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"}); 
