@@ -127,8 +127,7 @@ var AppRouter = Backbone.Router.extend({
    
     onDeviceReady: function() {
         //alert("Device Ready:"+ device.model);
-        console.log("Device Ready");
-        console.debug("Device Ready");        
+        console.log("Device Ready");        
         pushNotification = window.plugins.pushNotification;
         
         if (device.platform == 'android' || device.platform == 'Android') {
