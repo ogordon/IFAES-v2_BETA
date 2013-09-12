@@ -22,7 +22,7 @@ window.RegistrarView = Backbone.View.extend({
     
   registrarse: function(e) {  
 	  var username = $('#username').val();
-		var password = 'expo13';	
+		var password = 'ifaes13';	
 		var nombre = $('#nombre').val();
 		var empresa = $('#empresa').val();
 		var cargo = $('#cargo').val();
