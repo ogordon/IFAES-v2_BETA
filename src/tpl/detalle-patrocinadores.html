@@ -1,0 +1,31 @@
+<div data-role="header" data-position="fixed" data-theme="z" align="center">
+	<a href="" id="panel_pulsado" data-theme="z" data-icon="bars" data-iconpos="notext"></a>		
+	<h2>PATROCINADOR</h2>
+	<a href="#home" id="volver_home" data-theme="Z" data-icon="home" data-iconpos="notext"></a>		
+</div>
+
+<div id="lista_patrocinadores" data-role="content" data-theme="d"> 
+	<div align="center">
+		<img height="80px" src="<%= logo_url%>"><br />
+		<strong><%= nombre %></strong><br />		
+		<p>
+			<% if(telefono!="") {%>
+				<a id="icono_telefono" href="callto:<%= telefono%>"><img class="ponente_btn" src="assets/images/callme.png"></a>
+			<% } %>
+
+			<% if(mail!="") {%>
+				<a id="icono_email" href="mailto:<%= mail%>"><img class="ponente_btn" src="assets/images/email.png"></a>
+			<% } %>
+
+			<% if(twitter!="") {%>
+				<a id="icono_twitter" href="<%= twitter%>"><img class="ponente_btn" src="assets/images/twitter.png"></a>
+			<% } %>
+
+			<% if(web!="") {%>			
+				<!--<a id="icono_linkedin" href="<%= web%>"><img class="ponente_btn" src="assets/images/linkedin.png"></a>-->
+				<a id="icono_linkedin" href="#marco-patrocinador/<%= clave%>"><img class="ponente_btn" src="assets/images/linkedin.png"></a>
+			<% } %>
+		</p>
+	</div>
+  <p align="justify"><small><%= info %></small></p>
+</div>

@@ -4,7 +4,6 @@
  *
  */
 
-
 window.PatrocinadoresView = Backbone.View.extend({
   initialize:function () {
   	this.template = _.template(tpl.get('patrocinadores'));

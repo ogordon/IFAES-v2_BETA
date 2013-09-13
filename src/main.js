@@ -87,6 +87,7 @@ function onNotificationGCM(e) {
         }
 }
 
+/* END OF PUSH FUNCTIONS */
 
 /* Backbone router */
 
@@ -112,9 +113,11 @@ var AppRouter = Backbone.Router.extend({
     "imelius":"imelius",
     "ifaes":"ifaes",
     "patrocinadores":"patrocinadores",
+    "patrocinadores/:id":"patrocinadores_id",
     "info":"info",
     "infoexpo":"infoexpo",
-    "programa":"programa"
+    "programa":"programa",
+    "marco-patrocinador/:id":"marco_patrocinador"
   },
 
   initialize:function () {
@@ -232,6 +235,38 @@ var AppRouter = Backbone.Router.extend({
 		//<-- TEST */
 		//app.changePage(new window.HomeView());  // mostramos directamente la home   						
   },
+  
+    marco_patrocinador:function(id) {
+      // TEST de momento no verificamos el login de usuario -->
+      console.log("marco_patrocinador function"); 
+      StackMob.getLoggedInUser({
+            success: function(username) {
+              if (username) {
+                localStorage.page="#marco_patrocinador/"+id;          
+                       
+                  app.changePage(new window.MarcoPatrocinadorView());
+                  $(document).ready(function() {
+                    $('#external_url').load('www.avaya.es');
+                  }); 
+                  
+                    
+                } 
+                else {
+                localStorage.page = "#login";               
+                app.navigate("#login", {trigger: true});    
+                  //app.changePage(new window.LoginView());
+                }               
+            },
+            error: function(model, response, options){
+            localStorage.page = "#login";               
+            app.navigate("#login", {trigger: true});    
+              //app.changePage(new window.LoginView());
+            }
+        });  
+        //<-- TEST */
+        //app.changePage(new window.HomeView());  // mostramos directamente la home                         
+  },
+  
   
   // funciones nuevas
   
@@ -577,7 +612,7 @@ var AppRouter = Backbone.Router.extend({
   
   ponentes_id:function (id) {
     var listaPonentes = this.listaPonentes;
-  
+    console.log("Ponentes_id fuction");
 	  StackMob.getLoggedInUser({
 			success: function(username) {		
 				if (username) {	
@@ -621,6 +656,65 @@ var AppRouter = Backbone.Router.extend({
 		});				  				  				  
   },
   
+ 
+ patrocinadores_id: function (id) {  
+        StackMob.getLoggedInUser({
+            success: function(username) {       
+                if (username) {                 
+                    $.mobile.loading( 'show', {text: '', textVisible: false, theme: 'c', html: ""});                    
+                    
+                    var patrocinadores = new window.ListaPatrocinadores();
+                    var q = new StackMob.Collection.Query();
+                    q.equals('clave', id);
+                    
+                    patrocinadores.query(q, {
+                        success: function (collection, response, options) {                         
+                            if (collection.length > 0) {
+                                var patrocinador = collection.at(0);
+                                //var respuestas = new window.ListaRespuestas();                  
+                                //var q = new StackMob.Collection.Query();
+                                
+                                // Ver si este usuario ya tiene una respuesta para esta pregunta                    
+                                //var owner = 'user/' + app.user.get('username');
+                                //var preg_id = collection.at(0).get('pregunta_id');                                      
+                                //q.equals('sm_owner', owner);
+                                //q.equals('pregunta_id', preg_id);
+                                
+                                $.mobile.loading( 'hide', {text: '', textVisible: false, theme: 'c', html: ""});
+                                localStorage.page="#patrocinadores/"+id;
+                                app.changePage(new window.DetallePatrocinadoresView({model: patrocinador}));
+                                                                                                
+                            } 
+                            else {              
+                                $.mobile.loading( 'hide', {text: '', textVisible: false, theme: 'c', html: ""});
+                                alert('No hay información del patrocinador');    
+                                localStorage.page="#home";
+                                app.navigate("#home", {trigger: false});
+                            }
+                        },
+                        error: function (collection, response, options) {           
+                            $.mobile.loading( 'hide', {text: '', textVisible: false, theme: 'c', html: ""});                            
+                            alert('Error al cargar la información del patrocinador');
+                            localStorage.page="#home";
+                            app.navigate("#home", {trigger: false});
+                        },          
+                    });                         
+                } 
+                else {
+                    localStorage.page = "#login";               
+                    app.navigate("#login", {trigger: true});    
+                    //app.changePage(new window.LoginView());
+                }               
+            },
+            error: function(model, response, options) {
+                localStorage.page = "#login";               
+                app.navigate("#login", {trigger: true});    
+                //app.changePage(new window.LoginView());
+            }
+        });                                                     
+  },
+ 
+   
   ponentes_ponencia_id:function (id) {
     var listaPonentes = this.listaPonentes;
       
@@ -858,6 +952,8 @@ $(document).ready(function () {
   	'panel-lateral',
   	'ponentes', 
   	'detalle-ponentes',
+  	'detalle-patrocinadores',
+  	'marco-patrocinador',
   	'ponentes-ponencia', 
   	'celda_ponentes', 
   	'votar',
