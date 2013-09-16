@@ -111,6 +111,8 @@ window.MarcoPatrocinadorView = Backbone.View.extend({
     $(document).ready(function() {
         console.log("document ready");
                     $('#external_url').load("www.avaya.es");
+                     $('#external_url').appendTo('body');
+                    
                     //$("#external_url").attr("src", "www.avaya.es");
                   });
     return this;

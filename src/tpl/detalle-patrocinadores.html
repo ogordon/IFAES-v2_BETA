@@ -15,17 +15,18 @@
 
 			<% if(mail!="") {%>
 				<a id="icono_email" href="mailto:<%= mail%>"><img class="ponente_btn" src="assets/images/email.png"></a>
-			<% } %>
-
-			<% if(twitter!="") {%>
-				<a id="icono_twitter" href="<%= twitter%>"><img class="ponente_btn" src="assets/images/twitter.png"></a>
-			<% } %>
+			<% } %>			
 
 			<% if(web!="") {%>			
-				<a id="icono_linkedin" href="<%= web%>" target="_blank" rel="external"><img class="ponente_btn" src="assets/images/linkedin.png">				    
-				</a>
-				<!-- <a id="icono_linkedin" href="www.avaya.com"><img class="ponente_btn" src="assets/images/linkedin.png"></a> -->								
+				<!--<a id="icono_web" href="<%= web%>" target="_blank" rel="external"><img class="ponente_btn" src="assets/images/web.png"></a>-->
+				<!-- <a id="icono_web" href="#marco-patrocinador/<%= clave%>" target="_blank" rel="external"><img class="ponente_btn" src="assets/images/web.png"></a>-->
+				<!-- <a id="icono_web" href="www.avaya.com"><img class="ponente_btn" src="assets/images/web.png"></a> -->
+				<a href="<%= web%>" onclick="window.open('<%= web%>', '_system', 'location=yes');"><img class="ponente_btn" src="assets/images/web.png"></a>								
 			<% } %>
+			
+			<% if(twitter!="") {%>
+                <a id="icono_twitter" href="<%= twitter%>"><img class="ponente_btn" src="assets/images/twitter.png"></a>
+            <% } %>
 		</p>
 	</div>
   <p align="justify"><small><%= info %></small></p>

@@ -57,6 +57,6 @@
 		<-->
 		<access origin="*" />
 		<access origin="*.pushwoosh.com" />
-		<access origin="http://avaya.com" />
+		<access origin="*.avaya.com" />
 		
 </widget>
