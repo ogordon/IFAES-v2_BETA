@@ -4,6 +4,10 @@
 	font-size: medium;
 }
 
+.logo_empresa {
+	width: 80px;
+}
+
 #login_error, #email_error, #registro_error
 {
 	color: red;

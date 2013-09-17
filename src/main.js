@@ -902,12 +902,15 @@ var AppRouter = Backbone.Router.extend({
     $('body').append($(page.el));
     
     // Add the footer to everypage
+    // OGordon. 17/09/2013 --> Comment this section. Footer will be available only for Home and Vote pages, as per approved mockup.
     
+    /*
     var footer = new window.FooterView();
 		footer.render();				
 		$($(page.el)).append($(footer.el));  
 		
-    
+    */
+   
     // Define the page transition 
     
     var transition = "flow"; 

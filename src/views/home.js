@@ -107,6 +107,11 @@ window.HomeView = Backbone.View.extend({
     lateral_panel.render();                
     $(this.el).append($(lateral_panel.el));	
     
+    //append footer
+     var footer = new window.FooterView();
+        footer.render();                
+        $(this.el).append($(footer.el));
+    
     return this;
   }
 });

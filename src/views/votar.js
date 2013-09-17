@@ -200,7 +200,13 @@ window.VotarView = Backbone.View.extend({
   	var el = this.$el;
   	 
   	var attributes = this.model.toJSON();
-  	$(this.el).html(this.template(attributes));  		        
+  	$(this.el).html(this.template(attributes));  		
+  	
+  	//append footer
+     var footer = new window.FooterView();
+        footer.render();                
+        $(this.el).append($(footer.el));
+                
     return this;
   }
 });

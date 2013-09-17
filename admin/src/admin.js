@@ -49,7 +49,7 @@
               var User  = StackMob.Model.extend({ 
               	schemaName: 'user', 
               	defaults: {
-              		"password": "expo13",
+              		"password": "ifaes13",
               		"votos" : 0 
               	} 
               });
@@ -130,6 +130,63 @@
             }
 
           });
+
+    ImportPatrocinadoresView = Backbone.View.extend({
+
+            className:"span8",
+            tagName: "div",
+
+            events: {
+               "click #addBtn": "add"
+            },
+
+            initialize: function() {
+              this.template = _.template($('#patrocinadores_import').html());
+              this.render();
+            },
+
+            render: function() {
+              $(this.el).html(this.template());
+              $('.row').append(this.el);
+              return this;
+            },
+
+            add: function(e) {
+                e.preventDefault();
+                
+                alert("Importar...(1)");
+                
+                var patrocinadoresJSON = jQuery.parseJSON($('#patrocinadores_json').val());
+
+                alert("Importar...(2)");
+                                              
+              var Patrocinador  = StackMob.Model.extend({ 
+                schemaName: 'patrocinador', 
+                defaults: {
+                } 
+              });
+              var Patrocinadores = StackMob.Collection.extend({ model: Patrocinador });
+              
+              var patrocinadoresToCreate = new Patrocinadores(patrocinadoresJSON);
+              console.log(patrocinadoresToCreate.toJSON());
+              
+              
+                            //Create all of the books in one API call
+                            
+                            patrocinadoresToCreate.createAll({
+                              success: function(model) {
+                                console.log(model);
+                              },
+                              error: function(model, response) {
+                                console.log(response);
+                              }
+                            });
+              
+              return this;
+            }
+
+          });
+
 
           ImportPreguntasView = Backbone.View.extend({
 
@@ -249,6 +306,7 @@
               "login":"login",
               "importarusuarios":"imp_users",
               "importarponentes":"imp_ponentes",
+              "importarpatrocinadores":"imp_patrocinadores",
               "importarpreguntas":"imp_preguntas",
               "exportarrespuestas":"exp_respuestas"
             },
@@ -260,7 +318,7 @@
             
             login:function() {
 	            var username = "admin";
-		        	var password = "imeliu$2012";
+		        	var password = "ifaes2013";
 
 		        	var user = new StackMob.User({username: username, password: password}); 
 							
@@ -287,6 +345,11 @@
             imp_preguntas:function() {
               console.log('Importar preguntas');
               new ImportPreguntasView();
+            },
+
+            imp_patrocinadores:function() {
+              console.log('Importar patrocinadores');
+              new ImportPatrocinadoresView();
             },
 
             exp_respuestas:function() {

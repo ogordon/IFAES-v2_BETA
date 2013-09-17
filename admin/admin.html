@@ -1,0 +1,185 @@
+<!DOCTYPE html> 
+<html>
+	<head>
+		<meta charset="UTF-8">
+		
+		<title>IFAES'13 - Admin</title>
+		
+		<!-- TODO: Understand this meta content -->
+		
+		<meta content="IFAES" name="IFAES">
+		
+		<!-- Bootstrap CSS -->
+		
+    <link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" />
+		
+		<!-- Load jQuery library -->		
+		
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>						
+    <script type="text/javascript" src="http://static.stackmob.com/js/stackmob-js-0.9.1-bundled-min.js"></script>		
+    <script type="text/javascript" src="src/admin.js"></script>		
+    
+    <script>
+  	  // StackMob initialization  
+		  StackMob.init({
+		    //publicKey: "daeefab5-7304-4fe2-8f5d-b82c94a6f1bd",
+		    //apiVersion: 0
+		    publicKey: "9abb2959-eced-4fa5-80f4-d9a4d25155af",
+		    apiVersion: 0
+		  });
+		  
+    </script>	  
+    
+    <!-- Plantilla para importar usuarios -->
+    
+    <script type="text/template" id="item-home">
+			<div class="container">
+			  <div class="page-header">
+			  	<h1>IFAES'13</h1>
+			  </div>
+			  <div class="row">
+			    <div class="span4">
+			      <ul class="nav nav-list">
+			      	<li><a href="#login">Login</a></li>
+			      	<li><a href="#importarusuarios">Importar usuarios</a></li>
+			      	<li><a href="#importarponentes">Importar ponentes</a></li>                
+			      	<li><a href="#importarpreguntas">Importar preguntas</a></li>
+			      	<li><a href="#importarpatrocinadores">Importar patrocinadores</a></li>                
+			      	<li><a href="#exportarrespuestas">Exportar respuestas</a></li>
+			      	<li><a href="#exportarponentes">Exportar ponentes</a></li>                
+			      	<li><a href="#addpregunta">Añadir pregunta</a></li>                
+			      	<li><a href="#selpregunta">Seleccionar pregunta</a></li>                
+			      	<li><a href="#verresultados">Ver resultados</a></li>                
+			      </ul>
+			    </div>
+			  </div>
+			</div>
+    </script> 
+    
+    <!-- Plantilla para importar usuarios -->
+
+    <script type="text/template" id="users_import">
+      <form class="form-horizontal" method="post">
+        <fieldset>
+          <legend>Importar usuarios</legend>
+          <div class="control-group">
+            <label class="control-label" for="input01">JSON con usuarios:</label>
+            <div class="controls">
+            	<textarea id="users_json"></textarea>
+            </div>
+          </div>
+          <div class="control-group">
+            
+            <div class="controls">
+               <a href="#" id="cancelBtn" class="btn">Cancelar</a>
+               <a href="#" id="addBtn" class="btn">Cargar</a>
+            </div>
+          </div>
+          
+        </fieldset>
+      </form>
+    </script>
+    
+    <!-- Plantilla para importar ponentes -->
+
+    <script type="text/template" id="ponentes_import">
+      <form class="form-horizontal" method="post">
+        <fieldset>
+          <legend>Importar ponentes</legend>
+          <div class="control-group">
+            <label class="control-label" for="input01">JSON con ponentes:</label>
+            <div class="controls">
+            	<textarea id="ponentes_json"></textarea>
+            </div>
+          </div>
+          <div class="control-group">
+            
+            <div class="controls">
+               <a href="#" id="cancelBtn" class="btn">Cancelar</a>
+               <a href="#" id="addBtn" class="btn">Cargar</a>
+            </div>
+          </div>
+          
+        </fieldset>
+      </form>
+    </script>
+    
+    <!-- Plantilla para importar preguntas -->
+
+    <script type="text/template" id="preguntas_import">
+      <form class="form-horizontal" method="post">
+        <fieldset>
+          <legend>Importar preguntas</legend>
+          <div class="control-group">
+            <label class="control-label" for="input01">JSON con preguntas:</label>
+            <div class="controls">
+            	<textarea id="preguntas_json"></textarea>
+            </div>
+          </div>
+          <div class="control-group">
+            
+            <div class="controls">
+               <a href="#" id="cancelBtn" class="btn">Cancelar</a>
+               <a href="#" id="addBtn" class="btn">Cargar</a>
+            </div>
+          </div>
+          
+        </fieldset>
+      </form>
+    </script>
+    
+    <!-- Plantilla para importar patrocinadores -->
+
+    <script type="text/template" id="patrocinadores_import">
+      <form class="form-horizontal" method="post">
+        <fieldset>
+          <legend>Importar patrocinadores</legend>
+          <div class="control-group">
+            <label class="control-label" for="input01">JSON con patrocinadores:</label>
+            <div class="controls">
+                <textarea id="patrocinadores_json"></textarea>
+            </div>
+          </div>
+          <div class="control-group">
+            
+            <div class="controls">
+               <a href="#" id="cancelBtn" class="btn">Cancelar</a>
+               <a href="#" id="addBtn" class="btn">Cargar</a>
+            </div>
+          </div>
+          
+        </fieldset>
+      </form>
+    </script>
+    
+    <!-- Plantilla para importar preguntas -->
+
+    <script type="text/template" id="respuestas_export">
+      <form class="form-horizontal" method="post">
+        <fieldset>
+          <legend>Exportar respuestas</legend>
+          <div class="control-group">
+            <label class="control-label" for="input01">JSON respuestas:</label>
+            <div class="controls">
+            	<textarea id="respuestas_json"></textarea>
+            </div>
+          </div>
+          <div class="control-group">
+            
+            <div class="controls">
+               <a href="#" id="AnswersBtn" class="btn">Cargar</a>
+            </div>
+          </div>
+          
+        </fieldset>
+      </form>
+    </script>    
+
+    <script type="text/template" id="item-list">
+        <li><a href="#"><%= name %></a></li>
+    </script>    
+     
+	</head> 
+	<body>
+	</body>
+</html>
