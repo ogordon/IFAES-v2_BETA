@@ -111,10 +111,8 @@ var AppRouter = Backbone.Router.extend({
     "ponentes/:id":"ponentes_id",
     "ponentesponencia/:id":"ponentes_ponencia_id",
     "imelius":"imelius",
-    "ifaes":"ifaes",
     "patrocinadores":"patrocinadores",
-    "patrocinadores/:id":"patrocinadores_id",
-    "info":"info",
+    "patrocinadores/:id":"patrocinadores_id",    
     "infoexpo":"infoexpo",
     "programa":"programa",
     "marco-patrocinador/:id":"marco_patrocinador"
@@ -813,30 +811,6 @@ var AppRouter = Backbone.Router.extend({
 		app.changePage(new window.ImeliusView());  				
   },
   
-  ifaes:function () {  
-
-    /* TEST ---> De momento no verificamos el usuario en Stackmob 
-	  StackMob.getLoggedInUser({
-			success: function(username) {		
-				if (username) {					
-			  	localStorage.page="#konecta";    
-					app.changePage(new window.KonectaView());  
-				} 
-				else {
-			  	localStorage.page = "#login"; 	
-			  	app.navigate("#login", {trigger: true});		   		
-				  //app.changePage(new window.LoginView());
-				}				
-			},
-			error: function(model, response, options){
-		  	localStorage.page = "#login"; 		   		
-		  	app.navigate("#login", {trigger: true});	
-			  //app.changePage(new window.LoginView());
-			}
-		});	 
-	   <-- TEST */
-	  	app.changePage(new window.IFAESView());   	
-  },
   
   patrocinadores:function () {  
       // TEST ---> De momento no verificamos el login en stackmob		
@@ -862,29 +836,6 @@ var AppRouter = Backbone.Router.extend({
 		//app.changePage(new window.PatrocinadoresView()); // Cargamos directamente la página de patrocinadores  	
   },
 
-  info:function () {  
-    // TEST ---> De momento no verificamos el login en stackmob 
-	  StackMob.getLoggedInUser({
-			success: function(username) {		
-				if (username) {					
-				  localStorage.page="#info"; 
-					app.changePage(new window.InfoView());  
-				} 
-				else {
-			  	localStorage.page = "#login"; 		   		
-				  app.navigate("#login", {trigger: true});	
-				  //app.changePage(new window.LoginView());
-				}				
-			},
-			error: function(model, response, options){
-		  	localStorage.page = "#login"; 		   		
-		  	app.navigate("#login", {trigger: true});	
-			  //app.changePage(new window.LoginView());
-			}
-		});	  	
-		//<--- TEST */
-		//app.changePage(new window.InfoView()); // Cargamos directamente la página de Info
-  },
     
   changePage:function (page) {
   	
@@ -966,8 +917,7 @@ $(document).ready(function () {
   	'votar-thx',
   	'imelius', 
   	'konecta',
-  	'patrocinadores',
-  	'info'], function () {
+  	'patrocinadores'], function () {
 
        // After template loading we start the backbone routing engine
       app = new AppRouter();
