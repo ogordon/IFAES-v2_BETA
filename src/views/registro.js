@@ -26,7 +26,7 @@ window.RegistrarView = Backbone.View.extend({
 		var nombre = $('#nombre').val();
 		var empresa = $('#empresa').val();
 		var cargo = $('#cargo').val();
-		var telefono = $('#telefono').val();
+		
 		
 		// Prevent to launch the routing engine
 		
@@ -36,9 +36,9 @@ window.RegistrarView = Backbone.View.extend({
 		var nombre_ok = !(nombre==null || nombre=="");
 		var empresa_ok = !(empresa==null || empresa=="");
 		var cargo_ok = !(cargo==null || cargo=="");
-		var telefono_ok = !(telefono==null || telefono=="");
 		
-		if (!(username_ok && nombre_ok && empresa_ok && cargo_ok && telefono_ok)) {
+		
+		if (!(username_ok && nombre_ok && empresa_ok && cargo_ok)) {
 			$('#registro_error').toggle("show", function(){
 				_.delay(function(){
 						$('#registro_error').toggle("show");
@@ -63,7 +63,6 @@ window.RegistrarView = Backbone.View.extend({
 				nombre: nombre,
 				empresa: empresa,
 				cargo: cargo,
-				telefono: telefono,
 				votos: 0
 			});
 	  
