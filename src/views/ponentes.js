@@ -63,7 +63,7 @@ window.Celda_PonenteView = Backbone.View.extend({
   attributes: {
   	'data-role' : 'listview', 
   	'data-inset' : 'false', 
-  	'data-theme' : 'd',
+  	'data-theme' : 'a',
   	'data-filter' : 'true'
   }, 
   

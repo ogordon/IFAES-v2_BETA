@@ -1,6 +1,6 @@
 /*
  *
- * View Class to manage Ponentes Page
+ * View Class to manage Ponentes-Ponencia Page
  *
  */
 
@@ -37,7 +37,7 @@ window.PonentesPonenciaView = Backbone.View.extend({
  		// Render the Ponentes lists from StackMob
             
     var celdaView = new Celda_PonenteView({collection : app.listaPonentesPonencia});
-    el.find('#lista_ponentes').append(celdaView.render().el);
+    el.find('#lista_ponentes_ponencia').append(celdaView.render().el);
     
     return this;
   }
@@ -48,8 +48,8 @@ window.Celda_PonenteView = Backbone.View.extend({
   attributes: {
   	'data-role' : 'listview', 
   	'data-inset' : 'false', 
-  	'data-theme' : 'd',
-  	'data-filter' : 'false'
+  	'data-theme' : 'a',
+  	'data-filter' : 'true'
   }, 
   
   initialize:function () {

@@ -738,7 +738,14 @@ var AppRouter = Backbone.Router.extend({
 					      
 						    // Search for Ponentes en Ponencia
 						    
-						    var arrayponentes = app.listaPonentes.where({ponencia_id: id_ponencia});
+						    var arrayponentes1 = app.listaPonentes.where({ponencia1: id_ponencia});
+						    var arrayponentes2 = app.listaPonentes.where({ponencia2: id_ponencia});
+						    var arrayponentes3 = app.listaPonentes.where({ponencia3: id_ponencia});
+						    var arrayponentes4 = app.listaPonentes.where({ponencia4: id_ponencia});
+						    var arrayponentes5 = app.listaPonentes.where({ponencia5: id_ponencia});
+						    
+						    var arrayponentes = _.union(arrayponentes1,arrayponentes2,arrayponentes3,arrayponentes4,arrayponentes5);
+						    
 						    app.listaPonentesPonencia.reset(arrayponentes); 
 						    
 						    console.log(app.listaPonentesPonencia.toJSON());
@@ -777,9 +784,16 @@ var AppRouter = Backbone.Router.extend({
 							textVisible: false,
 							theme: 'c',
 							html: ""
-						});	 	
+						});	
+					
+					var arrayponentes1 = app.listaPonentes.where({ponencia1: id_ponencia});
+                    var arrayponentes2 = app.listaPonentes.where({ponencia2: id_ponencia});
+                    var arrayponentes3 = app.listaPonentes.where({ponencia3: id_ponencia});
+                    var arrayponentes4 = app.listaPonentes.where({ponencia4: id_ponencia});
+                    var arrayponentes5 = app.listaPonentes.where({ponencia5: id_ponencia});
+                            
+                    var arrayponentes = _.union(arrayponentes1,arrayponentes2,arrayponentes3,arrayponentes4,arrayponentes5);	 	
 						
-				    var arrayponentes = app.listaPonentes.where({ponencia_id: id_ponencia});
 				    app.listaPonentesPonencia.reset(arrayponentes); 
 				    
 						console.log(app.listaPonentesPonencia.toJSON());
