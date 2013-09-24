@@ -732,13 +732,39 @@ var AppRouter = Backbone.Router.extend({
 						html: ""
 					});		
 			  
+			  var pon1 = new StackMob.Collection.Query().equals("ponencia1", id_ponencia);
+			  var pon2 = new StackMob.Collection.Query().equals("ponencia2", id_ponencia);
+			  var pon3 = new StackMob.Collection.Query().equals("ponencia3", id_ponencia);
+			  var pon4 = new StackMob.Collection.Query().equals("ponencia4", id_ponencia);
+			  var pon5 = new StackMob.Collection.Query().equals("ponencia5", id_ponencia);
+			  
+			  //var consulta = pon1.or(pon2).or(pon3).or(pon4).or(pon5);
+			  var consulta = pon1;
+			  
+			  var l_patrocinadores = new window.ListaPonentes();
+			  l_patrocinadores.query(consulta,{
+			      success: function(model, results, options) {
+                            $.mobile.loading( 'hide', {text: '', textVisible: false, theme: 'c', html: ""});                
+                            localStorage.page="#ponentesponencia/"+id;          
+                            app.changePage(new window.PonentesPonenciaView());
+                        },
+                        error: function(model, results, options) {  
+                            $.mobile.loading( 'hide', {text: '', textVisible: false, theme: 'c', html: ""});                                        
+                            alert("No hemos podido cargar la lista de ponentes");
+                            localStorage.page="#home";
+                            app.navigate("#home", {trigger: false});                
+                        }
+			      
+			  })
+			  
 			    if(listaPonentes.isEmpty()) {    
 				    listaPonentes.fetch({   
 					    success: function(model, results, options) {
 					      
 						    // Search for Ponentes en Ponencia
 						    
-						    var arrayponentes = app.listaPonentes.where({ponencia_id: id_ponencia});
+						    var arrayponentes = app.listaPonentes.where({ponencia1: id_ponencia});
+						    
 						    app.listaPonentesPonencia.reset(arrayponentes); 
 						    
 						    console.log(app.listaPonentesPonencia.toJSON());
