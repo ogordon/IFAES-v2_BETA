@@ -37,7 +37,7 @@ window.PonentesPonenciaView = Backbone.View.extend({
  		// Render the Ponentes lists from StackMob
             
     var celdaView = new Celda_PonenteView({collection : app.listaPonentesPonencia});
-    el.find('#lista_ponentes').append(celdaView.render().el);
+    el.find('#lista_ponentes_ponencia').append(celdaView.render().el);
     
     return this;
   }
