@@ -130,7 +130,6 @@ var AppRouter = Backbone.Router.extend({
     this.listaPonentesPonencia  = new window.ListaPonentes();
     //new
     this.listaPonenciasPonentes = new window.ListaPonenciasPonentes();
-    this.listaPonentesEnPonencia = new window.ListaPonenciasPonentes();
     
     console.log("Inicializando Router ...");
     
@@ -719,7 +718,7 @@ var AppRouter = Backbone.Router.extend({
  
    
   ponentes_ponencia_id:function (id) {
-    var listaPonenciasPonentes = this.listaPonenciasPonentes;
+    var listaPonentes = this.listaPonentes;
       
 	  StackMob.getLoggedInUser({
 			success: function(username) {		
@@ -733,35 +732,16 @@ var AppRouter = Backbone.Router.extend({
 						html: ""
 					});		
 			  
-			    if(listaPonenciasPonentes.isEmpty()) {    
-				    listaPonenciasPonentes.fetch({   
-					    success: function(model, results, options) {    
-						   
+			    if(listaPonentes.isEmpty()) {    
+				    listaPonentes.fetch({   
+					    success: function(model, results, options) {
+					      
+						    // Search for Ponentes en Ponencia
 						    
-						    // Search for clave_ponentes en Ponencia_Ponente
-						    var arrayponentes = app.listaPonenciasPonentes.where({clave_ponencia: id_ponencia});
-						    var q = new StackMob.Collection.Query();
-						    var ponentes = new window.ListaPonentes();
-						    q.equals('clave_ponencia', arrayponentes);
+						    var arrayponentes = app.listaPonentes.where({ponencia_id: id_ponencia});
+						    app.listaPonentesPonencia.reset(arrayponentes); 
 						    
-						    ponentes.query(q, {
-						      success: function(model, results, options) {
-                                $.mobile.loading( 'hide', {text: '', textVisible: false, theme: 'c', html: ""});                
-                                localStorage.page="#ponentesponencia/:id_ponencia";          
-                                app.changePage(new window.PonentesPonenciaView());
-                                },
-                              error: function(model, results, options) {  
-                                $.mobile.loading( 'hide', {text: '', textVisible: false, theme: 'c', html: ""});                                        
-                                alert("No hemos podido cargar la lista de ponentes");
-                                localStorage.page="#home";
-                                app.navigate("#home", {trigger: false});                
-                                }                                       
-                             });
-						    
-						    console.log("Array:"+arrayponentes);
-						    //app.listaPonentesEnPonencia.reset(arrayponentes); 
-						    
-						    console.log(app.listaPonentesEnPonencia.toJSON());
+						    console.log(app.listaPonentesPonencia.toJSON());
 						    
 						    $.mobile.loading( 'hide', {
 									text: '',
@@ -791,41 +771,28 @@ var AppRouter = Backbone.Router.extend({
 				    });
 				  }
 				  else {
-				      
-				      // Search for clave_ponentes en Ponencia_Ponente
-                            var arrayponentes = app.listaPonenciasPonentes.where({clave_ponencia: id_ponencia});
-                            var q = new StackMob.Collection.Query();
-                            var ponentes = new window.ListaPonentes();
-                            q.equals('clave_ponencia', arrayponentes);
-                            
-                            ponentes.query(q, {
-                              success: function(model, results, options) {
-                                $.mobile.loading( 'hide', {text: '', textVisible: false, theme: 'c', html: ""});                
-                                localStorage.page="#ponentesponencia/:id_ponencia";          
-                                app.changePage(new window.PonentesPonenciaView());
-                                },
-                              error: function(model, results, options) {  
-                                $.mobile.loading( 'hide', {text: '', textVisible: false, theme: 'c', html: ""});                                        
-                                alert("No hemos podido cargar la lista de ponentes");
-                                localStorage.page="#home";
-                                app.navigate("#home", {trigger: false});                
-                                }                                       
-                             });
-                            
-                            console.log("Array:"+arrayponentes);
-                            //app.listaPonentesEnPonencia.reset(arrayponentes); 
-                            
-                            console.log(app.listaPonentesEnPonencia.toJSON());
-                            
-                            $.mobile.loading( 'hide', {
-                                    text: '',
-                                    textVisible: false,
-                                    theme: 'c',
-                                    html: ""
-                                });                 
-                                
-                            localStorage.page="#ponentesponencia/"+id;
-                            app.changePage(new window.PonentesPonenciaView());
+				  
+				    $.mobile.loading( 'hide', {
+							text: '',
+							textVisible: false,
+							theme: 'c',
+							html: ""
+						});	 	
+						
+				    var arrayponentes = app.listaPonentes.where({ponencia_id: id_ponencia});
+				    app.listaPonentesPonencia.reset(arrayponentes); 
+				    
+						console.log(app.listaPonentesPonencia.toJSON());
+				    
+				    $.mobile.loading( 'hide', {
+							text: '',
+							textVisible: false,
+							theme: 'c',
+							html: ""
+						});	 				
+						
+				   	localStorage.page="#ponentesponencia/"+id;
+				   	app.changePage(new window.PonentesPonenciaView());
 				  }
 
 				} 
