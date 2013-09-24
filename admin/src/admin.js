@@ -130,6 +130,63 @@
             }
 
           });
+          
+    ImportAgendasView = Backbone.View.extend({
+
+            className:"span8",
+            tagName: "div",
+
+            events: {
+               "click #addBtn": "add"
+            },
+
+            initialize: function() {
+              this.template = _.template($('#agendas_import').html());
+              this.render();
+            },
+
+            render: function() {
+              $(this.el).html(this.template());
+              $('.row').append(this.el);
+              return this;
+            },
+
+            add: function(e) {
+                e.preventDefault();
+                
+                alert("Importar...(1)");
+                
+                var agendasJSON = jQuery.parseJSON($('#agendas_json').val());
+
+                alert("Importar...(2)");
+                                              
+              var Agenda  = StackMob.Model.extend({ 
+                schemaName: 'agenda', 
+                defaults: {
+                } 
+              });
+              var Agendas = StackMob.Collection.extend({ model: Agenda });
+              
+              var agendasToCreate = new Agendas(agendasJSON);
+              console.log(agendasToCreate.toJSON());
+              
+              
+                            //Create all of the books in one API call
+                            
+                            agendasToCreate.createAll({
+                              success: function(model) {
+                                console.log(model);
+                              },
+                              error: function(model, response) {
+                                console.log(response);
+                              }
+                            });
+              
+              return this;
+            }
+
+          });
+
 
     ImportPatrocinadoresView = Backbone.View.extend({
 
@@ -306,6 +363,7 @@
               "login":"login",
               "importarusuarios":"imp_users",
               "importarponentes":"imp_ponentes",
+              "importaragendas":"imp_agendas",
               "importarpatrocinadores":"imp_patrocinadores",
               "importarpreguntas":"imp_preguntas",
               "exportarrespuestas":"exp_respuestas"
@@ -345,6 +403,11 @@
             imp_preguntas:function() {
               console.log('Importar preguntas');
               new ImportPreguntasView();
+            },
+            
+            imp_agendas:function() {
+              console.log('Importar agendas');
+              new ImportAgendasView();
             },
 
             imp_patrocinadores:function() {

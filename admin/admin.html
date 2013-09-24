@@ -44,6 +44,7 @@
 			      	<li><a href="#importarusuarios">Importar usuarios</a></li>
 			      	<li><a href="#importarponentes">Importar ponentes</a></li>                
 			      	<li><a href="#importarpreguntas">Importar preguntas</a></li>
+			      	<li><a href="#importaragendas">Importar agendas</a></li>
 			      	<li><a href="#importarpatrocinadores">Importar patrocinadores</a></li>                
 			      	<li><a href="#exportarrespuestas">Exportar respuestas</a></li>
 			      	<li><a href="#exportarponentes">Exportar ponentes</a></li>                
@@ -114,6 +115,30 @@
             <label class="control-label" for="input01">JSON con preguntas:</label>
             <div class="controls">
             	<textarea id="preguntas_json"></textarea>
+            </div>
+          </div>
+          <div class="control-group">
+            
+            <div class="controls">
+               <a href="#" id="cancelBtn" class="btn">Cancelar</a>
+               <a href="#" id="addBtn" class="btn">Cargar</a>
+            </div>
+          </div>
+          
+        </fieldset>
+      </form>
+    </script>
+    
+   <!-- Plantilla para importar agendas -->
+
+    <script type="text/template" id="agendas_import">
+      <form class="form-horizontal" method="post">
+        <fieldset>
+          <legend>Importar agendas</legend>
+          <div class="control-group">
+            <label class="control-label" for="input01">JSON con agendas:</label>
+            <div class="controls">
+                <textarea id="agendas_json"></textarea>
             </div>
           </div>
           <div class="control-group">

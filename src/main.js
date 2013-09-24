@@ -128,6 +128,8 @@ var AppRouter = Backbone.Router.extend({
     this.user = new window.User({username: '', logado: false});
     this.listaPonentes = new window.ListaPonentes();
     this.listaPonentesPonencia  = new window.ListaPonentes();
+    //new
+    this.listaPonenciasPonentes = new window.ListaPonenciasPonentes();
     
     console.log("Inicializando Router ...");
     
