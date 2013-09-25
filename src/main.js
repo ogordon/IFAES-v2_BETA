@@ -101,7 +101,7 @@ var AppRouter = Backbone.Router.extend({
     "login":"login",
     "registro":"registro",
     "condiciones":"condiciones",
-    "sala-1":"sala_1",
+    "sala-1":"sala_1_srv",
     "sala-2":"sala_2",
     "sala-p":"sala_p",
     "otras-act":"otras_act",
@@ -127,9 +127,35 @@ var AppRouter = Backbone.Router.extend({
     this.firstPage = true;    
     this.user = new window.User({username: '', logado: false});
     this.listaPonentes = new window.ListaPonentes();
+    
+    // Variables para gestionar la carga dinámica de las agendas desde Stackmob
+    this.listaAgendas = new window.ListaAgendas();
+    
+    this.Agenda1Tramo1 = new window.ListaAgendas();
+    this.Agenda1Tramo2 = new window.ListaAgendas();
+    this.Agenda1Tramo3 = new window.ListaAgendas();
+    this.Agenda1Tramo4 = new window.ListaAgendas();
+    this.Agenda1Tramo5 = new window.ListaAgendas();
+    
+    this.Agenda2Tramo1 = new window.ListaAgendas();
+    this.Agenda2Tramo2 = new window.ListaAgendas();
+    this.Agenda2Tramo3 = new window.ListaAgendas();
+    this.Agenda2Tramo4 = new window.ListaAgendas();
+    this.Agenda2Tramo5 = new window.ListaAgendas();
+    
+    this.Agenda3Tramo1 = new window.ListaAgendas();
+    this.Agenda3Tramo2 = new window.ListaAgendas();
+    this.Agenda3Tramo3 = new window.ListaAgendas();
+    this.Agenda3Tramo4 = new window.ListaAgendas();
+    this.Agenda3Tramo5 = new window.ListaAgendas();
+    
+    this.Agenda4Tramo1 = new window.ListaAgendas();
+    this.Agenda4Tramo2 = new window.ListaAgendas();
+    this.Agenda4Tramo3 = new window.ListaAgendas();
+    this.Agenda4Tramo4 = new window.ListaAgendas();
+    this.Agenda4Tramo5 = new window.ListaAgendas();
+    
     this.listaPonentesPonencia  = new window.ListaPonentes();
-    //new
-    //this.listaPonenciasPonentes = new window.ListaPonenciasPonentes();
     
     console.log("Inicializando Router ...");
     
@@ -294,7 +320,8 @@ var AppRouter = Backbone.Router.extend({
         });
       //app.changePage(new window.InfoexpoView());
   },
-  
+
+/* ----- Método antiguo. Sala con información estática ------ */
   sala_1:function(){
       StackMob.getLoggedInUser({
             success: function(username) {
@@ -309,6 +336,95 @@ var AppRouter = Backbone.Router.extend({
                   //app.changePage(new window.LoginView());
                 }               
             },
+            error: function(model, response, options){
+            localStorage.page = "#login";               
+            app.navigate("#login", {trigger: true});    
+              //app.changePage(new window.LoginView());
+            }
+        });
+      //app.changePage(new window.Sala_1View());
+  },
+/*-----------------      END  --------------------*/
+  sala_1_srv:function(){
+      var listaAgendas = this.listaAgendas;
+      StackMob.getLoggedInUser({
+            success: function(username) {
+              if (username) {
+                if(listaAgendas.isEmpty()) {    
+                    listaAgendas.fetch({   
+                        success: function(model, results, options) {                          
+                            // Search for schedule entries                            
+                            var ag1_tramo1 = app.listaAgendas.where({n_sala: "001", n_tramo: "001"});
+                            var ag1_tramo2 = app.listaAgendas.where({n_sala: "001", n_tramo: "002"});
+                            var ag1_tramo3 = app.listaAgendas.where({n_sala: "001", n_tramo: "003"});
+                            var ag1_tramo4 = app.listaAgendas.where({n_sala: "001", n_tramo: "004"});
+                            var ag1_tramo5 = app.listaAgendas.where({n_sala: "001", n_tramo: "005"});
+                            
+                            app.Agenda1Tramo1.reset(ag1_tramo1);
+                            app.Agenda1Tramo2.reset(ag1_tramo2);
+                            app.Agenda1Tramo3.reset(ag1_tramo3);
+                            app.Agenda1Tramo4.reset(ag1_tramo4);
+                            app.Agenda1Tramo5.reset(ag1_tramo5);
+                            
+                            $.mobile.loading( 'hide', {
+                                    text: '',
+                                    textVisible: false,
+                                    theme: 'c',
+                                    html: ""
+                                });                            
+                            
+                            localStorage.page="#sala-1";          
+                            //app.navigate("#home", {trigger: true});   
+                            app.changePage(new window.Sala_1_srvView());    
+                        }, //end of success function
+                        error: function(model, results, options) {  
+                        
+                            $.mobile.loading( 'hide', {
+                                    text: '',
+                                    textVisible: false,
+                                    theme: 'c',
+                                    html: ""
+                                });     
+                        
+                            alert("No hemos podido cargar la agenda de la sala 1");
+                            localStorage.page="#home";
+                            app.navigate("#home", {trigger: true});
+                
+                        } //end of error function
+                    }); //end of fetch
+                } //end IF listaAgendas is Empty
+                else{ // listaAgendas IS NOT EMPTY
+                    
+                            var ag1_tramo1 = app.listaAgendas.where({n_sala: "001", n_tramo: "001"});
+                            var ag1_tramo2 = app.listaAgendas.where({n_sala: "001", n_tramo: "002"});
+                            var ag1_tramo3 = app.listaAgendas.where({n_sala: "001", n_tramo: "003"});
+                            var ag1_tramo4 = app.listaAgendas.where({n_sala: "001", n_tramo: "004"});
+                            var ag1_tramo5 = app.listaAgendas.where({n_sala: "001", n_tramo: "005"});
+                            
+                            app.Agenda1Tramo1.reset(ag1_tramo1);
+                            app.Agenda1Tramo2.reset(ag1_tramo2);
+                            app.Agenda1Tramo3.reset(ag1_tramo3);
+                            app.Agenda1Tramo4.reset(ag1_tramo4);
+                            app.Agenda1Tramo5.reset(ag1_tramo5);
+                    
+                            $.mobile.loading( 'hide', {
+                                text: '',
+                                textVisible: false,
+                                theme: 'c',
+                                html: ""
+                            });
+                            
+                            localStorage.page="#sala-1";          
+                            //app.navigate("#home", {trigger: true});   
+                            app.changePage(new window.Sala_1_srvView());                        
+                } //end of else not empty
+                } // end of IF username 
+                else {
+                localStorage.page = "#login";               
+                app.navigate("#login", {trigger: true});    
+                  //app.changePage(new window.LoginView());
+                }               
+            }, //end of stackmob login success function
             error: function(model, response, options){
             localStorage.page = "#login";               
             app.navigate("#login", {trigger: true});    
@@ -673,15 +789,7 @@ var AppRouter = Backbone.Router.extend({
                         success: function (collection, response, options) {                         
                             if (collection.length > 0) {
                                 var patrocinador = collection.at(0);
-                                //var respuestas = new window.ListaRespuestas();                  
-                                //var q = new StackMob.Collection.Query();
-                                
-                                // Ver si este usuario ya tiene una respuesta para esta pregunta                    
-                                //var owner = 'user/' + app.user.get('username');
-                                //var preg_id = collection.at(0).get('pregunta_id');                                      
-                                //q.equals('sm_owner', owner);
-                                //q.equals('pregunta_id', preg_id);
-                                
+                                                                
                                 $.mobile.loading( 'hide', {text: '', textVisible: false, theme: 'c', html: ""});
                                 localStorage.page="#patrocinadores/"+id;
                                 app.changePage(new window.DetallePatrocinadoresView({model: patrocinador}));
@@ -965,6 +1073,8 @@ $(document).ready(function () {
   	'condiciones', 
   	'home', 
   	'sala-1',
+  	'sala-1-srv',
+  	'entrada_agenda',
   	'sala-2',
   	'sala-p',
   	'otras-act', 
