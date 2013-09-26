@@ -457,6 +457,95 @@ var AppRouter = Backbone.Router.extend({
       //app.changePage(new window.Sala_2View());
   },
   
+  sala_2_srv:function(){
+      var listaAgendas = this.listaAgendas;
+      StackMob.getLoggedInUser({
+            success: function(username) {
+              if (username) {
+                if(listaAgendas.isEmpty()) {    
+                    listaAgendas.fetch({   
+                        success: function(model, results, options) {                          
+                            // Search for schedule entries                            
+                            var ag2_tramo1 = app.listaAgendas.where({n_sala: "002", n_tramo: "001"});
+                            var ag2_tramo2 = app.listaAgendas.where({n_sala: "002", n_tramo: "002"});
+                            var ag2_tramo3 = app.listaAgendas.where({n_sala: "002", n_tramo: "003"});
+                            var ag2_tramo4 = app.listaAgendas.where({n_sala: "002", n_tramo: "004"});
+                            var ag2_tramo5 = app.listaAgendas.where({n_sala: "002", n_tramo: "005"});
+                            
+                            app.Agenda2Tramo1.reset(ag2_tramo1);
+                            app.Agenda2Tramo2.reset(ag2_tramo2);
+                            app.Agenda2Tramo3.reset(ag2_tramo3);
+                            app.Agenda2Tramo4.reset(ag2_tramo4);
+                            app.Agenda2Tramo5.reset(ag2_tramo5);
+                            
+                            $.mobile.loading( 'hide', {
+                                    text: '',
+                                    textVisible: false,
+                                    theme: 'c',
+                                    html: ""
+                                });                            
+                            
+                            localStorage.page="#sala-2";          
+                            //app.navigate("#home", {trigger: true});   
+                            app.changePage(new window.Sala_2_srvView());    
+                        }, //end of success function
+                        error: function(model, results, options) {  
+                        
+                            $.mobile.loading( 'hide', {
+                                    text: '',
+                                    textVisible: false,
+                                    theme: 'c',
+                                    html: ""
+                                });     
+                        
+                            alert("No hemos podido cargar la agenda de la sala 2");
+                            localStorage.page="#home";
+                            app.navigate("#home", {trigger: true});
+                
+                        } //end of error function
+                    }); //end of fetch
+                } //end IF listaAgendas is Empty
+                else{ // listaAgendas IS NOT EMPTY
+                    
+                            var ag2_tramo1 = app.listaAgendas.where({n_sala: "002", n_tramo: "001"});
+                            var ag2_tramo2 = app.listaAgendas.where({n_sala: "002", n_tramo: "002"});
+                            var ag2_tramo3 = app.listaAgendas.where({n_sala: "002", n_tramo: "003"});
+                            var ag2_tramo4 = app.listaAgendas.where({n_sala: "002", n_tramo: "004"});
+                            var ag2_tramo5 = app.listaAgendas.where({n_sala: "002", n_tramo: "005"});
+                            
+                            app.Agenda2Tramo1.reset(ag2_tramo1);
+                            app.Agenda2Tramo2.reset(ag2_tramo2);
+                            app.Agenda2Tramo3.reset(ag2_tramo3);
+                            app.Agenda2Tramo4.reset(ag2_tramo4);
+                            app.Agenda2Tramo5.reset(ag2_tramo5);
+                    
+                            $.mobile.loading( 'hide', {
+                                text: '',
+                                textVisible: false,
+                                theme: 'c',
+                                html: ""
+                            });
+                            
+                            localStorage.page="#sala-2";          
+                            //app.navigate("#home", {trigger: true});   
+                            app.changePage(new window.Sala_2_srvView());                        
+                } //end of else not empty
+                } // end of IF username 
+                else {
+                localStorage.page = "#login";               
+                app.navigate("#login", {trigger: true});    
+                  //app.changePage(new window.LoginView());
+                }               
+            }, //end of stackmob login success function
+            error: function(model, response, options){
+            localStorage.page = "#login";               
+            app.navigate("#login", {trigger: true});    
+              //app.changePage(new window.LoginView());
+            }
+        });
+      //app.changePage(new window.Sala_1View());
+  },
+  
   sala_p:function(){
       StackMob.getLoggedInUser({
             success: function(username) {
@@ -1075,9 +1164,13 @@ $(document).ready(function () {
   	'sala-1',
   	'sala-1-srv',
   	'entrada_agenda',
+  	'entrada_agenda2',
   	'sala-2',
+  	'sala-2-srv',
   	'sala-p',
-  	'otras-act', 
+  	'sala-p-srv',
+  	'otras-act',
+  	'otras-act-srv', 
   	'panel-lateral',
   	'ponentes', 
   	'detalle-ponentes',

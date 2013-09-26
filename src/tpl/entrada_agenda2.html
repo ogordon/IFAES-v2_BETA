@@ -1,6 +1,7 @@
 <li>
-	<a href="#ponentesponencia/<%= n_orden%>"><img src="<%= url_icono %>">
-	    <p><strong><%= hora %></strong> <%= titulo_linea1 %></p>	         
+	<a><img src="<%= url_icono %>">
+	    <p><strong>Horario: </strong><%= hora %></p>
+	    <p><strong>Lugar: </strong></p><%= titulo_linea1 %></p>	         
 	    <% if(titulo_linea2!="") {%>
 	        <p><%= titulo_linea2 %></p>                
         <% } %>
@@ -18,51 +19,51 @@
         <% } %>
         
         <% if(moderador!="") {%>
-            <p>Modera: <strong><i><%= moderador %></i></strong></p>                
+            <p><%= moderador %></p>                
         <% } %>
         
         <% if(empresa_moderador!="") {%>
-            <p><small><strong><%= empresa_moderador %></strong></small></p>               
+            <p><%= empresa_moderador %></p>               
         <% } %>
         
         <% if(ponente1!="") {%>
-            <p><strong><i><%= ponente1 %></i></strong></p>              
+            <p><%= ponente1 %></p>              
         <% } %>
         
         <% if(empresa_ponente1!="") {%>
-            <p><small><strong><%= empresa_ponente1 %></strong></small></p>               
+            <p><%= empresa_ponente1 %></p>               
         <% } %>
         
         <% if(ponente2!="") {%>
-            <p><strong><i><%= ponente2 %></i></strong></p>              
+            <p><%= ponente2 %></p>              
         <% } %>
         
         <% if(empresa_ponente2!="") {%>
-            <p><small><strong><%= empresa_ponente2 %></strong></small></p>               
+            <p><%= empresa_ponente2 %></p>               
         <% } %>
         
         <% if(ponente3!="") {%>
-            <p><strong><i><%= ponente3 %></i></strong></p>              
+            <p><%= ponente3 %></p>              
         <% } %>
         
         <% if(empresa_ponente3!="") {%>
-            <p><small><strong><%= empresa_ponente3 %></strong></small></p>               
+            <p><%= empresa_ponente3 %></p>               
         <% } %>
         
         <% if(ponente4!="") {%>
-            <p><strong><i><%= ponente4 %></i></strong></p>              
+            <p><%= ponente4 %></p>              
         <% } %>
         
         <% if(empresa_ponente4!="") {%>
-            <p><small><strong><%= empresa_ponente4 %></strong></small></p>               
+            <p><%= empresa_ponente4 %></p>               
         <% } %>
         
         <% if(ponente5!="") {%>
-            <p><strong><i><%= ponente5 %></i></strong></p>              
+            <p><%= ponente5 %></p>              
         <% } %>
         
         <% if(empresa_ponente5!="") {%>
-            <p><small><strong><%= empresa_ponente5 %></strong></small></p>               
+            <p><%= empresa_ponente5 %></p>               
         <% } %>
                       
 </li>
