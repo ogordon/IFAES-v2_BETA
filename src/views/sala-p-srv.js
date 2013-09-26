@@ -1,13 +1,13 @@
 /*
  *
- * View Class to manage Sala-1 Page, getting schedule from StackMob
+ * View Class to manage Sala-paralela Page, getting schedule from StackMob
  *
  */
 
 
-window.Sala_1_srvView = Backbone.View.extend({
+window.Sala_p_srvView = Backbone.View.extend({
   initialize:function () { 	
-		this.template = _.template(tpl.get('sala-1-srv'));
+		this.template = _.template(tpl.get('sala-p-srv'));
 
   	/*if(!app.user.get('logado')) {
 	  	app.navigate("#login", {trigger: true});	
@@ -45,24 +45,26 @@ window.Sala_1_srvView = Backbone.View.extend({
     
     
     //render tramo1 de agenda desde StackMob    
-    var eAgendaView1 = new Entrada_Agenda1View({collection : app.Agenda1Tramo1});
-    el.find('#lista_tramo1').append(eAgendaView1.render().el);
+    var eAgendaView1 = new Entrada_Agenda3View({collection : app.Agenda3Tramo1});
+    el.find('#sala3_tramo1').append(eAgendaView1.render().el);
     
     //render tramo2 de agenda desde StackMob    
-    var eAgendaView2 = new Entrada_Agenda1View({collection : app.Agenda1Tramo2});
-    el.find('#lista_tramo2').append(eAgendaView2.render().el);
+    var eAgendaView2 = new Entrada_Agenda3View({collection : app.Agenda3Tramo2});
+    el.find('#sala3_tramo2').append(eAgendaView2.render().el);
     
+    /* LA AGENDA DE LA SALA PARALELA SÓLO TIENE DOS TRAMOS
     //render tramo3 de agenda desde StackMob    
-    var eAgendaView3 = new Entrada_Agenda1View({collection : app.Agenda1Tramo3});
+    var eAgendaView3 = new Entrada_Agenda3View({collection : app.Agenda1Tramo3});
     el.find('#lista_tramo3').append(eAgendaView3.render().el);
     
     //render tramo4 de agenda desde StackMob    
-    var eAgendaView4 = new Entrada_Agenda1View({collection : app.Agenda1Tramo4});
+    var eAgendaView4 = new Entrada_Agenda3View({collection : app.Agenda1Tramo4});
     el.find('#lista_tramo4').append(eAgendaView4.render().el);
     
     //render tramo5 de agenda desde StackMob    
-    var eAgendaView5 = new Entrada_Agenda1View({collection : app.Agenda1Tramo5});
+    var eAgendaView5 = new Entrada_Agenda3View({collection : app.Agenda1Tramo5});
     el.find('#lista_tramo5').append(eAgendaView5.render().el);
+    */
     
     
     //append lateral panel
@@ -74,7 +76,7 @@ window.Sala_1_srvView = Backbone.View.extend({
   }
 });
 
-window.Entrada_Agenda1View = Backbone.View.extend({
+window.Entrada_Agenda3View = Backbone.View.extend({
   tagName: 'ul',
   attributes: {
     'data-role' : 'listview', 
@@ -94,8 +96,8 @@ window.Entrada_Agenda1View = Backbone.View.extend({
       
     // Pass the model data to the template
                     
-    collection.each(function (ponente) {        
-        el.append(template(ponente.attributes));
+    collection.each(function (entrada) {        
+        el.append(template(entrada.attributes));
     });
     
     return this;
