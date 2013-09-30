@@ -223,18 +223,22 @@ var AppRouter = Backbone.Router.extend({
       console.log("HOME function"); 
 	  StackMob.getLoggedInUser({
 			success: function(username) {
+			    console.log("SUCCESS getLoggedInUser");
 			  if (username) {
+			      console.log("entramos por username TRUE");
 			  	localStorage.page="#home";  		
 			  	//app.navigate("#home", {trigger: true});	
 				  app.changePage(new window.HomeView());	
 				} 
 				else {
+				    console.log("entramos por username FALSE");
 			  	localStorage.page = "#login"; 		   		
 			  	app.navigate("#login", {trigger: true});	
 				  //app.changePage(new window.LoginView());
 				}				
 			},
 			error: function(model, response, options){
+			    console.log("ERROR getLoggedInUser");
 		  	localStorage.page = "#login"; 		   		
 		  	app.navigate("#login", {trigger: true});	
 			  //app.changePage(new window.LoginView());
@@ -808,8 +812,8 @@ var AppRouter = Backbone.Router.extend({
 						
 						app.user.set({username: username});
 						app.user.set({logado: true});						
-						//app.navigate(page, {trigger: true});		
-						app.changePage(new window.HomeView());									
+						app.navigate(page, {trigger: true});		
+															
 					}				
 				} 
 				else {
