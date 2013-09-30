@@ -777,12 +777,15 @@ var AppRouter = Backbone.Router.extend({
     
     
   login:function() { 
-
+        
+      console.log("LOGIN function");
 	  StackMob.getLoggedInUser({
 			success: function(username) {
+			    console.log("SUCCESS getLoggedInUser");
 			
 				if (username) {
-				
+				    
+				    console.log("entramos por USERNAME=true");
 					var page = localStorage.page;
 					
 					if (page == "" || page==null || page==undefined) {				
@@ -790,6 +793,7 @@ var AppRouter = Backbone.Router.extend({
 					  app.changePage(new window.LoginView());
 					}
 					else {
+					    
 				  	$.mobile.loading( 'hide', {
 							text: '',
 							textVisible: false,
@@ -805,7 +809,7 @@ var AppRouter = Backbone.Router.extend({
 					}				
 				} 
 				else {
-
+                console.log("entramos por USERNAME=false");
 			  	$.mobile.loading( 'hide', {
 						text: '',
 						textVisible: false,
@@ -823,6 +827,7 @@ var AppRouter = Backbone.Router.extend({
 				}				
 			},
 			error: function(model, response, options){
+			    console.log("ERROR getLoggedInUser");
 
 		  	$.mobile.loading( 'hide', {
 					text: '',
