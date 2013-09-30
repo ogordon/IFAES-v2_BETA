@@ -6,7 +6,8 @@
 
 
 /* Push notification functions */
-
+// comento todo lo relativo a notificaciones push
+/*
 function tokenHandler(msg) {
     alert("tokenHandler function");
     console.log("Token Handler " + msg);
@@ -86,8 +87,9 @@ function onNotificationGCM(e) {
               break;
         }
 }
-
+*/ // fin comentario de funciones push
 /* END OF PUSH FUNCTIONS */
+
 
 /* Backbone router */
 
@@ -159,13 +161,17 @@ var AppRouter = Backbone.Router.extend({
     
     console.log("Inicializando Router ...");
     
+    //comento todo lo referente a PhoneGap
     //PhoneGap 
-    this.bindEvents();
+    //this.bindEvents();
   },
     // Bind Event Listeners
     //
     // Bind any events that are required on startup. Common events are:
     // 'load', 'deviceready', 'offline', and 'online'.
+    //Comento todo lo referente a PhoneGap
+    
+    /*
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
     },
@@ -177,38 +183,7 @@ var AppRouter = Backbone.Router.extend({
         console.debug("Debug: Device Ready"+ device.platform);        
         pushNotification = window.plugins.pushNotification;
         
-        /*
-        if (device.platform == 'android' || device.platform == 'Android') {
-            console.log("Android device");
-            console.log(device.platform);
-                pushNotification.registerDevice({ alert:true, badge:true, sound:true,  projectid: "176955130145", appid : "ABF08-7738C" },
-                                    function(status) {
-                                        console.log("Success Registering device");
-                                        var pushToken = status;
-                                        showStatusMsg('push token: ' + JSON.stringify(pushToken));
-                                    },
-                                    function(status) {
-                                        console.log("ERROR registering device");
-                                        showStatusMsg(JSON.stringify(['failed to register', status]));
-                                    });
-
-
-        } else {
-            console.log("ios device");
-            pushNotification.registerDevice({ alert:true, badge:true, sound:true,  appname: "ifaesBETA", pw_appid : "ABF08-7738C" },
-                                    function(status) {
-                                        var pushToken = status;
-                                        console.log("success, TOKEN:"+ pushToken);
-                                        //showStatusMsg('push token: ' + JSON.stringify(pushToken));                                        
-                                    },
-                                    function(status) {
-                                        console.log("TOKEN:"+ pushToken);
-                                        //showStatusMsg(JSON.stringify(['failed to register', status]));
-                                        
-                                    });
-
-        }
-        */ 
+        
         if (device.platform == 'android' || device.platform == 'Android') {
             alert("Android device"+ device.model);
             console.log("Android Device");
@@ -224,6 +199,7 @@ var AppRouter = Backbone.Router.extend({
         }
                     
     },
+    */
     
 
   init:function () {
