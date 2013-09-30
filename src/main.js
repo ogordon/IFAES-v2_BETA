@@ -219,7 +219,8 @@ var AppRouter = Backbone.Router.extend({
   },
 
   home:function() {
-      // TEST de momento no verificamos el login de usuario --> 
+      // TEST de momento no verificamos el login de usuario -->
+      console.log("HOME function"); 
 	  StackMob.getLoggedInUser({
 			success: function(username) {
 			  if (username) {
