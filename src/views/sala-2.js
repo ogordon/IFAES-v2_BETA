@@ -27,7 +27,7 @@ window.Sala_2View = Backbone.View.extend({
   
   showPanel: function(e) {
       e.preventDefault();   
-      $('#panel').panel("toggle");                            
+      $('#panellateral').panel("toggle");                            
   },
     
   volver : function(e) {

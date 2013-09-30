@@ -30,7 +30,7 @@ window.MarcoPatrocinadorView = Backbone.View.extend({
   
   showPanel: function(e) {
 	  e.preventDefault();   
-	  $('#panel').panel("toggle");							  
+	  $('#panellateral').panel("toggle");							  
   }, 
 
   /*

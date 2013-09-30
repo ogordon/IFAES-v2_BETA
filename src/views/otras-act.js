@@ -27,7 +27,7 @@ window.Otras_actView = Backbone.View.extend({
   
   showPanel: function(e) {
       e.preventDefault();   
-      $('#panel').panel("toggle");                            
+      $('#panellateral').panel("toggle");                            
   },
     
   volver : function(e) {
