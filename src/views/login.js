@@ -66,11 +66,7 @@ window.LoginView = Backbone.View.extend({
 					app.user.set({logado: true}); 
 					app.navigate("#home", {trigger: true});
 					
-					//identify in mixpanel	
-					console.log("device token:"+ app.device_token);				
-					mixpanel.identify("1234567890");
-					mixpanel.people.set({"$email":username, "$ios_devices":app.device_token});
-					mixpanel.track('test_mixpanel',{"email":username});
+					
 				},
 				error: function(model, response) {
 				
