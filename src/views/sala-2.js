@@ -7,7 +7,7 @@
 
 window.Sala_2View = Backbone.View.extend({
   initialize:function () { 	
-		this.template = _.template(tpl.get('sala-2'));
+		this.template = _.template(tpl.get('sala_2'));
 
   	/*if(!app.user.get('logado')) {
 	  	app.navigate("#login", {trigger: true});	

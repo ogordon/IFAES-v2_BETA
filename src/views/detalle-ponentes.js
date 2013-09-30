@@ -7,7 +7,7 @@
 window.DetallePonentesView = Backbone.View.extend({
   initialize:function () {
   
-		this.template = _.template(tpl.get('detalle-ponentes'));	  		
+		this.template = _.template(tpl.get('detalle_ponentes'));	  		
 	  
   	/*if(!app.user.get('logado')) {
 	  	app.navigate("#login", {trigger: true});	

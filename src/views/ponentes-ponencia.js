@@ -6,7 +6,7 @@
 
 window.PonentesPonenciaView = Backbone.View.extend({
   initialize:function () {
-	  this.template = _.template(tpl.get('ponentes-ponencia'));	  		  
+	  this.template = _.template(tpl.get('ponentes_ponencia'));	  		  
   
   	/*if(!app.user.get('logado')) {
 	  	app.navigate("#login", {trigger: true});	

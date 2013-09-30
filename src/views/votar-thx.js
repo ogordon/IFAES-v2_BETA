@@ -6,7 +6,7 @@
 
 window.Votar_thxView = Backbone.View.extend({
   initialize:function () {
-  	this.template = _.template(tpl.get('votar-thx'));
+  	this.template = _.template(tpl.get('votar_thx'));
 
   	/*if(!app.user.get('logado')) {
 	  	app.navigate("#login", {trigger: true});	

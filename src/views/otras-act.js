@@ -7,7 +7,7 @@
 
 window.Otras_actView = Backbone.View.extend({
   initialize:function () { 	
-		this.template = _.template(tpl.get('otras-act'));
+		this.template = _.template(tpl.get('otras_act'));
 
   	/*if(!app.user.get('logado')) {
 	  	app.navigate("#login", {trigger: true});	

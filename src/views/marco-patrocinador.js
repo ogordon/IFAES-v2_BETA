@@ -9,7 +9,7 @@ window.MarcoPatrocinadorView = Backbone.View.extend({
 
   initialize:function () {  
   	
-  	this.template = _.template(tpl.get('marco-patrocinador'));	  	
+  	this.template = _.template(tpl.get('marco_patrocinador'));	  	
   		
   	
   	/*if(!app.user.get('logado')) {

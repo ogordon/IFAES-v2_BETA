@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# 2013-09-30 - 15
+# 2013-09-30 - 17
 
 # Explicitly cached entries
 index.html
@@ -41,8 +41,8 @@ src/models/user.js
 # Templates
 src/tpl/celda_ponentes.html
 src/tpl/condiciones.html
-src/tpl/detalle-patrocinadores.html
-src/tpl/detalle-ponentes.html
+src/tpl/detalle_patrocinadores.html
+src/tpl/detalle_ponentes.html
 src/tpl/entrada_agenda.html
 src/tpl/entrada_agenda2.html
 src/tpl/footer.html
@@ -52,25 +52,25 @@ src/tpl/info.html
 src/tpl/infoexpo.html
 src/tpl/konecta.html
 src/tpl/login.html
-src/tpl/marco-patrocinador.html
-src/tpl/otras-act-srv.html
-src/tpl/otras-act.html
-src/tpl/panel-lateral.html
+src/tpl/marco_patrocinador.html
+src/tpl/otras_act_srv.html
+src/tpl/otras_act.html
+src/tpl/panel_lateral.html
 src/tpl/patrocinadores.html
-src/tpl/ponentes-ponencia.html
+src/tpl/ponentes_ponencia.html
 src/tpl/ponentes.html
 src/tpl/programa.html
 src/tpl/registro.html
-src/tpl/sala-1-srv.html
-src/tpl/sala-1.html
-src/tpl/sala-2-srv.html
-src/tpl/sala-2.html
-src/tpl/sala-p-srv.html
-src/tpl/sala-p.html
-src/tpl/votar-2.html
-src/tpl/votar-3.html
-src/tpl/votar-4.html
-src/tpl/votar-thx.html
+src/tpl/sala_1_srv.html
+src/tpl/sala_1.html
+src/tpl/sala_2_srv.html
+src/tpl/sala_2.html
+src/tpl/sala_p_srv.html
+src/tpl/sala_p.html
+src/tpl/votar_2.html
+src/tpl/votar_3.html
+src/tpl/votar_4.html
+src/tpl/votar_thx.html
 src/tpl/votar.html
 
 # Views
