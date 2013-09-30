@@ -808,7 +808,8 @@ var AppRouter = Backbone.Router.extend({
 						
 						app.user.set({username: username});
 						app.user.set({logado: true});						
-						app.navigate(page, {trigger: true});											
+						//app.navigate(page, {trigger: true});		
+						app.changePage(new window.HomeView());									
 					}				
 				} 
 				else {
