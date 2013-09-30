@@ -174,6 +174,7 @@ var AppRouter = Backbone.Router.extend({
     
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
+        console.log("bindEvents function");
     },
    
     onDeviceReady: function() {
@@ -210,6 +211,8 @@ var AppRouter = Backbone.Router.extend({
 			theme: 'c',
 			html: ""
 		});	
+		
+		console.log("INIT function");
     
 		//app.navigate("#home", {trigger: true});
 		app.navigate("#login", {trigger: true});	
