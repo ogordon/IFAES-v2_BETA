@@ -786,6 +786,7 @@ var AppRouter = Backbone.Router.extend({
 				if (username) {
 				    
 				    console.log("entramos por USERNAME=true");
+				    console.log("Username = "+username);
 					var page = localStorage.page;
 					
 					if (page == "" || page==null || page==undefined) {	
@@ -794,7 +795,7 @@ var AppRouter = Backbone.Router.extend({
 					  app.changePage(new window.LoginView());
 					}
 					else {
-					console.log("entramos por PAGE distinto de NULL");     
+					console.log("entramos por PAGE distinto de NULL. Page="+page);     
 				  	$.mobile.loading( 'hide', {
 							text: '',
 							textVisible: false,
