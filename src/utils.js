@@ -14,11 +14,13 @@ tpl = {
 		  var name = names[index];
 		  $.get('src/tpl/' + name + '.html', function (data) {
 		    that.templates[name] = data;
+		    console.log("cargando template:"+name);
 		    index++;
 		    if (index < names.length) {
 		      loadTemplate(index);
 		    } else {
 		      callback();
+		      console.log("saliendo por callback");
 		    }
 		  });
 		}
