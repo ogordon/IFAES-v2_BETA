@@ -1352,8 +1352,7 @@ $(document).ready(function () {
   	'votar_thx',
   	'imelius',
   	'patrocinadores',
-  	'info',
-  	'panel_lateral'], function () {
+  	'info'], function () {
 
        // After template loading we start the backbone routing engine
       app = new AppRouter();
