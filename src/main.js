@@ -788,12 +788,13 @@ var AppRouter = Backbone.Router.extend({
 				    console.log("entramos por USERNAME=true");
 					var page = localStorage.page;
 					
-					if (page == "" || page==null || page==undefined) {				
+					if (page == "" || page==null || page==undefined) {	
+					    console.log("entramos por PAGE=NULL");			
 						localStorage.page = "#login";
 					  app.changePage(new window.LoginView());
 					}
 					else {
-					    
+					console.log("entramos por PAGE distinto de NULL");     
 				  	$.mobile.loading( 'hide', {
 							text: '',
 							textVisible: false,
