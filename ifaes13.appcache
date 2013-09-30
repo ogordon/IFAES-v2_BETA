@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# 2013-09-30 - 20
+# 2013-09-30 - 21
 
 # Explicitly cached entries
 index.html
@@ -55,7 +55,7 @@ src/tpl/login.html
 src/tpl/marco_patrocinador.html
 src/tpl/otras_act_srv.html
 src/tpl/otras_act.html
-src/tpl/panel_lateral.html
+# src/tpl/panel_lateral.html
 src/tpl/patrocinadores.html
 src/tpl/ponentes_ponencia.html
 src/tpl/ponentes.html
