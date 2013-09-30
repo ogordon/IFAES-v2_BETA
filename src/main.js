@@ -1328,7 +1328,6 @@ $(document).ready(function () {
   	'ponentes', 
   	'detalle-ponentes',
   	'detalle-patrocinadores',
-  	'marco-patrocinador',
   	'ponentes-ponencia', 
   	'celda_ponentes', 
   	'votar',
@@ -1336,8 +1335,7 @@ $(document).ready(function () {
   	'votar-3',
   	'votar-4',
   	'votar-thx',
-  	'imelius', 
-  	'konecta',
+  	'imelius',
   	'patrocinadores',
   	'info'], function () {
 
