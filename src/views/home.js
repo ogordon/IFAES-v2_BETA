@@ -8,6 +8,7 @@
 window.HomeView = Backbone.View.extend({
 
   initialize:function () {  
+      console.log("HOME function");
   	
   	this.template = _.template(tpl.get('home'));	  		
   	
