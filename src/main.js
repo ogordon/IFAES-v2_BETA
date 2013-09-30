@@ -7,7 +7,7 @@
 
 /* Push notification functions */
 
-
+/* comento todo lo relativo a notificaciones push
 function tokenHandler(msg) {
     alert("tokenHandler function");
     console.log("Token Handler " + msg);
@@ -87,7 +87,7 @@ function onNotificationGCM(e) {
               break;
         }
 }
-
+ fin de comentario */
 /* END OF PUSH FUNCTIONS */
 
 
@@ -163,14 +163,14 @@ var AppRouter = Backbone.Router.extend({
     
     
     //PhoneGap 
-    this.bindEvents();
+    //this.bindEvents();
   },
     // Bind Event Listeners
     //
     // Bind any events that are required on startup. Common events are:
     // 'load', 'deviceready', 'offline', and 'online'.
     
-    
+ /* comento todo lo relativo a notificaciones push   
     
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
@@ -201,7 +201,7 @@ var AppRouter = Backbone.Router.extend({
                     
     },
     
-    
+   fin de comentario */ 
 
   init:function () {
   
