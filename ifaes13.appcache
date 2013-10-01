@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# 2013-09-30 - 21
+# 2013-09-30 - 22
 
 # Explicitly cached entries
 index.html
@@ -47,14 +47,9 @@ src/tpl/entrada_agenda.html
 src/tpl/entrada_agenda2.html
 src/tpl/footer.html
 src/tpl/home.html
-src/tpl/imelius.html
-src/tpl/info.html
 src/tpl/infoexpo.html
-src/tpl/konecta.html
 src/tpl/login.html
-src/tpl/marco_patrocinador.html
 src/tpl/otras_act_srv.html
-src/tpl/otras_act.html
 # src/tpl/panel_lateral.html
 src/tpl/patrocinadores.html
 src/tpl/ponentes_ponencia.html
@@ -62,11 +57,8 @@ src/tpl/ponentes.html
 src/tpl/programa.html
 src/tpl/registro.html
 src/tpl/sala_1_srv.html
-src/tpl/sala_1.html
 src/tpl/sala_2_srv.html
-src/tpl/sala_2.html
 src/tpl/sala_p_srv.html
-src/tpl/sala_p.html
 src/tpl/votar_2.html
 src/tpl/votar_3.html
 src/tpl/votar_4.html
@@ -79,13 +71,9 @@ src/views/detalle-patrocinadores.js
 src/views/detalle-ponentes.js
 src/views/footer.js
 src/views/home.js
-src/views/imelius.js
-src/views/info.js
 src/views/infoexpo.js
 src/views/login.js
-src/views/marco-patrocinador.js
 src/views/otras-act-srv.js
-src/views/otras-act.js
 src/views/panel-lateral.js
 src/views/patrocinadores.js
 src/views/ponentes-ponencia.js
@@ -93,11 +81,8 @@ src/views/ponentes.js
 src/views/programa.js
 src/views/registro.js
 src/views/sala-1-srv.js
-src/views/sala-1.js
 src/views/sala-2-srv.js
-src/views/sala-2.js
 src/views/sala-p-srv.js
-src/views/sala-p.js
 src/views/votar-thx.js
 src/views/votar.js
 

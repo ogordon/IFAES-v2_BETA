@@ -112,14 +112,10 @@ var AppRouter = Backbone.Router.extend({
     "votar-thx":"votar_thx",
     "ponentes/:id":"ponentes_id",
     "ponentesponencia/:id":"ponentes_ponencia_id",
-    "imelius":"imelius",
-    "ifaes":"ifaes",
     "patrocinadores":"patrocinadores",
     "patrocinadores/:id":"patrocinadores_id",
-    "info":"info",
     "infoexpo":"infoexpo",
-    "programa":"programa",
-    "marco-patrocinador/:id":"marco_patrocinador"
+    "programa":"programa"    
   },
 
   initialize:function () {
@@ -133,7 +129,7 @@ var AppRouter = Backbone.Router.extend({
     // Variables para gestionar la carga dinámica de las agendas desde Stackmob
     this.listaAgendas = new window.ListaAgendas();
     
-    this.Agenda1Tramo1 = new window.ListaAgendas();
+    this.Agenda1Tramo1 = new window.ListaAgendas();    
     this.Agenda1Tramo2 = new window.ListaAgendas();
     this.Agenda1Tramo3 = new window.ListaAgendas();
     this.Agenda1Tramo4 = new window.ListaAgendas();
@@ -248,38 +244,6 @@ var AppRouter = Backbone.Router.extend({
 		//app.changePage(new window.HomeView());  // mostramos directamente la home   						
   },
   
-    marco_patrocinador:function(id) {
-      // TEST de momento no verificamos el login de usuario -->
-      console.log("marco_patrocinador function"); 
-      StackMob.getLoggedInUser({
-            success: function(username) {
-              if (username) {
-                localStorage.page="#marco_patrocinador/"+id;          
-                       
-                  app.changePage(new window.MarcoPatrocinadorView());
-                  $(document).ready(function() {
-                    $('#external_url').load('www.avaya.es');
-                  }); 
-                  
-                    
-                } 
-                else {
-                localStorage.page = "#login";               
-                app.navigate("#login", {trigger: true});    
-                  //app.changePage(new window.LoginView());
-                }               
-            },
-            error: function(model, response, options){
-            localStorage.page = "#login";               
-            app.navigate("#login", {trigger: true});    
-              //app.changePage(new window.LoginView());
-            }
-        });  
-        //<-- TEST */
-        //app.changePage(new window.HomeView());  // mostramos directamente la home                         
-  },
-  
-  
   // funciones nuevas
   
   infoexpo:function(){
@@ -305,30 +269,6 @@ var AppRouter = Backbone.Router.extend({
       //app.changePage(new window.InfoexpoView());
   },
 
-/* ----- Método antiguo. Sala con información estática ------ */
-  sala_1:function(){
-      StackMob.getLoggedInUser({
-            success: function(username) {
-              if (username) {
-                localStorage.page="#sala-1";          
-                //app.navigate("#home", {trigger: true});   
-                  app.changePage(new window.Sala_1View());    
-                } 
-                else {
-                localStorage.page = "#login";               
-                app.navigate("#login", {trigger: true});    
-                  //app.changePage(new window.LoginView());
-                }               
-            },
-            error: function(model, response, options){
-            localStorage.page = "#login";               
-            app.navigate("#login", {trigger: true});    
-              //app.changePage(new window.LoginView());
-            }
-        });
-      //app.changePage(new window.Sala_1View());
-  },
-/*-----------------      END  --------------------*/
   sala_1_srv:function(){
       var listaAgendas = this.listaAgendas;
       StackMob.getLoggedInUser({
@@ -416,29 +356,6 @@ var AppRouter = Backbone.Router.extend({
             }
         });
       //app.changePage(new window.Sala_1View());
-  },
-  
-  sala_2:function(){
-      StackMob.getLoggedInUser({
-            success: function(username) {
-              if (username) {
-                localStorage.page="#sala-2";          
-                //app.navigate("#home", {trigger: true});   
-                  app.changePage(new window.Sala_2View());    
-                } 
-                else {
-                localStorage.page = "#login";               
-                app.navigate("#login", {trigger: true});    
-                  //app.changePage(new window.LoginView());
-                }               
-            },
-            error: function(model, response, options){
-            localStorage.page = "#login";               
-            app.navigate("#login", {trigger: true});    
-              //app.changePage(new window.LoginView());
-            }
-        });
-      //app.changePage(new window.Sala_2View());
   },
   
   sala_2_srv:function(){
@@ -530,29 +447,6 @@ var AppRouter = Backbone.Router.extend({
       
   },
   
-  sala_p:function(){
-      StackMob.getLoggedInUser({
-            success: function(username) {
-              if (username) {
-                localStorage.page="#sala-p";          
-                //app.navigate("#home", {trigger: true});   
-                  app.changePage(new window.Sala_pView());    
-                } 
-                else {
-                localStorage.page = "#login";               
-                app.navigate("#login", {trigger: true});    
-                  //app.changePage(new window.LoginView());
-                }               
-            },
-            error: function(model, response, options){
-            localStorage.page = "#login";               
-            app.navigate("#login", {trigger: true});    
-              //app.changePage(new window.LoginView());
-            }
-        });
-      //app.changePage(new window.Sala_pView());
-  },
-  
   sala_p_srv:function(){
       var listaAgendas = this.listaAgendas;
       StackMob.getLoggedInUser({
@@ -640,29 +534,6 @@ var AppRouter = Backbone.Router.extend({
             }
         });
       
-  },
-  
-  otras_act:function(){
-      StackMob.getLoggedInUser({
-            success: function(username) {
-              if (username) {
-                localStorage.page="#otras-act";          
-                //app.navigate("#home", {trigger: true});   
-                  app.changePage(new window.Otras_actView());    
-                } 
-                else {
-                localStorage.page = "#login";               
-                app.navigate("#login", {trigger: true});    
-                  //app.changePage(new window.LoginView());
-                }               
-            },
-            error: function(model, response, options){
-            localStorage.page = "#login";               
-            app.navigate("#login", {trigger: true});    
-              //app.changePage(new window.LoginView());
-            }
-        });
-      //app.changePage(new window.Otras_actView());
   },
   
   otras_act_srv:function(){
@@ -1190,36 +1061,6 @@ var AppRouter = Backbone.Router.extend({
 		});	     
   },
   
-  imelius:function () {
-  	localStorage.page="#imelius";  
-		app.changePage(new window.ImeliusView());  				
-  },
-  
-  ifaes:function () {  
-
-    /* TEST ---> De momento no verificamos el usuario en Stackmob 
-	  StackMob.getLoggedInUser({
-			success: function(username) {		
-				if (username) {					
-			  	localStorage.page="#konecta";    
-					app.changePage(new window.KonectaView());  
-				} 
-				else {
-			  	localStorage.page = "#login"; 	
-			  	app.navigate("#login", {trigger: true});		   		
-				  //app.changePage(new window.LoginView());
-				}				
-			},
-			error: function(model, response, options){
-		  	localStorage.page = "#login"; 		   		
-		  	app.navigate("#login", {trigger: true});	
-			  //app.changePage(new window.LoginView());
-			}
-		});	 
-	   <-- TEST */
-	  	app.changePage(new window.IFAESView());   	
-  },
-  
   patrocinadores:function () {  
       // TEST ---> De momento no verificamos el login en stackmob		
 	  StackMob.getLoggedInUser({
@@ -1242,30 +1083,6 @@ var AppRouter = Backbone.Router.extend({
 		});	
 		//<--- TEST */
 		//app.changePage(new window.PatrocinadoresView()); // Cargamos directamente la página de patrocinadores  	
-  },
-
-  info:function () {  
-    // TEST ---> De momento no verificamos el login en stackmob 
-	  StackMob.getLoggedInUser({
-			success: function(username) {		
-				if (username) {					
-				  localStorage.page="#info"; 
-					app.changePage(new window.InfoView());  
-				} 
-				else {
-			  	localStorage.page = "#login"; 		   		
-				  app.navigate("#login", {trigger: true});	
-				  //app.changePage(new window.LoginView());
-				}				
-			},
-			error: function(model, response, options){
-		  	localStorage.page = "#login"; 		   		
-		  	app.navigate("#login", {trigger: true});	
-			  //app.changePage(new window.LoginView());
-			}
-		});	  	
-		//<--- TEST */
-		//app.changePage(new window.InfoView()); // Cargamos directamente la página de Info
   },
     
   changePage:function (page) {
@@ -1329,16 +1146,12 @@ $(document).ready(function () {
   	'login',
   	'registro',
   	'condiciones', 
-  	'home', 
-  	'sala_1',
+  	'home',
   	'sala_1_srv',
   	'entrada_agenda',
   	'entrada_agenda2',
-  	'sala_2',
   	'sala_2_srv',
-  	'sala_p',
   	'sala_p_srv',
-  	'otras_act',
   	'otras_act_srv',
   	'ponentes', 
   	'detalle_ponentes',
@@ -1350,9 +1163,7 @@ $(document).ready(function () {
   	'votar_3',
   	'votar_4',
   	'votar_thx',
-  	'imelius',
   	'patrocinadores',
-  	'info',
   	'panel_lateral'], function () {
 
        // After template loading we start the backbone routing engine

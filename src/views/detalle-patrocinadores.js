@@ -27,7 +27,7 @@ window.DetallePatrocinadoresView = Backbone.View.extend({
   
   showPanel: function(e) {
       e.preventDefault();   
-      $('panellateral').panel("toggle");                            
+      $('#panellateral').panel("toggle");                            
   },     
 
   /*
