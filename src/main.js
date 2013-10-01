@@ -10,7 +10,7 @@
 /* comento todo lo relativo a notificaciones push
 function tokenHandler(msg) {
     alert("tokenHandler function");
-    console.log("Token Handler " + msg);
+    //console.log("Token Handler " + msg);
     app.device_token=msg;
     PushWoosh.appCode = "ABF08-7738C";
     PushWoosh.register(msg, function(data) {
@@ -22,27 +22,27 @@ function tokenHandler(msg) {
     
 function errorHandler(error) {
     alert("errorHandler function");
-    console.log("Error Handler  " + error);
+    //console.log("Error Handler  " + error);
     //alert(error);
 }
 
 function successHandler(result) {
     alert('Success! Result = '+result);
-    console.log("Success Result  " + result);
+    //console.log("Success Result  " + result);
 }
 
 //IOS
 function onNotificationAPN(event) {
     var pushNotification = window.plugins.pushNotification;
-    console.log("Received a notification! " + event.alert);
-    console.log("event sound " + event.sound);
-    console.log("event badge " + event.badge);
-    console.log("event " + event);
+    //console.log("Received a notification! " + event.alert);
+    //console.log("event sound " + event.sound);
+    //console.log("event badge " + event.badge);
+    //console.log("event " + event);
     if (event.alert) {
             navigator.notification.alert(event.alert);
     }
     if (event.badge) {
-            console.log("Set badge on  " + pushNotification);
+            //console.log("Set badge on  " + pushNotification);
             pushNotification.setApplicationIconBadgeNumber(this.successHandler, event.badge);
     }
     if (event.sound) {
@@ -62,7 +62,7 @@ function onNotificationGCM(e) {
                     // here is where you might want to send it the regID for later use.
                     alert('registration id = '+e.regid);
                     console.debug("REGISTRATION_ID: "+ e.regid);
-                    console.log("REGISTRATION_ID: "+ e.regid);
+                    //console.log("REGISTRATION_ID: "+ e.regid);
                     PushWoosh.appCode = "ABF08-7738C";
                     PushWoosh.register(e.regid, function(data) {
                          alert("PushWoosh register success: " + JSON.stringify(data));
@@ -155,7 +155,7 @@ var AppRouter = Backbone.Router.extend({
     
     this.listaPonentesPonencia  = new window.ListaPonentes();
     
-    console.log("Inicializando Router ...");
+    //console.log("Inicializando Router ...");
     
     
     //PhoneGap 
@@ -208,7 +208,7 @@ var AppRouter = Backbone.Router.extend({
 			html: ""
 		});	
 		
-		console.log("INIT function");
+		//console.log("INIT function");
     
 		//app.navigate("#home", {trigger: true});
 		app.navigate("#login", {trigger: true});	
@@ -216,25 +216,25 @@ var AppRouter = Backbone.Router.extend({
 
   home:function() {
       // TEST de momento no verificamos el login de usuario -->
-      console.log("HOME function"); 
+      //console.log("HOME function"); 
 	  StackMob.getLoggedInUser({
 			success: function(username) {
-			    console.log("SUCCESS getLoggedInUser");
+			    //console.log("SUCCESS getLoggedInUser");
 			  if (username) {
-			      console.log("entramos por username TRUE");
+			      //console.log("entramos por username TRUE");
 			  	localStorage.page="#home";  		
 			  	//app.navigate("#home", {trigger: true});	
 				  app.changePage(new window.HomeView());	
 				} 
 				else {
-				    console.log("entramos por username FALSE");
+				    //console.log("entramos por username FALSE");
 			  	localStorage.page = "#login"; 		   		
 			  	app.navigate("#login", {trigger: true});	
 				  //app.changePage(new window.LoginView());
 				}				
 			},
 			error: function(model, response, options){
-			    console.log("ERROR getLoggedInUser");
+			    //console.log("ERROR getLoggedInUser");
 		  	localStorage.page = "#login"; 		   		
 		  	app.navigate("#login", {trigger: true});	
 			  //app.changePage(new window.LoginView());
@@ -654,24 +654,24 @@ var AppRouter = Backbone.Router.extend({
     
   login:function() { 
         
-      console.log("LOGIN function");
+      //console.log("LOGIN function");
 	  StackMob.getLoggedInUser({
 			success: function(username) {
-			    console.log("SUCCESS getLoggedInUser");
+			    //console.log("SUCCESS getLoggedInUser");
 			
 				if (username) {
 				    
-				    console.log("entramos por USERNAME=true");
-				    console.log("Username = "+username);
+				    //console.log("entramos por USERNAME=true");
+				    //console.log("Username = "+username);
 					var page = localStorage.page;
 					
 					if (page == "" || page==null || page==undefined) {	
-					    console.log("entramos por PAGE=NULL");			
+					    //console.log("entramos por PAGE=NULL");			
 						localStorage.page = "#login";
 					  app.changePage(new window.LoginView());
 					}
 					else {
-					console.log("entramos por PAGE distinto de NULL. Page="+page);     
+					//console.log("entramos por PAGE distinto de NULL. Page="+page);     
 				  	$.mobile.loading( 'hide', {
 							text: '',
 							textVisible: false,
@@ -688,7 +688,7 @@ var AppRouter = Backbone.Router.extend({
 					}				
 				} 
 				else {
-                console.log("entramos por USERNAME=false");
+                //console.log("entramos por USERNAME=false");
 			  	$.mobile.loading( 'hide', {
 						text: '',
 						textVisible: false,
@@ -706,7 +706,7 @@ var AppRouter = Backbone.Router.extend({
 				}				
 			},
 			error: function(model, response, options){
-			    console.log("ERROR getLoggedInUser");
+			    //console.log("ERROR getLoggedInUser");
 
 		  	$.mobile.loading( 'hide', {
 					text: '',
@@ -862,7 +862,7 @@ var AppRouter = Backbone.Router.extend({
   
   ponentes_id:function (id) {
     var listaPonentes = this.listaPonentes;
-    console.log("Ponentes_id fuction");
+    //console.log("Ponentes_id fuction");
 	  StackMob.getLoggedInUser({
 			success: function(username) {		
 				if (username) {	
@@ -988,7 +988,7 @@ var AppRouter = Backbone.Router.extend({
 						    
 						    app.listaPonentesPonencia.reset(arrayponentes); 
 						    
-						    console.log(app.listaPonentesPonencia.toJSON());
+						    //console.log(app.listaPonentesPonencia.toJSON());
 						    
 						    $.mobile.loading( 'hide', {
 									text: '',
@@ -1036,7 +1036,7 @@ var AppRouter = Backbone.Router.extend({
 						
 				    app.listaPonentesPonencia.reset(arrayponentes); 
 				    
-						console.log(app.listaPonentesPonencia.toJSON());
+						//console.log(app.listaPonentesPonencia.toJSON());
 				    
 				    $.mobile.loading( 'hide', {
 							text: '',
