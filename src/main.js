@@ -732,9 +732,12 @@ var AppRouter = Backbone.Router.extend({
   		
 		// Cambiar a la página de condiciones de uso
 		
-		var condiciones = new window.Condiciones({origen : 'login'});
-		localStorage.page = "#condiciones";
-		app.changePage(new window.CondicionesView({model: condiciones}));		  
+		localStorage.page="#login";   
+        app.changePage(new window.CondicionesView());
+		
+		//var condiciones = new window.Condiciones({origen : 'login'});
+		//localStorage.page = "#condiciones";
+		//app.changePage(new window.CondicionesView({model: condiciones}));		  
   },
 
 
