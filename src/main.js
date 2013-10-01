@@ -127,8 +127,7 @@ var AppRouter = Backbone.Router.extend({
     this.listaPonentes = new window.ListaPonentes();
     
     // Variables para gestionar la carga dinámica de las agendas desde Stackmob
-    this.listaAgendas = new window.ListaAgendas();
-    alert("Declarando vbles IN");
+    this.listaAgendas = new window.ListaAgendas();   
     
     this.Agenda1Tramo1 = new window.ListaAgendas();    
     this.Agenda1Tramo2 = new window.ListaAgendas();
@@ -153,8 +152,6 @@ var AppRouter = Backbone.Router.extend({
     this.Agenda4Tramo3 = new window.ListaAgendas();
     this.Agenda4Tramo4 = new window.ListaAgendas();
     this.Agenda4Tramo5 = new window.ListaAgendas();
-    
-    alert("Declarando vbles OUT");
     
     this.listaPonentesPonencia  = new window.ListaPonentes();
     
