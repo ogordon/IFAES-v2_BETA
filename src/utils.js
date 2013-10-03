@@ -9,7 +9,7 @@ tpl = {
 	// concatenated in a single file.
 	
 	loadTemplates:function (names, callback) {		
-		var that = this;
+		var that = this;		
 		var loadTemplate = function (index) {
 		  var name = names[index];
 		  $.get('src/tpl/' + name + '.html', function (data) {
