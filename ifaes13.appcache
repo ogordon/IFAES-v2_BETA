@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# 2013-10-03 - 3
+# 2013-10-03 - 5
 
 # Explicitly cached entries
 index.html
@@ -121,26 +121,71 @@ assets/images/mapa_bernabeu.png
 assets/images/ok.jpg
 assets/images/panel_de_expertos.png
 assets/images/ponencia.png
-assets/images/ponentes/berni_molero_canal+.png
-assets/images/ponentes/brigitte_bauer_netsales.png
-assets/images/ponentes/carolina_heredero_prosegur.png
-assets/images/ponentes/david_arconada_orange.png
-assets/images/ponentes/enrique_diego_EMT.png
-assets/images/ponentes/eric_corrius_vocalcom.png
-assets/images/ponentes/francisco_perez_aerco.png
-assets/images/ponentes/javier_velasco_genesys.png
-assets/images/ponentes/jorgedelrio.png
-assets/images/ponentes/julio_robles_cloud.png
-assets/images/ponentes/oscar_gutierrez_pelayo.png
-assets/images/ponentes/OscarGordon.jpg
-assets/images/ponentes/paloma_hermida_iberdrola.png
-assets/images/ponentes/ponente_X.png
 assets/images/regalo.png
 assets/images/splashscreens/1536x2008_iPad_Retina.png
 assets/images/splashscreens/320x460_iPhone.png
 assets/images/splashscreens/640x1096_iPhone5.png
 assets/images/splashscreens/640x920_iPhone_Retina.png
 assets/images/splashscreens/768x1004_iPad_vertical.png
+assets/images/twitter.png
+assets/images/vino.png
+assets/images/web.png
+assets/images/workshop.png
+
+# PONENTES
+assets/images/ponentes/agusti_molias_cci.png
+assets/images/ponentes/ana_marzo_equipomarzo.png
+assets/images/ponentes/anamaria_martinez_vitaldent.png
+assets/images/ponentes/angela_sanchez_ing.png
+assets/images/ponentes/beatriz_lopez_sanitas.png
+assets/images/ponentes/beatriz_oficialdegui_destinia.png
+assets/images/ponentes/bernardo_crespo_bbva.png
+assets/images/ponentes/berni_molero_canal+.png
+assets/images/ponentes/brigitte_bauer_netsales.png
+assets/images/ponentes/bruno_sivardiere_prosodie.png
+assets/images/ponentes/carlos_alavarez_catalunyacaixa.png
+assets/images/ponentes/carlos_castillo_loreal.png
+assets/images/ponentes/carmen_lopez_vodafone.png
+assets/images/ponentes/carmen_porras_tnt.png
+assets/images/ponentes/carolina_heredero_prosegur.png
+assets/images/ponentes/cristina_recuero_mma.png
+assets/images/ponentes/david_arconada_orange.png
+assets/images/ponentes/elena_alfaro.png
+assets/images/ponentes/enrique_diego_EMT.png
+assets/images/ponentes/eric_corrius_vocalcom.png
+assets/images/ponentes/felipe_martinez_zfb.png
+assets/images/ponentes/fernando_aparicio_amvos.png
+assets/images/ponentes/fernando_egido_selfbank.png
+assets/images/ponentes/fernando_rivero_asocmkt.png
+assets/images/ponentes/fernando_valverde_securitasdirect.png
+assets/images/ponentes/francisco_perez_aerco.png
+assets/images/ponentes/javier_tamayo_tuenti.png
+assets/images/ponentes/javier_velasco_genesys.png
+assets/images/ponentes/jennifer_arienza_rga.png
+assets/images/ponentes/jorge_gonzalez_julianmartin.png
+assets/images/ponentes/jorge_hurtado_inin.png
+assets/images/ponentes/jorgedelrio.png
+assets/images/ponentes/josemaria_banos_letslaw.png
+assets/images/ponentes/josemaria_lopez_prosodie.png
+assets/images/ponentes/juanantonio_sanz_iberia.png
+assets/images/ponentes/juancarlos_lozano_anagam.png
+assets/images/ponentes/julio_robles_cloud.png
+assets/images/ponentes/leire_giron_carrier.png
+assets/images/ponentes/leticia_menendez_telepizza.png
+assets/images/ponentes/manuel_puente_telepizza.png
+assets/images/ponentes/mercedes_othon_seur.png
+assets/images/ponentes/oscar_gutierrez_pelayo.png
+assets/images/ponentes/OscarGordon.jpg
+assets/images/ponentes/paloma_hermida_iberdrola.png
+assets/images/ponentes/paloma_jimenez_metlife.png
+assets/images/ponentes/ponente_X.png
+assets/images/ponentes/rafael_muniz_foromarketing.png
+assets/images/ponentes/raul_madariaga_edenred.png
+assets/images/ponentes/ricardo_garcia_iberia.png
+assets/images/ponentes/santiago_espada_idiso.png
+assets/images/ponentes/silvia_alvarez_canalisabelii.png
+
+# SPONSORS
 assets/images/sponsors/2Mares.png
 assets/images/sponsors/ACCE.png
 assets/images/sponsors/Accenture.png
@@ -201,10 +246,6 @@ assets/images/sponsors/Verint.png
 assets/images/sponsors/Vocalcom.png
 assets/images/sponsors/VozCom.png
 assets/images/sponsors/ZFB.png
-assets/images/twitter.png
-assets/images/vino.png
-assets/images/web.png
-assets/images/workshop.png
 
 
 # All other resources (e.g. sites) require the user to be online. 
