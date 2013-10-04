@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# 2013-10-03 - 5
+# 2013-10-04 - 1
 
 # Explicitly cached entries
 index.html
@@ -47,6 +47,7 @@ src/tpl/detalle_patrocinadores.html
 src/tpl/detalle_ponentes.html
 src/tpl/entrada_agenda.html
 src/tpl/entrada_agenda2.html
+src/tpl/entrada_agenda3.html
 src/tpl/footer.html
 src/tpl/home.html
 src/tpl/infoexpo.html

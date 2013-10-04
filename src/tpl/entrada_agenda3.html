@@ -1,7 +1,6 @@
 <li data-icon="false">
 	<a><img src="<%= url_icono %>">
-	    <p><strong>Horario: </strong><%= hora %></p>
-	    <p><strong>Lugar: </strong><%= titulo_linea1 %></p>	         
+	    <p><strong><%= hora %></strong> <%= titulo_linea1 %></p>	         
 	    <% if(titulo_linea2!="") {%>
 	        <p><%= titulo_linea2 %></p>                
         <% } %>
@@ -19,51 +18,51 @@
         <% } %>
         
         <% if(moderador!="") {%>
-            <p><%= moderador %></p>                
+            <p>Modera: <strong><i><%= moderador %></i></strong></p>                
         <% } %>
         
         <% if(empresa_moderador!="") {%>
-            <p><%= empresa_moderador %></p>               
+            <p><small><strong><%= empresa_moderador %></strong></small></p>               
         <% } %>
         
         <% if(ponente1!="") {%>
-            <p><%= ponente1 %></p>              
+            <p><strong><i><%= ponente1 %></i></strong></p>              
         <% } %>
         
         <% if(empresa_ponente1!="") {%>
-            <p><%= empresa_ponente1 %></p>               
+            <p><small><strong><%= empresa_ponente1 %></strong></small></p>               
         <% } %>
         
         <% if(ponente2!="") {%>
-            <p><%= ponente2 %></p>              
+            <p><strong><i><%= ponente2 %></i></strong></p>              
         <% } %>
         
         <% if(empresa_ponente2!="") {%>
-            <p><%= empresa_ponente2 %></p>               
+            <p><small><strong><%= empresa_ponente2 %></strong></small></p>               
         <% } %>
         
         <% if(ponente3!="") {%>
-            <p><%= ponente3 %></p>              
+            <p><strong><i><%= ponente3 %></i></strong></p>              
         <% } %>
         
         <% if(empresa_ponente3!="") {%>
-            <p><%= empresa_ponente3 %></p>               
+            <p><small><strong><%= empresa_ponente3 %></strong></small></p>               
         <% } %>
         
         <% if(ponente4!="") {%>
-            <p><%= ponente4 %></p>              
+            <p><strong><i><%= ponente4 %></i></strong></p>              
         <% } %>
         
         <% if(empresa_ponente4!="") {%>
-            <p><%= empresa_ponente4 %></p>               
+            <p><small><strong><%= empresa_ponente4 %></strong></small></p>               
         <% } %>
         
         <% if(ponente5!="") {%>
-            <p><%= ponente5 %></p>              
+            <p><strong><i><%= ponente5 %></i></strong></p>              
         <% } %>
         
         <% if(empresa_ponente5!="") {%>
-            <p><%= empresa_ponente5 %></p>               
+            <p><small><strong><%= empresa_ponente5 %></strong></small></p>               
         <% } %>
                       
 </li>

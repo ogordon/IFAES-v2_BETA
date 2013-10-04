@@ -86,7 +86,7 @@ window.Entrada_Agenda3View = Backbone.View.extend({
   }, 
   
   initialize:function () {
-    this.template = _.template(tpl.get('entrada_agenda'));
+    this.template = _.template(tpl.get('entrada_agenda3'));
   },
 
   render:function (e) {

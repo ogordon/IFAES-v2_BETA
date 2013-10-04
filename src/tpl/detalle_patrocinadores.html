@@ -6,7 +6,7 @@
 
 <div id="lista_patrocinadores" data-role="content" data-theme="a"> 
 	<div align="center">
-		<img height="80px" src="<%= logo_url%>"><br />				
+		<img height="160px" src="<%= logo_url%>"><br />				
 		<p>
 	</div>
 		<div data-role="header" data-theme="a" align="center">
@@ -14,22 +14,22 @@
         </div>
     <div align"left">
 			<% if(telefono!="") {%>
-				<a id="icono_telefono" href="callto:<%= telefono%>"><img class="ponente_btn" src="assets/images/callme.png"><%= telefono%></a>
+				<a id="icono_telefono" href="callto:<%= telefono%>"><img class="ponente_btn" src="assets/images/callme.png"><small><%= telefono%></small></a>
 			<% } %>
             <br>
 			<% if(mail!="") {%>
-				<a id="icono_email" href="mailto:<%= mail%>"><img class="ponente_btn" src="assets/images/email.png"><%= mail%></a>
+				<a id="icono_email" href="mailto:<%= mail%>"><img class="ponente_btn" src="assets/images/email.png"><small><%= mail%></small></a>
 			<% } %>			
             <br>
 			<% if(web!="") {%>			
-				<a id="icono_web" href="<%= web%>" target="_blank"><img class="ponente_btn" src="assets/images/web.png"><%= web%></a>
+				<a id="icono_web" href="<%= web%>" target="_blank"><img class="ponente_btn" src="assets/images/web.png"><small><%= web%></small></a>
 				<!-- <a id="icono_web" href="#marco-patrocinador/<%= clave%>" target="_blank" rel="external"><img class="ponente_btn" src="assets/images/web.png"></a>-->
 				<!-- <a id="icono_web" href="www.avaya.com"><img class="ponente_btn" src="assets/images/web.png"></a> -->
 				<!--<a href="<%= web%>" onclick="window.open('<%= web%>', '_system', 'location=yes');"><img class="ponente_btn" src="assets/images/web.png"><%= web%></a>-->								
 			<% } %>
 			<br>
 			<% if(twitter!="") {%>
-                <a id="icono_twitter" href="<%= twitter%>" target="_blank"><img class="ponente_btn" src="assets/images/twitter.png"><%= twitter_corto%></a>
+                <a id="icono_twitter" href="<%= twitter%>" target="_blank"><img class="ponente_btn" src="assets/images/twitter.png"><small><%= twitter_corto%></small></a>
             <% } %>
             <br>
 		</p>

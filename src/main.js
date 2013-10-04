@@ -1153,6 +1153,7 @@ $(document).ready(function () {
   	'sala_1_srv',
   	'entrada_agenda',
   	'entrada_agenda2',
+  	'entrada_agenda3',
   	'sala_2_srv',
   	'sala_p_srv',
   	'otras_act_srv',
