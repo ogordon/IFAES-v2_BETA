@@ -285,10 +285,15 @@ var AppRouter = Backbone.Router.extend({
                             var ag1_tramo5 = app.listaAgendas.where({n_sala: "001", n_tramo: "005"});
                             
                             app.Agenda1Tramo1.reset(ag1_tramo1);
+                            app.Agenda1Tramo1.reset(app.Agenda1Tramo1.sortBy('n_orden'));
                             app.Agenda1Tramo2.reset(ag1_tramo2);
+                            app.Agenda1Tramo2.reset(app.Agenda1Tramo2.sortBy('n_orden'));
                             app.Agenda1Tramo3.reset(ag1_tramo3);
+                            app.Agenda1Tramo3.reset(app.Agenda1Tramo3.sortBy('n_orden'));
                             app.Agenda1Tramo4.reset(ag1_tramo4);
+                            app.Agenda1Tramo4.reset(app.Agenda1Tramo4.sortBy('n_orden'));
                             app.Agenda1Tramo5.reset(ag1_tramo5);
+                            app.Agenda1Tramo5.reset(app.Agenda1Tramo5.sortBy('n_orden'));
                             
                             $.mobile.loading( 'hide', {
                                     text: '',
@@ -326,10 +331,15 @@ var AppRouter = Backbone.Router.extend({
                             var ag1_tramo5 = app.listaAgendas.where({n_sala: "001", n_tramo: "005"});
                             
                             app.Agenda1Tramo1.reset(ag1_tramo1);
+                            app.Agenda1Tramo1.reset(app.Agenda1Tramo1.sortBy('n_orden'));
                             app.Agenda1Tramo2.reset(ag1_tramo2);
+                            app.Agenda1Tramo2.reset(app.Agenda1Tramo2.sortBy('n_orden'));
                             app.Agenda1Tramo3.reset(ag1_tramo3);
+                            app.Agenda1Tramo3.reset(app.Agenda1Tramo3.sortBy('n_orden'));
                             app.Agenda1Tramo4.reset(ag1_tramo4);
+                            app.Agenda1Tramo4.reset(app.Agenda1Tramo4.sortBy('n_orden'));
                             app.Agenda1Tramo5.reset(ag1_tramo5);
+                            app.Agenda1Tramo5.reset(app.Agenda1Tramo5.sortBy('n_orden'));
                     
                             $.mobile.loading( 'hide', {
                                 text: '',
@@ -374,10 +384,15 @@ var AppRouter = Backbone.Router.extend({
                             var ag2_tramo5 = app.listaAgendas.where({n_sala: "002", n_tramo: "005"});
                             
                             app.Agenda2Tramo1.reset(ag2_tramo1);
+                            app.Agenda2Tramo1.reset(app.Agenda2Tramo1.sortBy('n_orden'));
                             app.Agenda2Tramo2.reset(ag2_tramo2);
+                            app.Agenda2Tramo2.reset(app.Agenda2Tramo2.sortBy('n_orden'));
                             app.Agenda2Tramo3.reset(ag2_tramo3);
+                            app.Agenda2Tramo3.reset(app.Agenda2Tramo3.sortBy('n_orden'));
                             app.Agenda2Tramo4.reset(ag2_tramo4);
+                            app.Agenda2Tramo4.reset(app.Agenda2Tramo4.sortBy('n_orden'));
                             app.Agenda2Tramo5.reset(ag2_tramo5);
+                            app.Agenda2Tramo5.reset(app.Agenda2Tramo5.sortBy('n_orden'));
                             
                             $.mobile.loading( 'hide', {
                                     text: '',
@@ -415,10 +430,15 @@ var AppRouter = Backbone.Router.extend({
                             var ag2_tramo5 = app.listaAgendas.where({n_sala: "002", n_tramo: "005"});
                             
                             app.Agenda2Tramo1.reset(ag2_tramo1);
+                            app.Agenda2Tramo1.reset(app.Agenda2Tramo1.sortBy('n_orden'));
                             app.Agenda2Tramo2.reset(ag2_tramo2);
+                            app.Agenda2Tramo2.reset(app.Agenda2Tramo2.sortBy('n_orden'));
                             app.Agenda2Tramo3.reset(ag2_tramo3);
+                            app.Agenda2Tramo3.reset(app.Agenda2Tramo3.sortBy('n_orden'));
                             app.Agenda2Tramo4.reset(ag2_tramo4);
+                            app.Agenda2Tramo4.reset(app.Agenda2Tramo4.sortBy('n_orden'));
                             app.Agenda2Tramo5.reset(ag2_tramo5);
+                            app.Agenda2Tramo5.reset(app.Agenda2Tramo5.sortBy('n_orden'));
                     
                             $.mobile.loading( 'hide', {
                                 text: '',
@@ -463,10 +483,15 @@ var AppRouter = Backbone.Router.extend({
                             var ag3_tramo5 = app.listaAgendas.where({n_sala: "003", n_tramo: "005"});
                             
                             app.Agenda3Tramo1.reset(ag3_tramo1);
+                            app.Agenda3Tramo1.reset(app.Agenda3Tramo1.sortBy('n_orden'));
                             app.Agenda3Tramo2.reset(ag3_tramo2);
+                            app.Agenda3Tramo2.reset(app.Agenda3Tramo2.sortBy('n_orden'));
                             app.Agenda3Tramo3.reset(ag3_tramo3);
+                            app.Agenda3Tramo3.reset(app.Agenda3Tramo3.sortBy('n_orden'));
                             app.Agenda3Tramo4.reset(ag3_tramo4);
+                            app.Agenda3Tramo4.reset(app.Agenda3Tramo4.sortBy('n_orden'));
                             app.Agenda3Tramo5.reset(ag3_tramo5);
+                            app.Agenda3Tramo5.reset(app.Agenda3Tramo5.sortBy('n_orden'));
                             
                             $.mobile.loading( 'hide', {
                                     text: '',
@@ -504,10 +529,15 @@ var AppRouter = Backbone.Router.extend({
                             var ag3_tramo5 = app.listaAgendas.where({n_sala: "003", n_tramo: "005"});
                             
                             app.Agenda3Tramo1.reset(ag3_tramo1);
+                            app.Agenda3Tramo1.reset(app.Agenda3Tramo1.sortBy('n_orden'));
                             app.Agenda3Tramo2.reset(ag3_tramo2);
+                            app.Agenda3Tramo2.reset(app.Agenda3Tramo2.sortBy('n_orden'));
                             app.Agenda3Tramo3.reset(ag3_tramo3);
+                            app.Agenda3Tramo3.reset(app.Agenda3Tramo3.sortBy('n_orden'));
                             app.Agenda3Tramo4.reset(ag3_tramo4);
+                            app.Agenda3Tramo4.reset(app.Agenda3Tramo4.sortBy('n_orden'));
                             app.Agenda3Tramo5.reset(ag3_tramo5);
+                            app.Agenda3Tramo5.reset(app.Agenda3Tramo5.sortBy('n_orden'));
                     
                             $.mobile.loading( 'hide', {
                                 text: '',
@@ -546,16 +576,21 @@ var AppRouter = Backbone.Router.extend({
                         success: function(model, results, options) {                          
                             // Search for schedule entries                            
                             var ag4_tramo1 = app.listaAgendas.where({n_sala: "004", n_tramo: "001"});
-                            var ag4_tramo2 = app.listaAgendas.where({n_sala: "004", n_tramo: "002"});
+                            var ag4_tramo2 = app.listaAgendas.where({n_sala: "004", n_tramo: "002"});                         
                             var ag4_tramo3 = app.listaAgendas.where({n_sala: "004", n_tramo: "003"});
                             var ag4_tramo4 = app.listaAgendas.where({n_sala: "004", n_tramo: "004"});
                             var ag4_tramo5 = app.listaAgendas.where({n_sala: "004", n_tramo: "005"});
                             
                             app.Agenda4Tramo1.reset(ag4_tramo1);
-                            app.Agenda4Tramo2.reset(ag4_tramo2);
+                            app.Agenda4Tramo1.reset(app.Agenda4Tramo1.sortBy('n_orden'));
+                            app.Agenda4Tramo2.reset(ag4_tramo2);                            
+                            app.Agenda4Tramo2.reset(app.Agenda4Tramo2.sortBy('n_orden'));                            
                             app.Agenda4Tramo3.reset(ag4_tramo3);
+                            app.Agenda4Tramo3.reset(app.Agenda4Tramo3.sortBy('n_orden'));
                             app.Agenda4Tramo4.reset(ag4_tramo4);
+                            app.Agenda4Tramo4.reset(app.Agenda4Tramo4.sortBy('n_orden'));
                             app.Agenda4Tramo5.reset(ag4_tramo5);
+                            app.Agenda4Tramo5.reset(app.Agenda4Tramo5.sortBy('n_orden'));
                             
                             $.mobile.loading( 'hide', {
                                     text: '',
@@ -593,10 +628,15 @@ var AppRouter = Backbone.Router.extend({
                             var ag4_tramo5 = app.listaAgendas.where({n_sala: "004", n_tramo: "005"});
                             
                             app.Agenda4Tramo1.reset(ag4_tramo1);
+                            app.Agenda4Tramo1.reset(app.Agenda4Tramo1.sortBy('n_orden'));
                             app.Agenda4Tramo2.reset(ag4_tramo2);
+                            app.Agenda4Tramo2.reset(app.Agenda4Tramo2.sortBy('n_orden'));
                             app.Agenda4Tramo3.reset(ag4_tramo3);
+                            app.Agenda4Tramo3.reset(app.Agenda4Tramo3.sortBy('n_orden'));
                             app.Agenda4Tramo4.reset(ag4_tramo4);
+                            app.Agenda4Tramo4.reset(app.Agenda4Tramo4.sortBy('n_orden'));
                             app.Agenda4Tramo5.reset(ag4_tramo5);
+                            app.Agenda4Tramo5.reset(app.Agenda4Tramo5.sortBy('n_orden'));
                     
                             $.mobile.loading( 'hide', {
                                 text: '',
