@@ -9,8 +9,11 @@ window.HomeView = Backbone.View.extend({
 
   initialize:function () {  
       //console.log("HOME function");
+    
+    template: 'home',
+    
   	
-  	this.template = _.template(tpl.get('home'));	  		
+  	//this.template = _.template(tpl.get('home'));	  		
   	
   	/*if(!app.user.get('logado')) {
 	  	app.navigate("#login", {trigger: true});	
@@ -101,7 +104,14 @@ window.HomeView = Backbone.View.extend({
    */
      	 
   render:function (e) {
-    $(this.el).html(this.template());
+      
+    var that = this;
+    $.get('src/tpl/' + this.template + '.html', function (template) {
+        var htlm = $(template).tmpl();
+        that.$el.html(html);
+    });
+    
+    //$(this.el).html(this.template());
     
     //append lateral panel    
     var lateral_panel = new window.Panel_lateralView();
