@@ -1149,7 +1149,7 @@ $(document).ready(function () {
   	'login',
   	'registro',
   	'condiciones', 
-  	//'home',
+  	'home',
   	'sala_1_srv',
   	'entrada_agenda',
   	'entrada_agenda2',
