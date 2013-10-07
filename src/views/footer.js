@@ -8,7 +8,8 @@
 window.FooterView = Backbone.View.extend({
   initialize:function () {
      //seleccionamos la plantilla 
-  	 this.template = _.template(tpl.get('footer'));
+  	 //this.template = _.template(tpl.get('footer'));
+  	 this.template = _.template($('#footer').html());
   },
   
   // Events from the View's DOM 

@@ -6,7 +6,8 @@
 
 window.CondicionesView = Backbone.View.extend({
   initialize:function () {
-  	this.template = _.template(tpl.get('condiciones'));
+  	//this.template = _.template(tpl.get('condiciones'));
+  	this.template = _.template($('#condiciones').html());
   },
   
   // Events from the View's DOM 

@@ -7,7 +7,8 @@
 
 window.InfoexpoView = Backbone.View.extend({
   initialize:function () {
-    this.template = _.template(tpl.get('infoexpo'));
+    //this.template = _.template(tpl.get('infoexpo'));
+    this.template = _.template($('#infoexpo').html());
     
     /*if(!app.user.get('logado')) {
         app.navigate("#login", {trigger: true});    

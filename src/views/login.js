@@ -6,7 +6,8 @@
 
 window.LoginView = Backbone.View.extend({
   initialize:function () {
-  	this.template = _.template(tpl.get('login'));
+  	//this.template = _.template(tpl.get('login'));
+  	this.template = _.template($('#login').html());
   },
   
   // Events from the View's DOM 

@@ -15,16 +15,20 @@ window.VotarView = Backbone.View.extend({
   	this.op5 = this.model.get('opcion_5');
   	
   	if (this.op5 != '')
-  	     this.template = _.template(tpl.get('votar'));
+  	     //this.template = _.template(tpl.get('votar'));
+  	     this.template = _.template($('#votar').html());
   	else
   	 if (this.op4 != '')
-  	     this.template = _.template(tpl.get('votar-4'));
+  	     //this.template = _.template(tpl.get('votar_4'));
+  	     this.template = _.template($('#votar_4').html());
   	 else
   	     if (this.op3 != '')
-  	         this.template = _.template(tpl.get('votar-3'));
+  	         //this.template = _.template(tpl.get('votar_3'));
+  	         this.template = _.template($('#votar_3').html());
   	     else
   	         if(this.op2 != '')
-  	             this.template = _.template(tpl.get('votar-2'));
+  	             //this.template = _.template(tpl.get('votar_2'));
+  	             this.template = _.template($('#votar_2').html());
   	 
   	 
   	this.pregunta_id = this.model.get('pregunta_id');

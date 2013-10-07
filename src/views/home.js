@@ -10,8 +10,7 @@ window.HomeView = Backbone.View.extend({
   initialize:function () {  
       //console.log("HOME function");
   	
-  	//this.template = _.template(tpl.get('home'));
-  		  		
+  	//this.template = _.template(tpl.get('home'));  		  		
   	this.template = _.template($('#home').html());
   	
   	/*if(!app.user.get('logado')) {

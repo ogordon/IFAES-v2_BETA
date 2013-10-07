@@ -6,7 +6,8 @@
 
 window.ImeliusView = Backbone.View.extend({
   initialize:function () {
-  	this.template = _.template(tpl.get('imelius'));
+  	//this.template = _.template(tpl.get('imelius'));
+  	this.template = _.template($('#imelius').html());
   },
   
   // Events from the View's DOM 

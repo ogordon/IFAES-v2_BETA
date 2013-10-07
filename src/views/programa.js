@@ -7,7 +7,8 @@
 
 window.ProgramaView = Backbone.View.extend({
   initialize:function () {
-    this.template = _.template(tpl.get('programa'));
+    //this.template = _.template(tpl.get('programa'));
+    this.template = _.template($('#programa').html());
     
     /*if(!app.user.get('logado')) {
         app.navigate("#login", {trigger: true});    

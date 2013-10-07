@@ -7,7 +7,8 @@
 
 window.Sala_p_srvView = Backbone.View.extend({
   initialize:function () { 	
-		this.template = _.template(tpl.get('sala_p_srv'));
+		//this.template = _.template(tpl.get('sala_p_srv'));
+		this.template = _.template($('#sala_p_srv').html());
 
   	/*if(!app.user.get('logado')) {
 	  	app.navigate("#login", {trigger: true});	
@@ -86,7 +87,8 @@ window.Entrada_Agenda3View = Backbone.View.extend({
   }, 
   
   initialize:function () {
-    this.template = _.template(tpl.get('entrada_agenda3'));
+    //this.template = _.template(tpl.get('entrada_agenda3'));
+    this.template = _.template($('#entrada_agenda3').html());
   },
 
   render:function (e) {

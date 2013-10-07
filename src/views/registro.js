@@ -7,7 +7,8 @@
 
 window.RegistrarView = Backbone.View.extend({
   initialize:function () {
-  	this.template = _.template(tpl.get('registro'));
+  	//this.template = _.template(tpl.get('registro'));
+  	this.template = _.template($('#registro').html());
   },
   
   // Events from the View's DOM 

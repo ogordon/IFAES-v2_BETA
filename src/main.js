@@ -1182,6 +1182,7 @@ $(document).ready(function () {
   // Load HTML View templates
   // Same name than tpl/<file> without .html
   
+  /*
   tpl.loadTemplates([
   	'footer',
   	'infoexpo',
@@ -1215,4 +1216,7 @@ $(document).ready(function () {
       // Allow to use Back browser button      
       Backbone.history.start();
     });
+    */
+    app = new AppRouter();
+    Backbone.history.start();
 });

@@ -150,7 +150,1277 @@
         </div>
     </script>
     
+    <script type="text/template" id="celda_ponentes">
+        <li>
+            <a href="#ponentes/<%= ponente_id%>"><img src="<%= foto_url %>">
+            <p><strong><%= nombre %></strong></p>
+            <p><%= cargo %></p>
+            <p><strong><%= empresa %></strong></p></a>  
+        </li>        
+    </script>
+    
+    <script type="text/template" id="condiciones">
+        <div data-role="header" data-position="fixed" data-theme="a" align="center">
+            <a href="" id="volver_pulsado" data-theme="a" data-icon="back" data-iconpos="notext"></a>
+            <h2>Condiciones de uso</h2>
+        </div>
+        
+        <div data-role="content" data-theme="d">
+        <div align="center">
+        <strong>POLÍTICA DE PROTECCIÓN DE DATOS</strong>
+        </div>
+        <small>
+        En cumplimiento de los dispuesto en la Ley Orgánica 15/1999 de Protección de Datos de Carácter Personal, se le comunica que los datos personales facilitados voluntariamente por usted en el presente formulario van a ser incorporados en un fichero cuyo responsables es I.F.Executives, S.L. (IFAES) con C.I.F. B81542516 domiciliada en C/ Marqués de Valdeiglesias, 3-4º, 28004 Madrid con la finalidad de gestionar su asistencia al evento Expo RC+CC, así como la elaboración  de estadísticas sobre las votaciones y opiniones que usted realice en la aplicación. Dichas estadísticas podrán servir para la elaboración de un informe público de tendencias donde no se recogerán datos personales sobre quién ha votado, sino datos agrupados por sector de actividad o por pregunta globalmente. Adicionalmente se podrán utilizar los datos de las votaciones para conocer las valoraciones sobre las ponencias y hacer estudios internos sobre la calidad de las ponencias por parte de IFAES y los patrocinadores del congreso RC+CC.      
+        <br /><br />Los datos recabados, serán tratados con absoluta confidencialidad, no siendo utilizados para finalidades distintas que las indicadas.  
+        <br /><br />Usted autoriza expresamente el uso de sus datos por parte de I.F.Executives, S.L. con la finalidad anteriormente indicada así como la comunicación de los datos por parte del responsable del fichero a los patrocinadores con la finalidad del envío de publicidad para lo que se podrán utilizar los medios que el solicitante facilite, como el correo electrónico, teléfono, fax, correo ordinario. 
+        <br /><br /> 
+        En caso de que no desease que IFAES  tuviera un dato suyo o si quisiera tener conocimiento sobre los datos que tenemos sobre usted o si desea modificarlos o, en su caso, que los cancelemos de la base de datos, deberá enviar una carta, adjuntando copia de sus DNI, a la dirección postal reseñada en el encabezado a la atención del Departamento de Marketing 
+        
+        <div align="center">
+            <br />
+            <br />
+            <strong>CAMBIO DE PONENTES</strong>
+        </div>
+        
+        Podría ser necesario, por motivos que no dependen de la Organización, cambiar el contenido y/o horario del programa y/o a los ponentes.
+        
+        </div>
+    </script>
+    
+    <script type="text/template" id="detalle_patrocinadores">
+        <div data-role="header" data-position="fixed" data-theme="a" align="center">
+            <a href="" id="panel_pulsado" data-theme="a" data-icon="bars" data-iconpos="notext"></a>        
+            <h2>PATROCINADOR</h2>
+            <a href="#home" id="volver_home" data-theme="a" data-icon="home" data-iconpos="notext"></a>     
+        </div>
+        
+        <div id="lista_patrocinadores" data-role="content" data-theme="a"> 
+            <div align="center">
+                <img height="160px" src="<%= logo_url%>"><br />             
+                <p>
+            </div>
+                <div data-role="header" data-theme="a" align="center">
+                    <h5>Contacto</h5>  
+                </div>
+            <div align"left">
+                    <% if(telefono!="") {%>
+                        <a id="icono_telefono" href="callto:<%= telefono%>"><img class="ponente_btn" src="assets/images/callme.png"><small><%= telefono%></small></a>
+                    <% } %>
+                    <br>
+                    <% if(mail!="") {%>
+                        <a id="icono_email" href="mailto:<%= mail%>"><img class="ponente_btn" src="assets/images/email.png"><small><%= mail%></small></a>
+                    <% } %>         
+                    <br>
+                    <% if(web!="") {%>          
+                        <a id="icono_web" href="<%= web%>" target="_blank"><img class="ponente_btn" src="assets/images/web.png"><small><%= web%></small></a>
+                        <!-- <a id="icono_web" href="#marco-patrocinador/<%= clave%>" target="_blank" rel="external"><img class="ponente_btn" src="assets/images/web.png"></a>-->
+                        <!-- <a id="icono_web" href="www.avaya.com"><img class="ponente_btn" src="assets/images/web.png"></a> -->
+                        <!--<a href="<%= web%>" onclick="window.open('<%= web%>', '_system', 'location=yes');"><img class="ponente_btn" src="assets/images/web.png"><%= web%></a>-->                                
+                    <% } %>
+                    <br>
+                    <% if(twitter!="") {%>
+                        <a id="icono_twitter" href="<%= twitter%>" target="_blank"><img class="ponente_btn" src="assets/images/twitter.png"><small><%= twitter_corto%></small></a>
+                    <% } %>
+                    <br>
+                </p>
+            </div>
+            <div data-role="header" data-theme="a" align="center">
+                    <h5>Más info ...</h5>  
+                </div>
+          <p align="justify"><small><%= info %></small></p>
+        </div>
+    </script>
+    
+    <script type="text/template" id="detalle_ponentes">
+        <div data-role="header" data-position="fixed" data-theme="a" align="center">
+            <a href="" id="panel_pulsado" data-theme="a" data-icon="bars" data-iconpos="notext"></a>        
+            <h2>PONENTE</h2>
+            <a href="#home" id="volver_home" data-theme="a" data-icon="home" data-iconpos="notext"></a>     
+        </div>
+        
+        <div id="lista_ponentes" data-role="content" data-theme="a"> 
+            <div align="center">
+                <img height="80px" src="<%= foto_url%>"><br />
+                <strong><%= nombre %></strong><br />
+                <%= cargo %><br />
+                <%= empresa %>
+                <p>
+                    <% if(telefono!="") {%>
+                        <a id="icono_telefono" href="callto:<%= telefono%>"><img class="ponente_btn" src="assets/images/callme.png"></a>
+                    <% } %>
+        
+                    <% if(email!="") {%>
+                        <a id="icono_email" href="mailto:<%= email%>"><img class="ponente_btn" src="assets/images/email.png"></a>
+                    <% } %>
+        
+                    <% if(twitter_url!="") {%>
+                        <a id="icono_twitter" href="<%= twitter_url%>" target="_blank"><img class="ponente_btn" src="assets/images/twitter.png"></a>
+                    <% } %>
+        
+                    <% if(linkedin_url!="") {%>         
+                        <a id="icono_linkedin" href="<%= linkedin_url%>" target="_blank"><img class="ponente_btn" src="assets/images/linkedin.png"></a>
+                    <% } %>
+                </p>
+            </div>
+          <p align="justify"><small><%= bio %></small></p>
+        </div>
+        
+    </script>
+    
+    <script type="text/template" id="entrada_agenda">
+            <li>
+                <a href="#ponentesponencia/<%= n_orden%>"><img src="<%= url_icono %>">
+                    <p><strong><%= hora %></strong> <%= titulo_linea1 %></p>             
+                    <% if(titulo_linea2!="") {%>
+                        <p><%= titulo_linea2 %></p>                
+                    <% } %>
+                    
+                    <% if(titulo_linea3!="") {%>
+                        <p><%= titulo_linea3 %></p>                
+                    <% } %>
+                    
+                    <% if(titulo_linea4!="") {%>
+                        <p><%= titulo_linea4 %></p>                
+                    <% } %>
+                    
+                    <% if(titulo_linea5!="") {%>
+                        <p><%= titulo_linea5 %></p>                
+                    <% } %>
+                    
+                    <% if(moderador!="") {%>
+                        <p>Modera: <strong><i><%= moderador %></i></strong></p>                
+                    <% } %>
+                    
+                    <% if(empresa_moderador!="") {%>
+                        <p><small><strong><%= empresa_moderador %></strong></small></p>               
+                    <% } %>
+                    
+                    <% if(ponente1!="") {%>
+                        <p><strong><i><%= ponente1 %></i></strong></p>              
+                    <% } %>
+                    
+                    <% if(empresa_ponente1!="") {%>
+                        <p><small><strong><%= empresa_ponente1 %></strong></small></p>               
+                    <% } %>
+                    
+                    <% if(ponente2!="") {%>
+                        <p><strong><i><%= ponente2 %></i></strong></p>              
+                    <% } %>
+                    
+                    <% if(empresa_ponente2!="") {%>
+                        <p><small><strong><%= empresa_ponente2 %></strong></small></p>               
+                    <% } %>
+                    
+                    <% if(ponente3!="") {%>
+                        <p><strong><i><%= ponente3 %></i></strong></p>              
+                    <% } %>
+                    
+                    <% if(empresa_ponente3!="") {%>
+                        <p><small><strong><%= empresa_ponente3 %></strong></small></p>               
+                    <% } %>
+                    
+                    <% if(ponente4!="") {%>
+                        <p><strong><i><%= ponente4 %></i></strong></p>              
+                    <% } %>
+                    
+                    <% if(empresa_ponente4!="") {%>
+                        <p><small><strong><%= empresa_ponente4 %></strong></small></p>               
+                    <% } %>
+                    
+                    <% if(ponente5!="") {%>
+                        <p><strong><i><%= ponente5 %></i></strong></p>              
+                    <% } %>
+                    
+                    <% if(empresa_ponente5!="") {%>
+                        <p><small><strong><%= empresa_ponente5 %></strong></small></p>               
+                    <% } %>
+                                  
+            </li>        
+    </script>
+    
+    <script type="text/template" id="entrada_agenda2">
+        <li data-icon="false">
+            <a><img src="<%= url_icono %>">
+                <p><strong>Horario: </strong><%= hora %></p>
+                <p><strong>Lugar: </strong><%= titulo_linea1 %></p>          
+                <% if(titulo_linea2!="") {%>
+                    <p><%= titulo_linea2 %></p>                
+                <% } %>
+                
+                <% if(titulo_linea3!="") {%>
+                    <p><%= titulo_linea3 %></p>                
+                <% } %>
+                
+                <% if(titulo_linea4!="") {%>
+                    <p><%= titulo_linea4 %></p>                
+                <% } %>
+                
+                <% if(titulo_linea5!="") {%>
+                    <p><%= titulo_linea5 %></p>                
+                <% } %>
+                
+                <% if(moderador!="") {%>
+                    <p><%= moderador %></p>                
+                <% } %>
+                
+                <% if(empresa_moderador!="") {%>
+                    <p><%= empresa_moderador %></p>               
+                <% } %>
+                
+                <% if(ponente1!="") {%>
+                    <p><%= ponente1 %></p>              
+                <% } %>
+                
+                <% if(empresa_ponente1!="") {%>
+                    <p><%= empresa_ponente1 %></p>               
+                <% } %>
+                
+                <% if(ponente2!="") {%>
+                    <p><%= ponente2 %></p>              
+                <% } %>
+                
+                <% if(empresa_ponente2!="") {%>
+                    <p><%= empresa_ponente2 %></p>               
+                <% } %>
+                
+                <% if(ponente3!="") {%>
+                    <p><%= ponente3 %></p>              
+                <% } %>
+                
+                <% if(empresa_ponente3!="") {%>
+                    <p><%= empresa_ponente3 %></p>               
+                <% } %>
+                
+                <% if(ponente4!="") {%>
+                    <p><%= ponente4 %></p>              
+                <% } %>
+                
+                <% if(empresa_ponente4!="") {%>
+                    <p><%= empresa_ponente4 %></p>               
+                <% } %>
+                
+                <% if(ponente5!="") {%>
+                    <p><%= ponente5 %></p>              
+                <% } %>
+                
+                <% if(empresa_ponente5!="") {%>
+                    <p><%= empresa_ponente5 %></p>               
+                <% } %>
+                              
+        </li>        
+    </script>
+    
+    <script type="text/template" id="entrada_agenda3">
+        <li data-icon="false">
+            <a><img src="<%= url_icono %>">
+                <p><strong><%= hora %></strong> <%= titulo_linea1 %></p>             
+                <% if(titulo_linea2!="") {%>
+                    <p><%= titulo_linea2 %></p>                
+                <% } %>
+                
+                <% if(titulo_linea3!="") {%>
+                    <p><%= titulo_linea3 %></p>                
+                <% } %>
+                
+                <% if(titulo_linea4!="") {%>
+                    <p><%= titulo_linea4 %></p>                
+                <% } %>
+                
+                <% if(titulo_linea5!="") {%>
+                    <p><%= titulo_linea5 %></p>                
+                <% } %>
+                
+                <% if(moderador!="") {%>
+                    <p>Modera: <strong><i><%= moderador %></i></strong></p>                
+                <% } %>
+                
+                <% if(empresa_moderador!="") {%>
+                    <p><small><strong><%= empresa_moderador %></strong></small></p>               
+                <% } %>
+                
+                <% if(ponente1!="") {%>
+                    <p><strong><i><%= ponente1 %></i></strong></p>              
+                <% } %>
+                
+                <% if(empresa_ponente1!="") {%>
+                    <p><small><strong><%= empresa_ponente1 %></strong></small></p>               
+                <% } %>
+                
+                <% if(ponente2!="") {%>
+                    <p><strong><i><%= ponente2 %></i></strong></p>              
+                <% } %>
+                
+                <% if(empresa_ponente2!="") {%>
+                    <p><small><strong><%= empresa_ponente2 %></strong></small></p>               
+                <% } %>
+                
+                <% if(ponente3!="") {%>
+                    <p><strong><i><%= ponente3 %></i></strong></p>              
+                <% } %>
+                
+                <% if(empresa_ponente3!="") {%>
+                    <p><small><strong><%= empresa_ponente3 %></strong></small></p>               
+                <% } %>
+                
+                <% if(ponente4!="") {%>
+                    <p><strong><i><%= ponente4 %></i></strong></p>              
+                <% } %>
+                
+                <% if(empresa_ponente4!="") {%>
+                    <p><small><strong><%= empresa_ponente4 %></strong></small></p>               
+                <% } %>
+                
+                <% if(ponente5!="") {%>
+                    <p><strong><i><%= ponente5 %></i></strong></p>              
+                <% } %>
+                
+                <% if(empresa_ponente5!="") {%>
+                    <p><small><strong><%= empresa_ponente5 %></strong></small></p>               
+                <% } %>
+                              
+        </li>        
+    </script>
+    
+    <script type="text/template" id="footer">
+        <div data-role="footer" data-position="fixed" data-theme="m" align="center"> 
+            <a id="imelius_pulsado" data-role="none" href="#imelius">
+                <img src="assets/images/imelius/logo.png" height="48px"></img>
+            </a>    
+        </div>        
+    </script>
+    
+    <script type="text/template" id="infoexpo">
+        <div data-role="header" data-position="fixed" data-theme="a" align="center">
+            <!-- <a href="" id="volver_pulsado" data-theme="a" data-icon="back" data-iconpos="notext"></a> -->
+            <a href="" id="panel_pulsado" data-theme="a" data-icon="bars" data-iconpos="notext"></a>
+            <h1>Información</h1>
+            <a href="#home" id="volver_home" data-theme="a" data-icon="home" data-iconpos="notext"></a>     
+        </div>
+        
+        <div data-role="content" data-theme="a" align="center">
+            <h2> 8 y 9 de octubre de 2013</h2>
+            <p>Santiago Bernabéu<br>Madrid</p>
+            <img src="assets/images/mapa.png" height="300px"></img>
+            <p> Entrada por la C/ Padre Damián s/n<br>(Zona Puerta 57)</p>
+        </div>        
+    </script>
+    
+    <script type="text/template" id="login">
+        <div data-role="content" data-theme="f">
+          
+          <div align="center">
+           <img src="assets/images/EXPO_CP.png" height="120px">
+          </div>
+          <br />
+        
+          <div align="center">
+            La agenda en tu móvil<br />
+            Conoce a los ponentes<br />
+            Vota y opina
+          </div>
+          <br />
+        
+            <form id="demo-form">             
+              <div class="ui-hide-label">
+                  <label for="username">Username:</label>
+                  <input type="email" name="username" id="username" value="" placeholder="Usa el email del registro" data-mini="true"/>
+              </div>      
+            <a id="login_pulsado" href="" data-theme="x" data-role="button" data-inline="false" data-mini="true">Login</a>      
+            </form>  
+          <br />
+        
+          <div align="center">
+            <div hidden id="login_error">No tenemos el email registrado</div>         
+            <div hidden id="email_error">Debes poner una dirección de email válida</div>          
+            <div hidden id="show_registrar"><a id="sinregistrar_pulsado" href="#registro">Regístrate aquí</a></div>
+          </div>          
+          <br />
+          
+          <div align="center">
+            ¡Regístrate y vota!<br />
+          </div>
+          <br />
+        
+          <div align="center">
+            <a id="condiciones_pulsado" href="#condiciones"><small>Condiciones de uso</small></a>
+          </div>           
+        </div>
+        
+    </script>
+    
+    <script type="text/template" id="otras_act_srv">
+        <div data-role="header" data-position="fixed" data-theme="d" align="center">
+            <a href="" id="panel_pulsado" data-theme="d" data-icon="bars" data-iconpos="notext"></a>
+            <h1>Otras</h1>  
+            <h3>Actividades</h3>
+            <a href="#home" id="volver_home" data-theme="d" data-icon="home" data-iconpos="notext"></a>   
+        </div>
+        
+        <div data-role="content" data-theme="b">
+            <ul data-role="listview" data-inset="false" data-theme="d" data-divider-theme="d" data-icon="false">
+        
+                <li data-role="list-divider">
+                  Jornada I - 8 de octubre
+                </li>
+                
+                <div id="sala4_tramo1" data-role="content" data-theme="d">
+                    
+                </div>
+        
+                
+                <li data-role="list-divider" >
+                  Jornada II - 9 de octubre
+                </li>
+                
+                <div id="sala4_tramo2" data-role="content" data-theme="d">
+                    
+                </div>        
+                
+                                    
+                <li data-role="list-divider" data-theme="d">
+                  <small></small>
+                </li>         
+                
+            </ul>
+        </div>        
+    </script>
+    
+    <script type="text/template" id="panel_lateral">
+        <div data-role="panel" data-display="push" id="panellateral" data-theme="d">
+          <ul data-role="listview" data-theme="m">
+              <li data-icon="arrow-r">
+                <a href="#home">
+                    <img src="assets/images/01_home.png" alt="IFAES" class="ui-li-icon ui-corner-none">
+                    Home
+                    <p><small><br></small></p>            
+                </a>
+              </li>
+              <li data-icon="arrow-r">
+                <a href="#sala-1">
+                    <img src="assets/images/02_Sala_1.png" alt="IFAES" class="ui-li-icon ui-corner-none">
+                    Sala 1
+                    <p><small>Palco de Honor</small></p>
+                </a>
+              </li>
+              <li data-icon="arrow-r">
+                <a href="#sala-2">
+                    <img src="assets/images/03_Sala_2.png" alt="IFAES" class="ui-li-icon ui-corner-none">
+                    Sala 2
+                    <p><small>Carpa de Jugadores</small></p>
+                </a>
+              </li>
+              <li data-icon="arrow-r">
+                <a href="#sala-p">
+                    <img src="assets/images/04_Sala_Paralela.png" alt="IFAES" class="ui-li-icon ui-corner-none">
+                    Sala Paralela
+                    <p><small><br></small></p>
+                </a>
+              </li>
+              <li data-icon="arrow-r">
+                <a href="#otras-act">
+                    <img src="assets/images/05_Otras_Actividades.png" alt="IFAES" class="ui-li-icon ui-corner-none">
+                    Otras Actividades
+                    <p><small><br></small></p>
+                </a>
+              </li>
+              <li data-icon="arrow-r">
+                <a href="#ponentes">
+                    <img src="assets/images/06_Ponentes.png" alt="IFAES" class="ui-li-icon ui-corner-none">
+                    Ponentes
+                    <p><small><br></small></p>
+                </a>
+              </li>   
+              <li data-icon="arrow-r">
+                <a href="#patrocinadores">
+                    <img src="assets/images/07_Sponsors.png" alt="IFAES" class="ui-li-icon ui-corner-none">
+                    Patrocinadores
+                    <p><small>Listado de empresas</small></p>
+                </a>
+              </li>
+              <li data-icon="arrow-r">
+                <a href="#infoexpo">
+                    <img src="assets/images/08_Info.png" alt="IFAES" class="ui-li-icon ui-corner-none">
+                    Información
+                    <p><small>Localización y contactos</small></p>
+                </a>
+              </li>      
+              <li data-icon="arrow-r">
+                <a id="logout" href="">
+                    <img src="assets/images/09_Logout.png" alt="imelius" class="ui-li-icon ui-corner-none">
+                    Logout
+                    <p><small><br></small></p>
+                </a>
+              </li>
+          </ul>
+        </div>        
+    </script>
+    
+    <script type="text/template" id="patrocinadores">
+        <div data-role="header" data-position="fixed" data-theme="a" align="center">
+            <a href="" id="panel_pulsado" data-theme="a" data-icon="bars" data-iconpos="notext"></a>        
+            <h2>Sponsors</h2>
+            <a href="#home" id="volver_home" data-theme="a" data-icon="home" data-iconpos="notext"></a>     
+        </div>
+        
+        <div data-role="content" data-theme="a">
+        
+          <div align="center">
+           <strong>Patrocinadores</strong>
+           
+           <table class="patrocinadores_table" align="center">
+                    <tr>
+                        <td align="center">
+                           <a href="#patrocinadores/001"><img class="logo_empresa" src="assets/images/sponsors/avaya.png"></a>
+                        </td>
+                        <td align="center">
+                           <a href="#patrocinadores/002"><img class="logo_empresa" src="assets/images/sponsors/CCI.png"></a>
+                        </td>
+                        <td align="center">
+                           <a href="#patrocinadores/003"><img class="logo_empresa" src="assets/images/sponsors/eCustomer.png"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center">
+                           <a href="#patrocinadores/004"><img class="logo_empresa" src="assets/images/sponsors/Genesys.png"></a>
+                        </td>
+                        <td align="center">
+                           <a href="#patrocinadores/006"><img class="logo_empresa" src="assets/images/sponsors/InIn.png"></a>
+                        </td>
+                        <td align="center">
+                           <a href="#patrocinadores/007"><img class="logo_empresa" src="assets/images/sponsors/JetMultimedia.png"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center">
+                           <a href="#patrocinadores/008"><img class="logo_empresa" src="assets/images/sponsors/Nuance.png"></a>
+                        </td>       
+                        <td align="center">
+                          <a href="#patrocinadores/009"><img class="logo_empresa" src="assets/images/sponsors/Prosodie.png"></a>
+                        </td>
+                        <td>
+                           <a href="#patrocinadores/010"><img class="logo_empresa" src="assets/images/sponsors/Transcom.png"></a>
+                        </td>
+                    </tr>
+                 </table>
+                  <table class="patrocinadores_table" align="center">
+                      <tr>
+                        <td align="center">
+                           <a href="#patrocinadores/011"><img class="logo_empresa" src="assets/images/sponsors/Verint.png"></a>
+                        </td>
+                        <td align="center">
+                           <a href="#patrocinadores/012"><img class="logo_empresa" src="assets/images/sponsors/Vocalcom.png"></a>
+                        </td>                
+                    </tr>
+                 </table>        
+                
+              <br />
+              <div align="center">
+               <strong>Offshoring Sponsors</strong>
+              </div>
+            
+                <table class="patrocinadores_table" align="center">
+                    <tr>
+                        <td align="center">
+                           <a href="#patrocinadores/013"><img class="logo_empresa" src="assets/images/sponsors/Tetouanshore.png"></a>
+                        </td>
+                        <td align="center">
+                           <a href="#patrocinadores/014"><img class="logo_empresa" src="assets/images/sponsors/ZFB.png"></a>
+                        </td>
+                        </tr>
+                 </table>
+              
+              <br />
+              <div align="center">
+               <strong>Copatrocinadores</strong>
+              </div>   
+                 
+                 <table class="patrocinadores_table" align="center">
+                    <tr>
+                        <td align="center">
+                           <a href="#patrocinadores/015"><img class="logo_empresa" src="assets/images/sponsors/Altitude.png"></a>
+                        </td>
+                        <td align="center">
+                           <a href="#patrocinadores/016"><img class="logo_empresa" src="assets/images/sponsors/Arvato.png"></a>
+                        </td>
+                        <td align="center">
+                           <a href="#patrocinadores/017"><img class="logo_empresa" src="assets/images/sponsors/Aspect.png"></a>
+                        </td>
+                    </tr>
+                    <tr>                
+                        <td align="center">
+                           <a href="#patrocinadores/018"><img class="logo_empresa" src="assets/images/sponsors/Atento.png"></a>
+                        </td>
+                        <td align="center">
+                           <a href="#patrocinadores/019"><img class="logo_empresa" src="assets/images/sponsors/Delikia.png"></a>
+                        </td>       
+                        <td align="center">
+                           <a href="#patrocinadores/020"><img class="logo_empresa" src="assets/images/sponsors/Konecta.png"></a>
+                        </td>
+                    </tr>
+                </table>
+                 <table class="patrocinadores_table" align="center">
+                    <tr>                
+                        <td>
+                           <a href="#patrocinadores/021"><img class="logo_empresa" src="assets/images/sponsors/Mercanza.png"></a>
+                        </td>
+                        <td align="center">
+                           <a href="#patrocinadores/022"><img class="logo_empresa" src="assets/images/sponsors/VozCom.png"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                </table>    
+                <br />
+                
+              <div align="center">
+               <strong>Expositores</strong>
+              </div>
+              
+              <table class="patrocinadores_table" align="center">
+                    <tr>
+                        <td align="center">
+                           <a href="#patrocinadores/023"><img class="logo_empresa" src="assets/images/sponsors/2Mares.png"></a>
+                        </td>
+                        <td align="center">
+                           <a href="#patrocinadores/024"><img class="logo_empresa" src="assets/images/sponsors/Datapoint.png"></a>
+                        </td>
+                        <td align="center">
+                           <a href="#patrocinadores/026"><img class="logo_empresa" src="assets/images/sponsors/eAlicia.png"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center">
+                           <a href="#patrocinadores/027"><img class="logo_empresa" src="assets/images/sponsors/Enghouse.png"></a>
+                        </td>
+                        <td align="center">
+                           <a><img class="logo_empresa" src="assets/images/sponsors/GSS.png"></a>
+                        </td>
+                        <td align="center">
+                           <a href="#patrocinadores/028"><img class="logo_empresa" src="assets/images/sponsors/inConcert.png"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center">
+                           <a href="#patrocinadores/030"><img class="logo_empresa" src="assets/images/sponsors/Madison.png"></a>
+                        </td>
+                        <td align="center">
+                           <a href="#patrocinadores/040"><img class="logo_empresa" src="assets/images/sponsors/Nubeum_Voiceware.png"></a>
+                        </td>
+                        <td align="center">
+                           <a href="#patrocinadores/031"><img class="logo_empresa" src="assets/images/sponsors/Sennheiser_Magnetron.png"></a>
+                        </td>                
+                    </tr>
+                    <tr>                
+                        <td align="center">
+                           <a href="#patrocinadores/032"><img class="logo_empresa" src="assets/images/sponsors/ONSolution.png"></a>
+                        </td>
+                        <td align="center">
+                           <a href="#patrocinadores/033"><img class="logo_empresa" src="assets/images/sponsors/Presence.png"></a>
+                        </td>
+                        <td align="center">
+                           <a href="#patrocinadores/034"><img class="logo_empresa" src="assets/images/sponsors/Syscom.png"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                </table>
+                <table class="patrocinadores_table" align="center">
+                    <tr>
+                        <td align="center">
+                           <a href="#patrocinadores/035"><img class="logo_empresa" src="assets/images/sponsors/Unitono.png"></a>
+                        </td>               
+                    </tr>
+                </table>
+            
+                <br />
+                <div align="center">
+               <strong>Participantes</strong>
+              </div>
+            
+              <table class="patrocinadores_table" align="center">
+                    <tr>
+                        <td align="center">
+                           <a href="#patrocinadores/036"><img class="logo_empresa" src="assets/images/sponsors/iMelius.png"></a>
+                        </td>
+                        <td align="center">
+                           <a href="#patrocinadores/038"><img class="logo_empresa" src="assets/images/sponsors/sertel.png"></a>
+                        </td>
+                        <td align="center">
+                           <a href="#patrocinadores/039"><img class="logo_empresa" src="assets/images/sponsors/Telefonica.png"></a>
+                        </td>
+                    </tr>
+                </table>
+                <table class="patrocinadores_table" align="center">
+                    <tr>                
+                        <td align="center">
+                           <a href="#patrocinadores/041"><img class="logo_empresa" src="assets/images/sponsors/sitel.png"></a>
+                        </td>
+                        <td align="center">
+                           <a><img class="logo_empresa" src="assets/images/sponsors/gesfutur.png"></a>
+                        </td>
+                        <td align="center">
+                           <a><img class="logo_empresa" src="assets/images/sponsors/teamvision.png"></a>
+                        </td>               
+                    </tr>
+                    <tr>
+                </table>
+                <table class="patrocinadores_table" align="center">
+                    <tr>
+                        <td align="center">
+                           <a><img class="logo_empresa" src="assets/images/sponsors/unisono.png"></a>
+                        </td>
+                    </tr>
+                </table>    
+                <br />
+                
+                <div align="center">
+               <strong>Colaboradores</strong>
+              </div>
+                <table class="patrocinadores_table" align="center">
+                    <tr>
+                        <td align="center">
+                           <!--<a href="http://ace.adigital.org/" onclick="window.open('http://ace.adigital.org/', '_system', 'location=yes');"><img class="logo_empresa" src="assets/images/sponsors/ACCE.png"></a>-->
+                           <a href="http://ace.adigital.org/" target="_blank"><img class="logo_empresa" src="assets/images/sponsors/ACCE.png"></a>
+                        </td>
+                        <td align="center">
+                           <a href="http://www.aeerc.com" target="_blank"><img class="logo_empresa" src="assets/images/sponsors/AERC.png"></a>
+                        </td>
+                        <td align="center">
+                           <a href="http://www.aercomunidad.org" target="_blank"><img class="logo_empresa" src="assets/images/sponsors/AERCO-PSM.png"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center">
+                           <a href="http://relacioncliente.es/" target="_blank"><img class="logo_empresa" src="assets/images/sponsors/BlogRCCC.png"></a>
+                        </td>
+                        <td align="center">
+                           <a href="http://www.callcenternoticias.com" target="_blank"><img class="logo_empresa" src="assets/images/sponsors/CCN.png"></a>
+                        </td>
+                        <td align="center">
+                           <a href="http://www.portalinformatico.com/web/canalnet/historico.asp" target="_blank"><img class="logo_empresa" src="assets/images/sponsors/DirectorTIC.png"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center">
+                           <a href="http://www.elcontact.com/" target="_blank"><img class="logo_empresa" src="assets/images/sponsors/elContact.png"></a>
+                        </td>
+                        <td align="center">
+                           <a href="http://www.foromarketing.com/" target="_blank"><img class="logo_empresa" src="assets/images/sponsors/ForoMarketing.png"></a>
+                        </td>
+                        <td align="center">
+                           <a href="http://www.icemd.com/" target="_blank"><img class="logo_empresa" src="assets/images/sponsors/ICEMD.png"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                     <td align="center">
+                           <a href="http://www.interactivadigital.com/" target="_blank"><img class="logo_empresa" src="assets/images/sponsors/Interactiva.png"></a>
+                        </td>
+                        <td align="center">
+                           <a href="http://www.tatum.es/BlogosferaMkt/paginas/Inicio.aspx" target="_blank"><img class="logo_empresa" src="assets/images/sponsors/Observatorio.png"></a>
+                        </td>
+                        <td align="center">
+                           <a href="http://www.callcenternoticias.com/callcentermagazine" target="_blank"><img class="logo_empresa" src="assets/images/sponsors/RCCC_Magazine.png"></a>
+                        </td>
+                    </tr>            
+               </table>
+               <table class="patrocinadores_table" align="center">
+                   <tr>
+                     <td align="center">
+                           <a href="http://www.tribunacontactcenter.com/" target="_blank"><img class="logo_empresa" src="assets/images/sponsors/TribunaContactCenter.png"></a>
+                        </td>                             
+                    </tr>           
+                </table>
+              
+          
+          </div>
+            
+        </div>        
+    </script>
+    
+    <script type="text/template" id="ponentes_ponencia">
+        <div data-role="header" data-position="fixed" data-theme="a" align="center">
+            <a href="" id="volver_pulsado" data-theme="a" data-icon="back" data-iconpos="notext"></a>       
+            <h2>Participantes</h2>
+            <a href="#home" id="volver_home" data-theme="a" data-icon="home" data-iconpos="notext"></a>     
+        </div>
+        
+        <div id="lista_ponentes_ponencia" data-role="content" data-theme="a"> 
+        </div>        
+    </script>
+    
+    <script type="text/template" id="ponentes">
+        <div data-role="header" data-position="fixed" data-theme="a" align="center">
+            <a href="" id="panel_pulsado" data-theme="a" data-icon="bars" data-iconpos="notext"></a>        
+            <h2>Ponentes</h2>
+            <a href="#home" id="volver_home" data-theme="a" data-icon="home" data-iconpos="notext"></a> 
+        </div>
+        
+        <!-- <div id="lista_ponentes" data-role="listview" data-filter="true" data-theme="d">  -->
+        <div id="lista_ponentes" data-role="content" data-theme="a"> 
+        </div>
+    </script>
+    
+    <script type="text/template" id="programa">
+        <div data-role="header" data-position="fixed" data-theme="z" align="center">
+            <a href="" id="panel_pulsado" data-theme="z" data-icon="bars" data-iconpos="notext"></a>
+            <h1>PROGRAMA</h1>
+            <a href="#home" id="volver_home" data-theme="z" data-icon="home" data-iconpos="notext"></a>         
+        </div>
+        
+        <!-- LISTA DE OPCIONES -->
+        <div data-role="content" data-theme="a">
+          <ul data-role="listview" data-inset="true" data-theme="i">
+              <li><a id="sala1_pulsado" href="#sala-1">
+              <img src="assets/images/02_Sala_1.png" width="50px">
+              <h2>SALA 1</h2>
+              <h5><small>Palco de Honor</small></h5>
+              </a></li>
+          </ul>
+          <ul data-role="listview" data-inset="true" data-theme="j">  
+              <li><a id="sala2_pulsado" href="#sala-2">
+              <img src="assets/images/03_Sala_2.png" width="50px">
+              <h2>SALA 2</h2>
+              <h5><small>Carpa de jugadores</small></h5>
+              </a></li>
+          </ul>
+          <ul data-role="listview" data-inset="true" data-theme="k">    
+              <li><a id="salap_pulsado" href="#sala-p">
+              <img src="assets/images/04_Sala_Paralela.png" width="50px">
+              <h2>SALA</h2> 
+              <h5><small>PARALELA</small></h5>
+               
+              </a></li>
+          </ul>
+          <ul data-role="listview" data-inset="true" data-theme="l">  
+              <li><a id="otras_pulsado" href="#otras-act">
+              <img src="assets/images/05_Otras_Actividades.png" width="50px">
+              <h2>OTRAS</h2> 
+              <h5><small>ACTIVIDADES</small></h5>
+               
+              </a></li>
+          </ul>
+        </div>        
+    </script>
+    
+    <script type="text/template" id="registro">
+        <div data-role="content" data-theme="a">
+          
+          <div align="center">
+           <img src="assets/images/EXPO_CP.png" height="60px"></img>
+          </div>
+          <br />
+        
+          <div id="signin_form">                      
+              <div class="ui-hide-label">
+                  <label for="username">Nomre:</label>
+                  <input type="text" name="username" id="nombre" value="" placeholder="Nombre y apellidos" data-mini="true"/>
+                  
+                  <label for="empresa">Empresa:</label>
+                  <input type="text" name="empresa" id="empresa" value="" placeholder="Empresa" data-mini="true"/>
+        
+                  <label for="cargo">Cargo:</label>
+                  <input type="text" name="cargo" id="cargo" value="" placeholder="Cargo" data-mini="true"/>
+                  
+                  <label for="username">Email:</label>
+                  <input type="email" name="username" id="username" value="<%= username %>" placeholder="Email" data-mini="true"/>
+                  
+              </div>
+              
+            <a id="registrarse_pulsado" href="" data-theme="b" data-role="button" data-inline="false" data-mini="true">Registrarse</a>            
+            </div>  
+          <br />
+          
+          <div align="center">
+            <div hidden id="registro_error">Por favor, rellena todos los campos</div>         
+          </div>          
+          <br />  
+        
+          <div align="center">
+            <a id="yaregistrado_pulsado" href="#login"><small>¿Ya registrado?</small></a>
+          </div>          
+          <br />
+        
+          <div align="center">
+            <a id="condiciones_pulsado" href="#condiciones"><small>Condiciones de uso</small></a>
+          </div>          
+          
+        </div>
+        
+    </script>
+    
+    <script type="text/template" id="sala_1_srv">
+        <div data-role="header" data-position="fixed" data-theme="a" align="center">
+            <a href="" id="panel_pulsado" data-theme="a" data-icon="bars" data-iconpos="notext"></a>
+            <h1>Sala 1</h1>  
+            <h3><small>Palco de Honor</small></h3>
+            <a href="#home" id="volver_home" data-theme="a" data-icon="home" data-iconpos="notext"></a>   
+        </div>
+        
+        <div data-role="content" data-theme="a">  
+            <ul data-role="listview" data-inset="false" data-theme="a" data-divider-theme="a">
+        
+                <li data-role="list-divider">
+                  Jornada I - 8 de octubre
+                </li>
+        
+                <!-- NO HAY PANELES -->
+                <li>
+                      <p><strong>09:00 Recepción de asistentes</strong></p>
+                </li>
+                <li>
+                      <p><strong>09:15 IFAES da la bienvenida</strong></p>   
+                </li>       
+            
+                <div id="lista_tramo1" data-role="content" data-theme="a">
+                    
+                </div>
+                
+                <li data-role="list-divider" data-theme="a">
+                  <small>10:45 Pausa Café</small>
+                </li>
+                
+                <div id="lista_tramo2" data-role="content" data-theme="a">
+                    
+                </div>
+                
+                <li data-role="list-divider" data-theme="a">
+                  <small>14:10 Cocktail en la zona Expo</small><br>
+                  <small>Cortesía de los expositores</small>
+                </li>        
+                
+               <div id="lista_tramo3" data-role="content" data-theme="a">
+                    
+                </div>
+                
+                <li>
+                      <p><strong>17:30 Despedida a cargo de IMPROMADRID</strong></p>   
+                </li>
+        
+        
+                <li data-role="list-divider" data-theme="a">
+                  <small>17:45 Fin de Jornada. Nos vemos mañana !!</small>        
+                </li>
+                 
+                
+                <li data-role="list-divider" >
+                  Jornada II - 9 de octubre
+                </li>
+                
+                <li>
+                      <p><strong>09:15 Recepción de asistentes</strong></p>
+                </li>
+                
+                <div id="lista_tramo4" data-role="content" data-theme="a">
+                    
+                </div>
+                
+                        
+                <li data-role="list-divider" data-theme="a">
+                  <small>11:00 Pausa Café</small>
+                </li>
+                
+                <div id="lista_tramo5" data-role="content" data-theme="a">
+                    
+                </div>        
+                
+                            
+                <li data-role="list-divider" data-theme="a">
+                  <small>14:15 Fin de Jornada - Vino español</small>
+                </li>         
+                
+            </ul>
+        </div>        
+    </script>
+    
+    <script type="text/template" id="sala_2_srv">
+        <div data-role="header" data-position="fixed" data-theme="b" align="center">
+            <a href="" id="panel_pulsado" data-theme="b" data-icon="bars" data-iconpos="notext"></a>
+            <h1>Sala 2</h1>  
+            <h3><small>Carpa de jugadores</small></h3>
+            <a href="#home" id="volver_home" data-theme="b" data-icon="home" data-iconpos="notext"></a>   
+        </div>
+        
+        <div data-role="content" data-theme="b">
+            <ul data-role="listview" data-inset="false" data-theme="b" data-divider-theme="b">
+        
+                <li data-role="list-divider">
+                  Jornada I - 8 de octubre
+                </li>
+        
+                <!-- NO HAY PANELES -->
+                <li>
+                      <p><strong>09:00 Recepción de asistentes</strong></p>
+                </li>
+                
+                <div id="sala2_tramo1" data-role="content" data-theme="b">
+                    
+                </div>
+                
+                
+                <li data-role="list-divider" data-theme="b">
+                  <small>11:15 Pausa Café</small>
+                </li>
+                
+                <div id="sala2_tramo2" data-role="content" data-theme="b">
+                    
+                </div>                 
+                
+                        
+                <li data-role="list-divider" data-theme="b">
+                  <small>14:00 Cocktail en la zona Expo</small><br>
+                  <small>Cortesía de los expositores</small>
+                </li>  
+                
+                <div id="sala2_tramo3" data-role="content" data-theme="b">
+                    
+                </div>      
+                        
+               
+                <li data-role="list-divider" data-theme="b">
+                  <small>17:45 Fin de Jornada. ¡Nos vemos mañana!</small>        
+                </li>
+                 
+                
+                <li data-role="list-divider" >
+                  Jornada II - 9 de octubre
+                </li>
+                
+                <li>
+                      <p><strong>09:00 Recepción de asistentes</strong></p>
+                </li>
+                
+                <div id="sala2_tramo4" data-role="content" data-theme="b">
+                    
+                </div>        
+                
+                
+                <li data-role="list-divider" data-theme="b">
+                  <small>10:45 Pausa Café</small>
+                </li>
+                
+                <div id="sala2_tramo5" data-role="content" data-theme="b">
+                    
+                </div>
+                
+                                    
+                <li data-role="list-divider" data-theme="b">
+                  <small>14:00 Fin de Jornada - Vino español</small>
+                </li>         
+                
+            </ul>
+        </div>        
+    </script>
+    
+    <script type="text/template" id="sala_p_srv">
+        <div data-role="header" data-position="fixed" data-theme="c" align="center">
+            <a href="" id="panel_pulsado" data-theme="c" data-icon="bars" data-iconpos="notext"></a>
+            <h1>Sala</h1>  
+            <h3>Paralela</h3>
+            <a href="#home" id="volver_home" data-theme="c" data-icon="home" data-iconpos="notext"></a>   
+        </div>
+        
+        <div data-role="content" data-theme="c">
+            <ul data-role="listview" data-inset="false" data-theme="c" data-divider-theme="c">
+        
+                <li data-role="list-divider">
+                  Jornada I - 8 de octubre
+                </li>
+                
+                <div id="sala3_tramo1" data-role="content" data-theme="c">
+                    
+                </div>
+                
+                
+                <li data-role="list-divider" >
+                  Jornada II - 9 de octubre
+                </li>
+                
+                <div id="sala3_tramo2" data-role="content" data-theme="c">
+                    
+                </div>
+                
+                        
+                <li data-role="list-divider" data-theme="c">
+                  <small></small>
+                </li>         
+                
+            </ul>
+        </div>        
+    </script>
+    
+    <script type="text/template" id="votar_2">
+        <div data-role="header" data-position="fixed" data-theme="a" align="center">
+            <a href="" id="volver_pulsado" data-theme="a" data-icon="back" data-iconpos="notext"></a>       
+            <h2>VOTAR</h2>
+            <a href="#home" id="volver_home" data-theme="a" data-icon="home" data-iconpos="notext"></a>     
+        </div>
+        
+        <div data-role="content" data-theme="a">
+          
+          <div align="center">
+                <form>
+                    <fieldset data-role="controlgroup">
+                        <legend><strong><%= titulo %></strong></legend>
+                        <input type="radio" name="respuesta" id="opcion_1" value="1" data-theme="a">
+                        <label for="opcion_1"><small><%= opcion_1 %></small></label>
+                        <input type="radio" name="respuesta" id="opcion_2" value="2" data-theme="a">
+                        <label for="opcion_2"><small><%= opcion_2 %></small></label>                
+                    </fieldset>
+                </form>
+                
+                <a href="" id="votar_pulsado" data-theme="x" data-role="button" data-inline="false" data-mini="true">Vota</a>
+                <div hidden id="msg_votacion_ok">
+                    <strong>Voto registrado</strong>
+                </div>
+                <div hidden id="sin_elegir">
+                    <strong>Elige una opción</strong>
+                </div>
+                <div hidden id="msg_votacion_fail">
+                    Error al registrar el voto
+                </div>                      
+          </div>          
+        </div>
+        
+        
+    </script>
+    
+    <script type="text/template" id="votar_3">
+        <div data-role="header" data-position="fixed" data-theme="a" align="center">
+            <a href="" id="volver_pulsado" data-theme="a" data-icon="back" data-iconpos="notext"></a>       
+            <h2>VOTAR</h2>
+            <a href="#home" id="volver_home" data-theme="a" data-icon="home" data-iconpos="notext"></a>     
+        </div>
+        
+        <div data-role="content" data-theme="a">
+          
+          <div align="center">
+                <form>
+                    <fieldset data-role="controlgroup">
+                        <legend><strong><%= titulo %></strong></legend>
+                        <input type="radio" name="respuesta" id="opcion_1" value="1" data-theme="a">
+                        <label for="opcion_1"><small><%= opcion_1 %></small></label>
+                        <input type="radio" name="respuesta" id="opcion_2" value="2" data-theme="a">
+                        <label for="opcion_2"><small><%= opcion_2 %></small></label>
+                        <input type="radio" name="respuesta" id="opcion_3" value="3" data-theme="a">
+                        <label for="opcion_3"><small><%= opcion_3 %></small></label>                                
+                    </fieldset>
+                </form>
+                
+                <a href="" id="votar_pulsado" data-theme="x" data-role="button" data-inline="false" data-mini="true">Vota</a>
+                <div hidden id="msg_votacion_ok">
+                    <strong>Voto registrado</strong>
+                </div>
+                <div hidden id="sin_elegir">
+                    <strong>Elige una opción</strong>
+                </div>
+                <div hidden id="msg_votacion_fail">
+                    Error al registrar el voto
+                </div>                      
+          </div>          
+        </div>
+    </script>
+    
+    <script type="text/template" id="votar_4">
+        <div data-role="header" data-position="fixed" data-theme="a" align="center">
+            <a href="" id="volver_pulsado" data-theme="a" data-icon="back" data-iconpos="notext"></a>       
+            <h2>VOTAR</h2>
+            <a href="#home" id="volver_home" data-theme="a" data-icon="home" data-iconpos="notext"></a>     
+        </div>
+        
+        <div data-role="content" data-theme="a">
+          
+          <div align="center">
+                <form>
+                    <fieldset data-role="controlgroup">
+                        <legend><strong><%= titulo %></strong></legend>
+                        <input type="radio" name="respuesta" id="opcion_1" value="1" data-theme="a">
+                        <label for="opcion_1"><small><%= opcion_1 %></small></label>
+                        <input type="radio" name="respuesta" id="opcion_2" value="2" data-theme="a">
+                        <label for="opcion_2"><small><%= opcion_2 %></small></label>
+                        <input type="radio" name="respuesta" id="opcion_3" value="3" data-theme="a">
+                        <label for="opcion_3"><small><%= opcion_3 %></small></label>
+                        <input type="radio" name="respuesta" id="opcion_4" value="4" data-theme="a">
+                        <label for="opcion_4"><small><%= opcion_4 %></small></label>                                
+                    </fieldset>
+                </form>
+                
+                <a href="" id="votar_pulsado" data-theme="x" data-role="button" data-inline="false" data-mini="true">Vota</a>
+                <div hidden id="msg_votacion_ok">
+                    <strong>Voto registrado</strong>
+                </div>
+                <div hidden id="sin_elegir">
+                    <strong>Elige una opción</strong>
+                </div>
+                <div hidden id="msg_votacion_fail">
+                    Error al registrar el voto
+                </div>                      
+          </div>          
+        </div>        
+    </script>
+    
+    <script type="text/template" id="votar_thx">
+        <div data-role="header" data-position="fixed" data-theme="a" align="center">
+            <a href="" id="panel_pulsado" data-theme="a" data-icon="bars" data-iconpos="notext"></a>        
+            <h2>VOTAR</h2>
+            <a href="#home" id="home_pulsado" data-theme="a" data-icon="home" data-iconpos="notext"></a>        
+        </div>
+        
+        <div data-role="content" data-theme="a">
+          
+          <div align="center">
+                <br/>
+                <br/>
+                <br/>
+                <img src="assets/images/ok.jpg" height="120px"></img>
+                <br/>
+                <br/>
+                <br/>
+                <h2>Gracias por votar</h2>
+                <a href="#home" id="siguiente" data-theme="x" data-role="button" data-inline="false" data-mini="true">Siguiente</a>                     
+          </div>          
+        </div>        
+    </script>
+    
+    <script type="text/template" id="votar">
+        <div data-role="header" data-position="fixed" data-theme="a" align="center">
+            <a href="" id="volver_pulsado" data-theme="a" data-icon="back" data-iconpos="notext"></a>       
+            <h2>VOTAR</h2>
+            <a href="#home" id="volver_home" data-theme="a" data-icon="home" data-iconpos="notext"></a>     
+        </div>
+        
+        <div data-role="content" data-theme="a">
+          
+          <div align="center">
+                <form>
+                    <fieldset data-role="controlgroup">
+                        <legend><strong><%= titulo %></strong></legend>
+                        <input type="radio" name="respuesta" id="opcion_1" value="1" data-theme="a">
+                        <label for="opcion_1"><small><%= opcion_1 %></small></label>
+                        <input type="radio" name="respuesta" id="opcion_2" value="2" data-theme="a">
+                        <label for="opcion_2"><small><%= opcion_2 %></small></label>
+                        <input type="radio" name="respuesta" id="opcion_3" value="3" data-theme="a">
+                        <label for="opcion_3"><small><%= opcion_3 %></small></label>
+                        <input type="radio" name="respuesta" id="opcion_4" value="4" data-theme="a">
+                        <label for="opcion_4"><small><%= opcion_4 %></small></label>                
+                        <input type="radio" name="respuesta" id="opcion_5" value="5" data-theme="a">
+                        <label for="opcion_5"><small><%= opcion_5 %></small></label>                
+                    </fieldset>
+                </form>
+                
+                <a href="" id="votar_pulsado" data-theme="x" data-role="button" data-inline="false" data-mini="true">Vota</a>
+                <div hidden id="msg_votacion_ok">
+                    <strong>Voto registrado</strong>
+                </div>
+                <div hidden id="sin_elegir">
+                    <strong>Elige una opción</strong>
+                </div>
+                <div hidden id="msg_votacion_fail">
+                    Error al registrar el voto
+                </div>                      
+          </div>          
+        </div>
+    </script>
+    
 	</head> 
+	
 	<body>	
 	<div align="center">
 		<img src="assets/images/splashscreens/640x920_iPhone_Retina.png" width="100%" />			

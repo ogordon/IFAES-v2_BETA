@@ -6,7 +6,8 @@
 
 window.PatrocinadoresView = Backbone.View.extend({
   initialize:function () {
-  	this.template = _.template(tpl.get('patrocinadores'));
+  	//this.template = _.template(tpl.get('patrocinadores'));
+  	this.template = _.template($('#patrocinadores').html());
   	
   	/*if(!app.user.get('logado')) {
 	  	app.navigate("#login", {trigger: true});	

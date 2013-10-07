@@ -6,7 +6,8 @@
 
 window.PonentesPonenciaView = Backbone.View.extend({
   initialize:function () {
-	  this.template = _.template(tpl.get('ponentes_ponencia'));	  		  
+	 // this.template = _.template(tpl.get('ponentes_ponencia'));
+	 this.template = _.template($('#ponentes_ponencia').html());	  		  
   
   	/*if(!app.user.get('logado')) {
 	  	app.navigate("#login", {trigger: true});	
@@ -53,7 +54,8 @@ window.Celda_PonenteView = Backbone.View.extend({
   }, 
   
   initialize:function () {
-  	this.template = _.template(tpl.get('celda_ponentes'));
+  	//this.template = _.template(tpl.get('celda_ponentes'));
+  	this.template = _.template($('#celda_ponentes').html());
   },
 
   render:function (e) {
